@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [T24 R23]" guice-stage="DEVELOPMENT">
+  <parameter name="URL" value="http://10.32.15.118:9089/BrowserWeb/servlet/BrowserServlet"/>
+  <parameter name="browserType" value="chrome"/>
+  <test thread-count="5" name="Linh Test(failed)">
+    <classes>
+      <class name="TestCaseAcc.CurrAccountTest">
+        <methods>
+          <include name="initializeTestBaseSetup"/>
+          <include name="TypeAcc"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestCaseAcc.CurrAccountTest -->
+    </classes>
+  </test> <!-- Linh Test(failed) -->
+</suite> <!-- Failed suite [T24 R23] -->

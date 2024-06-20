@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="T24 R24">
+	<parameter name="browserType" value="chrome" />
+	<parameter name="URL" value="http://10.32.15.119:9089/BrowserWeb/servlet/BrowserServlet" />
+	<test name="Linh Test">
+		<classes>
+			<!--<class name="customerTest.customerTest"></class>-->
+			<class name="customerTest.customerTestCorp">
+				<methods>
+					<include name="customerTest018"/>
+				</methods>	
+			</class>
+		</classes>
+	</test>
+</suite>
