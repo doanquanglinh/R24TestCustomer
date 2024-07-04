@@ -84,7 +84,22 @@ public class customerPageUI {
 	public static final By deleteDeal = By.xpath("//img[@title = 'Deletes a Deal']");
 	public static final By transactionIdAmendSF = By.xpath("//input[@class = 'idbox idbox_CUSTOMER idbox_CUSTOMER_VMBINDIVAMENDSF']");
 	
-
+	public static final By gbFullNameAmend = By.xpath("//tr[@mvlist = 'M_3.2_3.2']//span[@class = 'disabled_dealbox disabled_dealbox_CUSTOMER disabled_dealbox_CUSTOMER_VMBCORPSMART']");
+	public static final By gbShortNameAmend = By.xpath("//tr[@mvlist = 'M_2.2_2.2']//span[@class = 'disabled_dealbox disabled_dealbox_CUSTOMER disabled_dealbox_CUSTOMER_VMBCORPSMART']");
+	public static final By contactNameExpand = By.xpath("//td[@mvdetails = 'M_220.2_224.2']//img[@title= 'Expand Sub Value']");
+	public static final By contactName2 = By.id("fieldName:CONTACT.NAME:2");
+	public static final By relatedPerson2 = By.id("fieldName:CONTACT.POS.LT:2");
+	public static final By officeNumber2  = By.id("fieldName:CONTACT.OFFICE:2");
+	public static final By mobileNumberCorp2 = By.id("fieldName:CONTACT.MOB:2");
+	public static final By emailAddCorp2 = By.id("fieldName:CONTACT.EMAIL:2");
+	public static final By viewContactName2 =  By.xpath("//a[contains(text(),'Contact Name.2')]//ancestor::tr[@tabid]//span[contains(text(),'MR LINH DOAN 2')]");
+	public static final By viewRelatedPerson2 =  By.xpath("//a[contains(text(),'Related person.2')]//ancestor::tr[@tabid]//span[contains(text(),'Director') and @style]");
 	
+	public static final By viewContactName2TC023 =  By.xpath("//a[contains(text(),'Contact Name.2')]//ancestor::tr[@tabid]//span[contains(text(),'MR LINH DOAN CA')]");
+	public static final By viewRelatedPerson2TC023 =  By.xpath("//a[contains(text(),'Related person.2')]//ancestor::tr[@tabid]//span[contains(text(),'Chief Accountant') and @style]");
+	public static final By viewContactName2TC024 =  By.xpath("//a[contains(text(),'Contact Name.2')]//ancestor::tr[@tabid]//span[contains(text(),'MR LINH DOAN')]");
+	public static final By viewRelatedPerson2TC024 =  By.xpath("//a[contains(text(),'Related person.2')]//ancestor::tr[@tabid]//span[contains(text(),'Legal Reprensentative') and @style]");
+	public static final By viewContactName2TC021 =  By.xpath("//a[contains(text(),'Contact Name.1')]//ancestor::tr[@tabid]//span[contains(text(),'MR LINH DOAN AMEND' )]");
+	public static final By viewSector = By.xpath("//a[contains(text(),'Sector')]//ancestor::tr[@tabid]//span[contains(text(),'2401')and@style]");
 	
 }

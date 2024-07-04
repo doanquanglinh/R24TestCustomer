@@ -4,12 +4,12 @@
 	<parameter name="URL" value="http://10.32.15.119:9089/BrowserWeb/servlet/BrowserServlet" />
 	<test name="Linh Test">
 		<classes>
-			<!--<class name="customerTest.customerTest"></class>-->
 			<class name="customerTest.customerTestCorp">
-				<methods>
-					<include name="customerTest018"/>
-				</methods>	
-			</class>
+				    <methods>		
+						<include name="customerTest010"/>					
+					</methods>			   
+			</class>			
 		</classes>
 	</test>
 </suite>
+	

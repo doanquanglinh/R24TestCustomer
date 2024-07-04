@@ -13,7 +13,7 @@ import Base.SwitchWindow;
 import java.util.Arrays;
 import java.util.List;
 import Page.customerPageUI;
-import Base.RanDomCccdSDT;
+import Base.RanDomStringInt;
 
 public class customerTest extends BaseSetup {
 	private WebDriver driver;
@@ -185,8 +185,8 @@ public class customerTest extends BaseSetup {
 		String targetTitle = "CUSTOMER";
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
 		List<String> inputCustomerData = Arrays.asList("DOAN", "LINH", "QUANG","DOAN QUANG LINH", "LINHDQ", "CO NHUE", "CO NHUE",
-				"1000", "19991010", "VN", "CCCD",RanDomCccdSDT.genRandomCCCD(), "BAC NINH", "20151010",
-				"1001", "9102", "2001", "114", "E123456","9990","0797979796789","linhdq@abbank.vn",RanDomCccdSDT.genRandomCCCD(),"20301010");
+				"1000", "19991010", "VN", "CCCD",RanDomStringInt.genRandom(), "BAC NINH", "20151010",
+				"1001", "9102", "2001", "114", "E123456","9990","0797979796789","linhdq@abbank.vn",RanDomStringInt.genRandom(),"20301010");
 		customerPage.inputCustomer(inputCustomerData);	
 			WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
 		commitDealElement.click();

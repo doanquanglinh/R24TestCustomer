@@ -1,4 +1,3 @@
-
 package Page;
 
 import Page.customerPageCorp;
@@ -10,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import Page.customerPageCorp;
 import Base.SwitchWindow;
+import org.openqa.selenium.support.ui.Select;
+
 
 import java.time.Duration;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -118,37 +119,37 @@ public class customerPageCorp {
 		idNumberCorpElement.sendKeys(inputCustomerCorpData.get(26));
 		contactNationalityElement.sendKeys(inputCustomerCorpData.get(27));
 		contactDOBElement.sendKeys(inputCustomerCorpData.get(28));
-
+		Thread.sleep(6000);
 		WebElement validateDealCorp010Element = driver.findElement(customerPageUI.validateDeal);
 		validateDealCorp010Element.click();
 	}
 	
 
-	public void authoriseCustomerCorp(String authoriseCustomerData) throws Exception {
+	public void authoriseCustomerCorp(String acccountAuth, String authoriseCustomerData) throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPageCorp = new customerPageCorp(driver);
-		signInPage.signin("LINHDQ.2", "Anbinh$1234");
+		signInPage.signin(acccountAuth, "Anbinh$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 		SwitchWindow.switchToWindowWithTitle(driver,"CUSTOMER");
-		WebElement transactionIdCorpElement = driver.findElement(customerPageUI.transactionIdCorp);
+		WebElement transactionIdCorpElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorp));
 		transactionIdCorpElement.isDisplayed();
 		transactionIdCorpElement.sendKeys(authoriseCustomerData);
-		WebElement performContractElement = driver.findElement(customerPageUI.performContract);
+		WebElement performContractElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.performContract));
 		performContractElement.isDisplayed();
 		performContractElement.click();
-		Thread.sleep(800);
-		WebElement authoriseDealElement = driver.findElement(customerPageUI.authoriseDeal);
+		Thread.sleep(1000);
+		WebElement authoriseDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.authoriseDeal));
 		authoriseDealElement.isDisplayed();
 		authoriseDealElement.click();
-		WebElement getCifCorpElement = driver.findElement(customerPageUI.getCifCorp);
+		WebElement getCifCorpElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
 		getCifCorpElement.isDisplayed();
 	}
-	
 	//Verify Case 010
-	public void customerTest010Verify() {
+public void customerTest010Verify() {
 		try {
 			WebElement errorBoxElement = driver.findElement(customerPageUI.errorMesBox);
 			if (errorBoxElement.isDisplayed()) {
@@ -158,21 +159,21 @@ public class customerPageCorp {
 		}
 	}
 	//Verify Case 011
-	public String customerTest011Verify() {
+public String customerTest011Verify() {
 		WebElement errorBoxElement = driver.findElement(customerPageUI.errorMesBox);
 		errorBoxElement.isDisplayed();
 		System.out.println(errorBoxElement.getText());
 		return errorBoxElement.getText();	
 	}
 	//Verify Case 012
-		public String customerTest012Verify(String transactionIdCorpDataTest){
+public String customerTest012Verify(String transactionIdCorpDataTest){
 			WebElement mesBoxElement = driver.findElement(customerPageUI.mesBox);
 			mesBoxElement.isDisplayed();
 			System.out.println(mesBoxElement.getText());
 			return mesBoxElement.getText();
 		}
 	//Verify Case 013
-		public void customerTest013AndVerify(String AmendData,String emailAddData,String mobileNumberData, String customerTest013DataTest  ) throws Exception  {
+public void customerTest013AndVerify(String AmendData,String emailAddData,String mobileNumberData, String customerTest013DataTest  ) throws Exception  {
 			WebElement transactionIdCorpAmendElement = driver.findElement(customerPageUI.transactionIdCorpAmend);
 			transactionIdCorpAmendElement.isDisplayed();
 			transactionIdCorpAmendElement.sendKeys(customerTest013DataTest);
@@ -201,10 +202,10 @@ public class customerPageCorp {
 			gbStreetAfterAmendElement.isDisplayed();
 			System.out.println(gbStreetAfterAmendElement.getText());
 			Assert.assertEquals(AmendData,gbStreetAfterAmendElement.getText());
-		}
-		
-		public void customerTest014AndVerify(String relCodeData, String relCustomerData,String emailAddData,String mobileNumberData, String customerTest014DataTest) throws Exception  {
-			WebElement transactionIdCorpAmendElement = driver.findElement(customerPageUI.transactionIdCorpAmend);
+		}	
+public void customerTest014AndVerify(String relCodeData, String relCustomerData,String emailAddData,String mobileNumberData, String customerTest014DataTest) throws Exception  {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+			WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
 			transactionIdCorpAmendElement.isDisplayed();
 			transactionIdCorpAmendElement.sendKeys(customerTest014DataTest);
 			WebElement editTransactionCorpElement = driver.findElement(customerPageUI.editTransaction);
@@ -214,7 +215,7 @@ public class customerPageCorp {
 			relCodeCorpAmendElement.isDisplayed();
 			relCodeCorpAmendElement.clear();
 			relCodeCorpAmendElement.sendKeys(relCodeData);	
-			Thread.sleep(500);
+			Thread.sleep(1500);
 			WebElement relCustomerCorpAmendElement = driver.findElement(customerPageUI.relCustomerCorpAmend);
 			relCustomerCorpAmendElement.isDisplayed();
 			relCustomerCorpAmendElement.clear();
@@ -224,36 +225,32 @@ public class customerPageCorp {
 			WebElement mobileNumberCorpElement = driver.findElement(customerPageUI.mobileNumberCorp);
 			emailAddCorpElement.isDisplayed();
 			emailAddCorpElement.sendKeys(emailAddData);
-			mobileNumberCorpElement.sendKeys(mobileNumberData);
-			
+			mobileNumberCorpElement.sendKeys(mobileNumberData);	
 			Thread.sleep(500);
 			WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
 			commitDealElement.click();
 			Thread.sleep(500);
-			
 			WebElement transactionIdCorpAmendElement2 = driver.findElement(customerPageUI.transactionIdCorpAmend);
 			transactionIdCorpAmendElement2.isDisplayed();
 			transactionIdCorpAmendElement2.sendKeys(customerTest014DataTest);
 			WebElement viewTransactionElement = driver.findElement(customerPageUI.viewTransaction);
 			viewTransactionElement.isDisplayed();
-			viewTransactionElement.click();	
-			
+			viewTransactionElement.click();			
 			WebElement relCustomerAfterAmendElement = driver.findElement(customerPageUI.relCustomerAfterAmend);
 			relCustomerAfterAmendElement.isDisplayed();
 			Assert.assertEquals(relCustomerData,relCustomerAfterAmendElement.getText());
 		}
 		
-		public String customerTest015Verify(String customerDataTest015) {
-			WebElement cusRalInputElement = driver.findElement(customerPageUI.cusRalInput);
+public String customerTest015Verify(String customerDataTest015) {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+			WebElement cusRalInputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.cusRalInput));
 			cusRalInputElement.isDisplayed();
 			cusRalInputElement.clear();
 			cusRalInputElement.sendKeys(customerDataTest015);
-			WebElement cusRalFindElement = driver.findElement(customerPageUI.cusRalFind);
+			WebElement cusRalFindElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.cusRalFind));
 			cusRalFindElement.isDisplayed();
 			cusRalFindElement.click();
-			WebElement respondEnqElement = driver.findElement(customerPageUI.respondEnq);
-			respondEnqElement.isDisplayed();
-			WebElement enqDataElement = driver.findElement(customerPageUI.enqData);
+			WebElement enqDataElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.enqData));
 			enqDataElement.isDisplayed();
 			System.out.println(enqDataElement.getText());
 			return enqDataElement.getText();
@@ -264,11 +261,10 @@ public class customerPageCorp {
 			newDealElement.click();
 			WebElement mesBoxtElement = driver.findElement(customerPageUI.mesBox);
 			mesBoxtElement.isDisplayed();
-			String cutMesBoxtElement = mesBoxtElement.getText();
-			String afterCutMesBoxtElement = cutMesBoxtElement.substring(0,48);
-			System.out.println(afterCutMesBoxtElement);
-			return afterCutMesBoxtElement;
+			String cutMesBoxtElement = mesBoxtElement.getText().substring(0,48);
+			return cutMesBoxtElement;
 		}
+
 		public String customerTest017Verify(String customerTest017DataTest) {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 			WebElement editTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));		
@@ -282,88 +278,242 @@ public class customerPageCorp {
 			return mesBoxtElement.getText();
 		}
 		
-		public void customerTest018AndVerify(String customerTest018DataTest) throws Exception  {
-			WebElement transactionIdCorpAmendElement = driver.findElement(customerPageUI.transactionIdCorpAmend);
+		public void customerTest018AndVerify(String customerTest018DataTest, String gbFullNameDataTest, String gbShortNameDataTest,String emailAddData,String mobileNumberData) throws Exception  {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+			WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
 			transactionIdCorpAmendElement.isDisplayed();
 			transactionIdCorpAmendElement.sendKeys(customerTest018DataTest);
-			WebElement editTransactionCorpElement = driver.findElement(customerPageUI.editTransaction);
+			WebElement editTransactionCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
 			editTransactionCorpElement.click();
 			Thread.sleep(500);
-			WebElement relCodeCorpAmendElement = driver.findElement(customerPageUI.relCodeCorpAmend);
-			relCodeCorpAmendElement.isDisplayed();
-			relCodeCorpAmendElement.clear();
-			relCodeCorpAmendElement.sendKeys(relCodeData);	
-			Thread.sleep(500);
-			WebElement relCustomerCorpAmendElement = driver.findElement(customerPageUI.relCustomerCorpAmend);
-			relCustomerCorpAmendElement.isDisplayed();
-			relCustomerCorpAmendElement.clear();
-			relCustomerCorpAmendElement.sendKeys(relCustomerData);	
-			
-			WebElement emailAddCorpElement = driver.findElement(customerPageUI.emailAddCorp);
-			WebElement mobileNumberCorpElement = driver.findElement(customerPageUI.mobileNumberCorp);
+			WebElement gbFullNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.gbFullName));
+			gbFullNameElement.isDisplayed();
+			gbFullNameElement.clear();
+			gbFullNameElement.sendKeys(gbFullNameDataTest);
+			WebElement gbShortNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.gbShortName));
+			gbShortNameElement.isDisplayed();
+			gbShortNameElement.clear();
+			gbShortNameElement.sendKeys(gbShortNameDataTest);
+			WebElement emailAddCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp));
+			WebElement mobileNumberCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp));
 			emailAddCorpElement.isDisplayed();
 			emailAddCorpElement.sendKeys(emailAddData);
 			mobileNumberCorpElement.sendKeys(mobileNumberData);
-			
-			Thread.sleep(500);
-			WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
 			commitDealElement.click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			
-			WebElement transactionIdCorpAmendElement2 = driver.findElement(customerPageUI.transactionIdCorpAmend);
-			transactionIdCorpAmendElement2.isDisplayed();
-			transactionIdCorpAmendElement2.sendKeys(customerTest014DataTest);
-			WebElement viewTransactionElement = driver.findElement(customerPageUI.viewTransaction);
-			viewTransactionElement.isDisplayed();
-			viewTransactionElement.click();	
-			
-			WebElement relCustomerAfterAmendElement = driver.findElement(customerPageUI.relCustomerAfterAmend);
-			relCustomerAfterAmendElement.isDisplayed();
-			Assert.assertEquals(relCustomerData,relCustomerAfterAmendElement.getText());
 		}
 		
-
-				
-public void customerTest015AndVerifyIndep(String relCodeData, String relCustomerData, String emailAddData,
-			String mobileNumberData, String customerTest014DataTest) throws Exception {
-			WebElement transactionIdCorpAmendElement = driver.findElement(customerPageUI.transactionIdCorpAmend);
+		public void customerTest019AndVerify(String customerTest019DataTest,String contactName2Data, String officeNumber2Data, String mobileNumberCorp2Data, String emailAddData,String mobileNumberData) throws Exception  {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+			WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
 			transactionIdCorpAmendElement.isDisplayed();
-			transactionIdCorpAmendElement.sendKeys(customerTest014DataTest);
-			WebElement editTransactionCorpElement = driver.findElement(customerPageUI.editTransaction);
+			transactionIdCorpAmendElement.sendKeys(customerTest019DataTest);
+			WebElement editTransactionCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
 			editTransactionCorpElement.click();
 			Thread.sleep(500);
-			WebElement relCodeCorpAmendElement = driver.findElement(customerPageUI.relCodeCorpAmend);
-			relCodeCorpAmendElement.isDisplayed();
-			relCodeCorpAmendElement.clear();
-			relCodeCorpAmendElement.sendKeys(relCodeData);
-			Thread.sleep(500);
-			WebElement relCustomerCorpAmendElement = driver.findElement(customerPageUI.relCustomerCorpAmend);
-			relCustomerCorpAmendElement.isDisplayed();
-			relCustomerCorpAmendElement.clear();
-			relCustomerCorpAmendElement.sendKeys(relCustomerData);
-
-			WebElement emailAddCorpElement = driver.findElement(customerPageUI.emailAddCorp);
-			WebElement mobileNumberCorpElement = driver.findElement(customerPageUI.mobileNumberCorp);
+			WebElement contactNameExpandElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactNameExpand));
+			contactNameExpandElement.isDisplayed();
+			contactNameExpandElement.click();
+			WebElement contactName2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactName2));
+			contactNameExpandElement.isDisplayed();
+			contactName2Element.sendKeys(contactName2Data);
+            WebElement dropDownElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.relatedPerson2));
+            Select dropDown = new Select(dropDownElement);
+            dropDown.selectByVisibleText("Director");
+            WebElement officeNumber2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.officeNumber2));
+            officeNumber2Element.isDisplayed();
+            officeNumber2Element.sendKeys(officeNumber2Data);
+            WebElement mobileNumberCorp2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp2));
+            mobileNumberCorp2Element.isDisplayed();
+            mobileNumberCorp2Element.sendKeys(mobileNumberCorp2Data);
+            WebElement emailAddCorp2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp2));
+            emailAddCorp2Element.isDisplayed();
+            emailAddCorp2Element.sendKeys(mobileNumberCorp2Data);
+            			
+			WebElement emailAddCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp));
+			WebElement mobileNumberCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp));
 			emailAddCorpElement.isDisplayed();
 			emailAddCorpElement.sendKeys(emailAddData);
 			mobileNumberCorpElement.sendKeys(mobileNumberData);
-
-			Thread.sleep(500);
-			WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
 			commitDealElement.click();
+			Thread.sleep(1000);
+			
+		}	
+		
+public void customerTest020AndVerify(String customerTest020DataTest,String contactName2Data, String officeNumber2Data, String mobileNumberCorp2Data, String emailAddData,String mobileNumberData) throws Exception  {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+			WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+			transactionIdCorpAmendElement.isDisplayed();
+			transactionIdCorpAmendElement.sendKeys(customerTest020DataTest);
+			WebElement editTransactionCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
+			editTransactionCorpElement.click();
+			Thread.sleep(500);         			
+			WebElement emailAddCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp));
+			WebElement mobileNumberCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp));
+			emailAddCorpElement.isDisplayed();
+			emailAddCorpElement.sendKeys(emailAddData);
+			mobileNumberCorpElement.sendKeys(mobileNumberData);
+			WebElement contactNameCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactName));
+			contactNameCorpElement.clear();
+			mobileNumberCorpElement.sendKeys(mobileNumberData);
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement.click();
+			Thread.sleep(1000);	
+			WebElement errorMesBoxElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.errorMesBox));
+			System.out.println(errorMesBoxElement.getText());
+			String dataContactName = "Contact Name.1 INPUT MISSING";
+			Assert.assertEquals(dataContactName,errorMesBoxElement.getText());
+		}
+		
+public void customerTest021AndVerify(String customerTest021DataTest,String contactNameAmend, String emailAddData,String mobileNumberData) throws Exception  {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+	transactionIdCorpAmendElement.isDisplayed();
+	transactionIdCorpAmendElement.sendKeys(customerTest021DataTest);
+	WebElement editTransactionCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
+	editTransactionCorpElement.click();
+	Thread.sleep(500);
+	WebElement editcontactNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactName));
+	editcontactNameElement.isDisplayed();
+	editcontactNameElement.clear();
+	editcontactNameElement.sendKeys(contactNameAmend);
+	WebElement emailAddCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp));
+	WebElement mobileNumberCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp));
+	emailAddCorpElement.isDisplayed();
+	emailAddCorpElement.sendKeys(emailAddData);
+	mobileNumberCorpElement.sendKeys(mobileNumberData);
+	WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+	commitDealElement.click();
+	Thread.sleep(1000);
+}	
+public void customerTest023AndVerify(String customerTest023DataTest,String contactName2Data, String officeNumber2Data, String mobileNumberCorp2Data, String emailAddData,String mobileNumberData) throws Exception  {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+			WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+			transactionIdCorpAmendElement.isDisplayed();
+			transactionIdCorpAmendElement.sendKeys(customerTest023DataTest);
+			WebElement editTransactionCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
+			editTransactionCorpElement.click();
 			Thread.sleep(500);
-
-			WebElement transactionIdCorpAmendElement2 = driver.findElement(customerPageUI.transactionIdCorpAmend);
-			transactionIdCorpAmendElement2.isDisplayed();
-			transactionIdCorpAmendElement2.sendKeys(customerTest014DataTest);
-			WebElement viewTransactionElement = driver.findElement(customerPageUI.viewTransaction);
-			viewTransactionElement.isDisplayed();
-			viewTransactionElement.click();
-
-			WebElement relCustomerAfterAmendElement = driver.findElement(customerPageUI.relCustomerAfterAmend);
-			relCustomerAfterAmendElement.isDisplayed();
-			Assert.assertEquals(relCustomerData, relCustomerAfterAmendElement.getText());
+			WebElement contactNameExpandElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactNameExpand));
+			contactNameExpandElement.isDisplayed();
+			contactNameExpandElement.click();
+			WebElement contactName2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactName2));
+			contactNameExpandElement.isDisplayed();
+			contactName2Element.sendKeys(contactName2Data);
+            WebElement dropDownElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.relatedPerson2));
+            Select dropDown = new Select(dropDownElement);
+            dropDown.selectByVisibleText("Chief Accountant");
+            WebElement officeNumber2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.officeNumber2));
+            officeNumber2Element.isDisplayed();
+            officeNumber2Element.sendKeys(officeNumber2Data);
+            WebElement mobileNumberCorp2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp2));
+            mobileNumberCorp2Element.isDisplayed();
+            mobileNumberCorp2Element.sendKeys(mobileNumberCorp2Data);
+            WebElement emailAddCorp2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp2));
+            emailAddCorp2Element.isDisplayed();
+            emailAddCorp2Element.sendKeys(mobileNumberCorp2Data);           			
+			WebElement emailAddCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp));
+			WebElement mobileNumberCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp));
+			emailAddCorpElement.isDisplayed();
+			emailAddCorpElement.sendKeys(emailAddData);
+			mobileNumberCorpElement.sendKeys(mobileNumberData);
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement.click();
+			Thread.sleep(1000);			
 		}
 
-
-	}
+public void customerTest022AndVerify(String customerTest022DataTest,String contactName2Data, String officeNumber2Data, String mobileNumberCorp2Data, String emailAddData,String mobileNumberData) throws Exception  {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+	transactionIdCorpAmendElement.isDisplayed();
+	transactionIdCorpAmendElement.sendKeys(customerTest022DataTest);
+	WebElement editTransactionCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
+	editTransactionCorpElement.click();
+	Thread.sleep(500);
+	WebElement contactNameExpandElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactNameExpand));
+	contactNameExpandElement.isDisplayed();
+	contactNameExpandElement.click();
+	WebElement contactName2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactName2));
+	contactNameExpandElement.isDisplayed();
+	contactName2Element.sendKeys(contactName2Data);
+    WebElement dropDownElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.relatedPerson2));
+    Select dropDown = new Select(dropDownElement);
+    dropDown.selectByVisibleText("Chief Accountant");
+    WebElement officeNumber2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.officeNumber2));
+    officeNumber2Element.isDisplayed();
+    officeNumber2Element.sendKeys(officeNumber2Data);
+    WebElement mobileNumberCorp2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp2));
+    mobileNumberCorp2Element.isDisplayed();
+    mobileNumberCorp2Element.sendKeys(mobileNumberCorp2Data);
+    WebElement emailAddCorp2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp2));
+    emailAddCorp2Element.isDisplayed();
+    emailAddCorp2Element.sendKeys(mobileNumberCorp2Data);           			
+	WebElement emailAddCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp));
+	WebElement mobileNumberCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp));
+	emailAddCorpElement.isDisplayed();
+	emailAddCorpElement.sendKeys(emailAddData);
+	mobileNumberCorpElement.sendKeys(mobileNumberData);
+	WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+	commitDealElement.click();
+	Thread.sleep(1000);			
+}	
+		
+public void customerTest024AndVerify(String customerTest024DataTest,String contactName2Data, String officeNumber2Data, String mobileNumberCorp2Data, String emailAddData,String mobileNumberData) throws Exception  {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+	transactionIdCorpAmendElement.isDisplayed();
+	transactionIdCorpAmendElement.sendKeys(customerTest024DataTest);
+	WebElement editTransactionCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
+	editTransactionCorpElement.click();
+	Thread.sleep(500);
+	WebElement contactNameExpandElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactNameExpand));
+	contactNameExpandElement.isDisplayed();
+	contactNameExpandElement.click();
+	WebElement contactName2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactName2));
+	contactNameExpandElement.isDisplayed();
+	contactName2Element.sendKeys(contactName2Data);
+    WebElement dropDownElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.relatedPerson2));
+    Select dropDown = new Select(dropDownElement);
+    dropDown.selectByVisibleText("Legal Reprensentative");
+    WebElement officeNumber2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.officeNumber2));
+    officeNumber2Element.isDisplayed();
+    officeNumber2Element.sendKeys(officeNumber2Data);
+    WebElement mobileNumberCorp2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp2));
+    mobileNumberCorp2Element.isDisplayed();
+    mobileNumberCorp2Element.sendKeys(mobileNumberCorp2Data);
+    WebElement emailAddCorp2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp2));
+    emailAddCorp2Element.isDisplayed();
+    emailAddCorp2Element.sendKeys(mobileNumberCorp2Data);           			
+	WebElement emailAddCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp));
+	WebElement mobileNumberCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp));
+	emailAddCorpElement.isDisplayed();
+	emailAddCorpElement.sendKeys(emailAddData);
+	mobileNumberCorpElement.sendKeys(mobileNumberData);
+	WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+	commitDealElement.click();
+	Thread.sleep(1000);			
+}	
+public void customerTest028AndVerify(String customerTest028DataTest,String sectorAmend, String emailAddData,String mobileNumberData) throws Exception  {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+	transactionIdCorpAmendElement.isDisplayed();
+	transactionIdCorpAmendElement.sendKeys(customerTest028DataTest);
+	WebElement editTransactionCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
+	editTransactionCorpElement.click();
+	Thread.sleep(500);
+	WebElement editSectorElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.sector));
+	editSectorElement.clear();
+	editSectorElement.sendKeys(sectorAmend);
+	WebElement emailAddCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp));
+	WebElement mobileNumberCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp));
+	emailAddCorpElement.isDisplayed();
+	emailAddCorpElement.sendKeys(emailAddData);
+	mobileNumberCorpElement.sendKeys(mobileNumberData);
+	WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+	commitDealElement.click();
+	Thread.sleep(1000);
+	}	
+}

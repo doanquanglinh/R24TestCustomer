@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-T24_R24" class="navigator-link">
-              <span class="suite-name border-failed">T24 R24</span>
+              <span class="suite-name border-passed">T24 R24</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-T24_R24" class="hide-methods failed suite-T24_R24"> (hide)</a> <!-- hide-methods failed suite-T24_R24 -->
-                      <a href="#" panel-name="suite-T24_R24" class="show-methods failed suite-T24_R24"> (show)</a> <!-- show-methods failed suite-T24_R24 -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-T24_R24" class="hide-methods passed suite-T24_R24"> (hide)</a> <!-- hide-methods passed suite-T24_R24 -->
+                      <a href="#" panel-name="suite-T24_R24" class="show-methods passed suite-T24_R24"> (show)</a> <!-- show-methods passed suite-T24_R24 -->
                     </span>
-                    <div class="method-list-content failed suite-T24_R24">
+                    <div class="method-list-content passed suite-T24_R24">
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-T24_R24" title="customerTest.customerTestCorp" class="method navigator-link" hash-for-method="customerTest018">customerTest018</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-T24_R24" title="customerTest.customerTestCorp" class="method navigator-link" hash-for-method="customerTest010">customerTest010</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-T24_R24 -->
+                    </div> <!-- method-list-content passed suite-T24_R24 -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,47 +119,21 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-T24_R24" class="panel T24_R24">
-          <div class="suite-T24_R24-class-failed">
+          <div class="suite-T24_R24-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">customerTest.customerTestCorp</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="customerTest018">
-                  </a> <!-- customerTest018 -->
-                  <span class="method-name">customerTest018</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#signOnName&quot;}
-  (Session info: chrome=126.0.6478.114)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [69a29656637048cc41864514f211bca4, findElement {value=signOnName, using=id}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.114, chrome: {chromedriverVersion: 126.0.6478.62 (b2781ca4c383..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56723}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56723/devtoo..., se:cdpVersion: 126.0.6478.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 69a29656637048cc41864514f211bca4
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at Page.SignInPage.UserField(SignInPage.java:26)
-	at Page.SignInPage.signin(SignInPage.java:45)
-	at customerTest.customerTestCorp.customerTest018(customerTestCorp.java:231)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
+                  <a name="customerTest010">
+                  </a> <!-- customerTest010 -->
+                  <span class="method-name">customerTest010</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-T24_R24-class-failed -->
+          </div> <!-- suite-T24_R24-class-passed -->
         </div> <!-- panel T24_R24 -->
         <div panel-name="test-xml-T24_R24" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -176,7 +150,7 @@ Session ID: 69a29656637048cc41864514f211bca4
     &lt;classes&gt;
       &lt;class name=&quot;customerTest.customerTestCorp&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;customerTest018&quot;/&gt;
+          &lt;include name=&quot;customerTest010&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- customerTest.customerTestCorp --&gt;
     &lt;/classes&gt;
@@ -220,14 +194,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'customerTest018')
+data.setCell(0, 1, 'customerTest010')
 data.setCell(0, 2, 'customerTest.customerTestCorp')
-data.setCell(0, 3, 208);
+data.setCell(0, 3, 24401);
 window.suiteTableData['T24_R24']= { tableData: data, tableDiv: 'times-div-T24_R24'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 208 ms</span>
+              <span class="suite-total-time">Total running time: 24 seconds</span>
               <div id="times-div-T24_R24">
               </div> <!-- times-div-T24_R24 -->
             </div> <!-- times-div -->
@@ -242,19 +216,23 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-T24_R24" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">8 ignored methods</span>
+            <span class="header-content">15 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">customerTest.customerTestCorp</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">customerTest010</span>
-                <br/>
                 <span class="ignored-method-name">customerTest011</span>
+                <br/>
+                <span class="ignored-method-name">customerTest022</span>
+                <br/>
+                <span class="ignored-method-name">customerTest018</span>
                 <br/>
                 <span class="ignored-method-name">customerTest016</span>
                 <br/>
                 <span class="ignored-method-name">customerTest017</span>
+                <br/>
+                <span class="ignored-method-name">customerTest028</span>
                 <br/>
                 <span class="ignored-method-name">customerTest014</span>
                 <br/>
@@ -262,7 +240,17 @@ return data;
                 <br/>
                 <span class="ignored-method-name">customerTest012</span>
                 <br/>
+                <span class="ignored-method-name">customerTest023</span>
+                <br/>
                 <span class="ignored-method-name">customerTest013</span>
+                <br/>
+                <span class="ignored-method-name">customerTest024</span>
+                <br/>
+                <span class="ignored-method-name">customerTest021</span>
+                <br/>
+                <span class="ignored-method-name">customerTest020</span>
+                <br/>
+                <span class="ignored-method-name">customerTest019</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -279,19 +267,17 @@ return data;
                 <span class="method-name">initializeTestBaseSetup(chrome, http://10.32.15.119:9089/BrowserWeb/servlet/BrowserServlet)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">customerTest018</span>
-                <span class="method-start">58293 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">58293 ms</span>
+                <span class="method-start">6391 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">customerTest010</span>
+                <span class="method-start">6392 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">58508 ms</span>
+                <span class="method-start">30798 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

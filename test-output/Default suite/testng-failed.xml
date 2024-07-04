@@ -3,22 +3,28 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="customerTest.customerTest">
+      <class name="customerTest.customerTestCorp">
         <methods>
-          <include name="customerTest007"/>
-          <include name="customerTest004"/>
-          <include name="customerTest005"/>
+          <include name="customerTest011"/>
+          <include name="customerTest022"/>
           <include name="initializeTestBaseSetup"/>
-          <include name="customerTest002"/>
-          <include name="customerTest003"/>
-          <include name="customerTest001"/>
           <include name="setUp"/>
+          <include name="customerTest018"/>
+          <include name="customerTest016"/>
+          <include name="customerTest017"/>
+          <include name="customerTest028"/>
           <include name="tearDown"/>
-          <include name="customerTest008"/>
-          <include name="customerTest009"/>
-          <include name="customerTest006"/>
+          <include name="customerTest014"/>
+          <include name="customerTest015"/>
+          <include name="customerTest012"/>
+          <include name="customerTest023"/>
+          <include name="customerTest013"/>
+          <include name="customerTest010"/>
+          <include name="customerTest021"/>
+          <include name="customerTest020"/>
+          <include name="customerTest019"/>
         </methods>
-      </class> <!-- customerTest.customerTest -->
+      </class> <!-- customerTest.customerTestCorp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

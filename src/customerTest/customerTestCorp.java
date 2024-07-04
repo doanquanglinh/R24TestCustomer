@@ -1,18 +1,20 @@
 package customerTest;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.openqa.selenium.Alert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import Base.BaseSetup;
-import Base.RanDomCccdSDT;
+import Base.RanDomStringInt;
 import Page.SignInPage;
 import Page.customerPageCorp;
 import Page.customerPageUI;
 import Base.SwitchWindow;
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,14 +22,13 @@ public class customerTestCorp extends BaseSetup {
 	private WebDriver driver;
 	public SignInPage signInPage;
 	public customerPageCorp customerPageCorp;
-
 	@Parameters({ "browserType", "URL" })
 	@BeforeMethod
 	public void setUp() {
 		driver = getDriver();
-	}
+	}	
 	@Test
-	public void customerTest010() throws Exception {
+public void customerTest010() throws Exception{
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
@@ -37,17 +38,16 @@ public class customerTestCorp extends BaseSetup {
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 		String targetTitle = "CUSTOMER";
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
-		List<String> inputCustomerCorpData = Arrays.asList("CONG TY LINHDQ", "LINHDQ CO", "CO NHUE, HA NOI", "CO NHUE",
-				"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", "26584325682", "DK1", "368126968123", "HA NOI",
-				"20201010", "20301010", "051651678912", "3616506549816", "20201010", "2020", "8005", "2109", "9614",
-				"999", "E093710", "MR LINH DOAN", "03265482656", "2615615", "VN", "20221010");
-		customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+		List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 010", "CONG TY DATA TEST CASE 010", "CO NHUE, HA NOI", "CO NHUE",
+				"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+				"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+				"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+				customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
 		customerPageCorp.customerTest010Verify();
 		driver.close();
 	}
-	
-	@Test
-	public void customerTest011() throws Exception {
+@Test	
+public void customerTest011() throws Exception{
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
@@ -57,18 +57,17 @@ public class customerTestCorp extends BaseSetup {
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 		String targetTitle = "CUSTOMER";
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
-		List<String> inputCustomerCorpData = Arrays.asList("CONG TY LINHDQ", "LINHDQ CO", "CO NHUE, HA NOI", "CO NHUE",
-				"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", "26584325682", "DK1", "368126968123", "HA NOI",
-				"20301010", "20311010", "051651678912", "3616506549816", "20201010", "2020", "8009", "2102", "9614",
-				"999", "E093710", "MR LINH DOAN", "03265482656", "2615615", "VN", "20221010");
-		customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+		List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 011", "CONG TY DATA TEST CASE 011", "CO NHUE, HA NOI", "CO NHUE",
+				"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+				"20301010", "20311010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+				"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+				customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
 		String expectedMessageCustomer011 = "Issued Date.1 Cannot be Greater than or Equal to Today";
 		Assert.assertEquals(expectedMessageCustomer011,customerPageCorp.customerTest011Verify());
 		driver.close();
 	}
-	
-	@Test
-	public void customerTest012() throws Exception {
+@Test
+public void customerTest012() throws Exception{
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
@@ -80,9 +79,9 @@ public class customerTestCorp extends BaseSetup {
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
 		SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
 		List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 012", "CONG TY DATA TEST CASE 012", "CO NHUE, HA NOI", "CO NHUE",
-				"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomCccdSDT.genRandomCCCD(), "DK1", RanDomCccdSDT.genRandomCCCD(), "HA NOI",
-				"20201010", "20301010",RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "20201010", "2020", "8009", "2102", "9614",
-				"999", "E093710", "MR LINH DOAN", RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "VN", "20221010");
+				"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+				"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+				"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
 				customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
 				WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
 				commitDealElement.click();
@@ -110,9 +109,9 @@ public class customerTestCorp extends BaseSetup {
 				customerPageCorp.customerTest012Verify(afterCutCifCorpStringTC012);
 				Assert.assertEquals(expectedMessageCustomer012,customerPageCorp.customerTest012Verify(afterCutCifCorpStringTC012));
 				driver.close();
-	}	
+}	
 @Test
-public void customerTest013() throws Exception {
+public void customerTest013() throws Exception{
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
@@ -123,11 +122,10 @@ public void customerTest013() throws Exception {
 		String targetTitle = "CUSTOMER";
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
 		List<String> inputCustomerCorpData = Arrays.asList("CONG TY TEST CASE 013", "TEST CASE 013", "CO NHUE, HA NOI", "CO NHUE",
-				"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomCccdSDT.genRandomCCCD(), "DK1", RanDomCccdSDT.genRandomCCCD(), "HA NOI",
-				"20201010", "20301010",RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "20201010", "2020", "8009", "2102", "9614",
-				"999", "E093710", "MR LINH DOAN", RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "VN", "20221010");
+				"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+				"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+				"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
 				customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
-				
 				WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
 				commitDealElement.click();
 				WebElement getCifCorpElement = driver.findElement(customerPageUI.getCifCorp);
@@ -136,46 +134,114 @@ public void customerTest013() throws Exception {
 			    String afterCutCifCorpString = cifText.substring(14, 22);
 				System.out.println(afterCutCifCorpString);
 				driver.close();
-		
 				SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 				signInPage.SwitchFrame1();
 				signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
 				SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
-				customerPageCorp.customerTest013AndVerify("PEAK VIEW, 36 HOANG CAU","linhdq@abbank.vn",RanDomCccdSDT.genRandomCCCD(),afterCutCifCorpString);
+				customerPageCorp.customerTest013AndVerify("PEAK VIEW, 36 HOANG CAU","linhdq@abbank.vn",RanDomStringInt.genRandom(),afterCutCifCorpString);
 				driver.close();
 	}	
 @Test
 public void customerTest014() throws Exception{
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+    SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+    driver.navigate().refresh();
+    signInPage = new SignInPage(driver);
+    customerPageCorp = new customerPageCorp(driver);
+    signInPage.signin("LINHDQ.1", "Anbinh$1234");
+    signInPage.SwitchFrame1();
+    signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
+    SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+    List<String> inputCustomerCorpData = Arrays.asList("DATA TEST CASE 014", "TC 014", "CO NHUE, HA NOI", "CO NHUE",
+            "CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+            "20201010", "20301010", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+            "999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+    customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+    WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+    commitDealElement.click();
+    WebElement getCifCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+    getCifCorpElement.isDisplayed();
+    String cifText = getCifCorpElement.getText().substring(14, 22);
+    System.out.println(cifText);
+    driver.close();
+    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
+    driver.close();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
-	signInPage = new SignInPage(driver);
-	customerPageCorp = new customerPageCorp(driver);
 	signInPage.signin("LINHDQ.1", "Anbinh$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
-	String targetTitle = "CUSTOMER";
-	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
-	List<String> inputCustomerCorpData = Arrays.asList("CONG TY TEST CASE 014", "TEST CASE 014", "CO NHUE, HA NOI", "CO NHUE",
-			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomCccdSDT.genRandomCCCD(), "DK1", RanDomCccdSDT.genRandomCCCD(), "HA NOI",
-			"20201010", "20301010",RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "20201010", "2020", "8009", "2102", "9614",
-			"999", "E093710", "MR LINH DOAN", RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "VN", "20221010");
-			customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
-			WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
-			commitDealElement.click();
-			WebElement getCifCorpElement = driver.findElement(customerPageUI.getCifCorp);
-			getCifCorpElement.isDisplayed();
-		    	String cifText = getCifCorpElement.getText();
-		    	String afterCutCifCorpString = cifText.substring(14, 22);
+	SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+	List<String> inputCustomerCorpData2 = Arrays.asList("CONG TY TEST CASE 014", "TEST CASE 014", "CO NHUE, HA NOI", "CO NHUE",
+			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+			"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+			customerPageCorp.inputCustomerCorp(inputCustomerCorpData2);
+			WebElement commitDealElement2 = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement2.click();
+			WebElement getCifCorpElement2 = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+			getCifCorpElement2.isDisplayed();
+		    String cifText2 = getCifCorpElement2.getText().substring(14, 22);
 			driver.close();
 			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 			signInPage.SwitchFrame1();
 			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
 			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
-			customerPageCorp.customerTest014AndVerify("9","12951594","linhdq@abbank.vn",RanDomCccdSDT.genRandomCCCD(),afterCutCifCorpString);
+			System.out.println(cifText2);
+			customerPageCorp.customerTest014AndVerify("9",cifText,"linhdq@abbank.vn",RanDomStringInt.genRandom(),cifText2);		
 			driver.close();
 }	
 @Test
 public void customerTest015() throws Exception{
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+    SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+    signInPage = new SignInPage(driver);
+    customerPageCorp = new customerPageCorp(driver);
+    signInPage.signin("LINHDQ.1", "Anbinh$1234");
+    signInPage.SwitchFrame1();
+    signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
+    SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+    List<String> inputCustomerCorpData = Arrays.asList("DATA TEST CASE 015", "TC 015", "CO NHUE, HA NOI", "CO NHUE",
+            "CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+            "20201010", "20301010", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+            "999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+    customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+    WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+    commitDealElement.click();
+    WebElement getCifCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+    getCifCorpElement.isDisplayed();
+    String cifText = getCifCorpElement.getText().substring(14, 22);
+    System.out.println(cifText);
+    driver.close();
+    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
+    driver.close();
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
+	SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+	List<String> inputCustomerCorpData2 = Arrays.asList("CONG TY TEST CASE 015", "TEST CASE 015", "CO NHUE, HA NOI", "CO NHUE",
+			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+			"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+			customerPageCorp.inputCustomerCorp(inputCustomerCorpData2);
+			WebElement commitDealElement2 = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement2.click();
+			WebElement getCifCorpElement2 = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+			getCifCorpElement2.isDisplayed();
+		    String cifText2 = getCifCorpElement2.getText().substring(14, 22);
+			driver.close();
+			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+			signInPage.SwitchFrame1();
+			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
+			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+			System.out.println(cifText2);
+			customerPageCorp.customerTest014AndVerify("9",cifText,"linhdq@abbank.vn",RanDomStringInt.genRandom(),cifText2);	
+			driver.close();
+		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText2); 
+		    driver.close();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
@@ -185,11 +251,11 @@ public void customerTest015() throws Exception{
 	signInPage.CMD("ENQ VMB.CUS.RELATION");
 	String targetTitle = "Customer Ralationship";
 	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
-	customerPageCorp.customerTest015Verify("12951760");
-	String expectedMessageCustomer015 = "12951760 TEST CASE 015 9 CHU SO HUU 12951759 CONG TY DATA TEST CASE 015 99 DONG CHU SO HUU";
-	Assert.assertEquals(expectedMessageCustomer015,customerPageCorp.customerTest015Verify("12951760"));
+	customerPageCorp.customerTest015Verify(cifText2);
+	String expectedMessageCustomer015 = cifText2 +" TEST CASE 015 9 CHU SO HUU "+cifText+" TC 015 99 DONG CHU SO HUU";
+	Assert.assertEquals(expectedMessageCustomer015,customerPageCorp.customerTest015Verify(cifText2));
+	driver.close();
 }
-
 @Test
 public void customerTest016() throws Exception{
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
@@ -205,7 +271,6 @@ public void customerTest016() throws Exception{
 	Assert.assertEquals(expectedMessageCustomer016,customerPageCorp.customerTest016Verify());
 	driver.close();
 }
-
 @Test
 public void customerTest017() throws Exception{
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
@@ -216,14 +281,14 @@ public void customerTest017() throws Exception{
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.INDIV.AMEND.SF");
 	SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
-	String expectedMessageCustomer017 = "Vui long thuc hien chuc nang nay tren SmartForm.12951916";
-	customerPageCorp.customerTest017Verify("12951916");
-	Assert.assertEquals(expectedMessageCustomer017,customerPageCorp.customerTest017Verify("12951916"));
+	String expectedMessageCustomer017 = "Vui long thuc hien chuc nang nay tren SmartForm.12345678";
+	customerPageCorp.customerTest017Verify("12345678");
+	Assert.assertEquals(expectedMessageCustomer017,customerPageCorp.customerTest017Verify("12345678"));
 	driver.close();
 }
-
 @Test
 public void customerTest018() throws Exception{
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
@@ -233,12 +298,11 @@ public void customerTest018() throws Exception{
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
 	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
-	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 017", "CONG TY DATA TEST CASE 017", "CO NHUE, HA NOI", "CO NHUE",
-			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomCccdSDT.genRandomCCCD(), "DK1", RanDomCccdSDT.genRandomCCCD(), "HA NOI",
-			"20201010", "20301010",RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "20201010", "2020", "8009", "2102", "9614",
-			"999", "E093710", "MR LINH DOAN", RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "VN", "20221010");
+	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 018", "TEST CASE 018", "CO NHUE, HA NOI", "CO NHUE",
+			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+			"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
 			customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
-			
 			WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
 			commitDealElement.click();
 			WebElement getCifCorpElement = driver.findElement(customerPageUI.getCifCorp);
@@ -246,155 +310,314 @@ public void customerTest018() throws Exception{
 		    String cifText = getCifCorpElement.getText();
 		    String afterCutCifCorpString = cifText.substring(14, 22);
 		    System.out.println(afterCutCifCorpString);
-		    driver.close();			
-		    customerPageCorp.authoriseCustomerCorp(afterCutCifCorpString);
-		    driver.close(); 
+		    driver.close();
+		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",afterCutCifCorpString);  
+		    driver.close();
 			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-			driver.navigate().refresh();			
-			signInPage = new SignInPage(driver);
-			customerPageCorp = new customerPageCorp(driver);
-			signInPage.signin("LINHDQ.1", "Anbinh$1234");
-			signInPage.SwitchFrame1();
-			signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
-			SwitchWindow.switchToWindowWithTitle(driver,"CUSTOMER");
-			List<String> inputCustomerCorpData2 = Arrays.asList("CONG TY TEST CASE 015", "TEST CASE 015", "CO NHUE, HA NOI", "CO NHUE",
-					"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomCccdSDT.genRandomCCCD(), "DK1", RanDomCccdSDT.genRandomCCCD(), "HA NOI",
-					"20201010", "20301010",RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "20201010", "2020", "8009", "2102", "9614",
-					"999", "E093710", "MR LINH DOAN", RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "VN", "20221010");
-					customerPageCorp.inputCustomerCorp(inputCustomerCorpData2);
-					WebElement commitDealElement2 = driver.findElement(customerPageUI.commitDeal);
-					commitDealElement2.isDisplayed();
-					commitDealElement2.click();
-					WebElement getCifCorpElement2 = driver.findElement(customerPageUI.getCifCorp);
-					getCifCorpElement2.isDisplayed();
-				    String cifText2 = getCifCorpElement2.getText();
-				    String afterCutCifCorpString2 = cifText2.substring(14, 22);
-				    System.out.println(afterCutCifCorpString2);
-				    driver.close();
-					SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-					signInPage.SwitchFrame1();
-					signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
-					SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
-					//customerPageCorp.customerTest018AndVerify();	
-					//driver.close();
+		    signInPage.SwitchFrame1();
+			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
+			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+			String gbFullNameAfterAmned = "CONG TY DATA TEST CASE 018 AFTER AMEND";
+			String gbShortNameAfterAmned = "TEST CASE 018 AFTER AMEND";
+			customerPageCorp.customerTest018AndVerify(afterCutCifCorpString,gbFullNameAfterAmned,gbShortNameAfterAmned,"linhdq@abbank.vn",RanDomStringInt.genRandom());
+			driver.close();
+			customerPageCorp.authoriseCustomerCorp("LINHDQ.1",afterCutCifCorpString);
+			WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorp));
+			transactionIdCorpElement.sendKeys(afterCutCifCorpString);
+			WebElement viewTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
+			viewTransactionElement.click();
+			WebElement viewgbFullNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.gbFullNameAmend));
+			WebElement viewgbShortNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.gbShortNameAmend));
+			System.out.println(viewgbFullNameElement.getText());
+			System.out.println(viewgbShortNameElement.getText());
+			Assert.assertEquals(gbFullNameAfterAmned,viewgbFullNameElement.getText());
+			Assert.assertEquals(gbShortNameAfterAmned,viewgbShortNameElement.getText());
+			driver.close();
+}
+@Test
+public void customerTest019() throws Exception{
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
+	String targetTitle = "CUSTOMER";
+	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 019", "TEST CASE 019", "CO NHUE, HA NOI", "CO NHUE",
+			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+			"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+			customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement.click();
+			WebElement getCifCorpElement= wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+			getCifCorpElement.isDisplayed();
+		    String cifText = getCifCorpElement.getText();
+		    String afterCutCifCorpString = cifText.substring(14, 22);
+		    System.out.println(afterCutCifCorpString);
+		    driver.close();
+		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",afterCutCifCorpString);  
+		    driver.close();
+			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		    signInPage.SwitchFrame1();
+			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
+			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+			customerPageCorp.customerTest019AndVerify(afterCutCifCorpString,"MR LINH DOAN 2",RanDomStringInt.genRandom(),RanDomStringInt.genRandom(),"linhdq@abbank.vn",RanDomStringInt.genRandom());
+			driver.close();
+			customerPageCorp.authoriseCustomerCorp("LINHDQ.1",afterCutCifCorpString);
+			WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorp));
+			transactionIdCorpElement.sendKeys(afterCutCifCorpString);
+			WebElement viewTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
+			viewTransactionElement.click();
+			WebElement viewContactName2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewContactName2));
+			WebElement viewRelatedPerson2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewRelatedPerson2));
+			String dataContactName2 = "MR LINH DOAN 2";
+			String dataRelatedPerson2 = "Director";
+			Assert.assertEquals(dataContactName2, viewContactName2Element.getText());
+			Assert.assertEquals(dataRelatedPerson2, viewRelatedPerson2Element.getText());
+			driver.close();
+			//TRONG TEST CASE: VERSION INPUT LÀ SỬA KHCN NHƯNG MÀN HÌNH NHẬP LẠI LÀ KHDN ???
+}
+@Test
+public void customerTest020() throws Exception{
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
+	String targetTitle = "CUSTOMER";
+	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 020", "TEST CASE 020", "CO NHUE, HA NOI", "CO NHUE",
+			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+			"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+			customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement.click();
+			WebElement getCifCorpElement= wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+			getCifCorpElement.isDisplayed();
+		    String cifText = getCifCorpElement.getText().substring(14, 22);
+		    System.out.println(cifText);
+		    driver.close();	
+		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
+		    driver.close();
+			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		    signInPage.SwitchFrame1();
+			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
+			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");	
+			customerPageCorp.customerTest020AndVerify(cifText,"MR LINH DOAN CA",RanDomStringInt.genRandom(),RanDomStringInt.genRandom(),"linhdq@abbank.vn",RanDomStringInt.genRandom());
+			driver.close();
+}
+@Test
+public void customerTest021() throws Exception{
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
+	String targetTitle = "CUSTOMER";
+	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 021", "TEST CASE 021", "CO NHUE, HA NOI", "CO NHUE",
+			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+			"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+			customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement.click();
+			WebElement getCifCorpElement= wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+			getCifCorpElement.isDisplayed();
+		    String cifText = getCifCorpElement.getText().substring(14, 22);
+		    System.out.println(cifText);
+		    driver.close();
+		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
+		    driver.close();
+			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		    signInPage.SwitchFrame1();
+			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
+			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+			customerPageCorp.customerTest021AndVerify(cifText,"MR LINH DOAN AMEND","linhdq@abbank.vn",RanDomStringInt.genRandom());
+			driver.close();
+			customerPageCorp.authoriseCustomerCorp("LINHDQ.1",cifText);
+			WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorp));
+			transactionIdCorpElement.sendKeys(cifText);
+			WebElement viewTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
+			viewTransactionElement.click();
+			WebElement viewContactNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewContactName2TC021));
+			viewContactNameElement.isDisplayed();
+			Assert.assertEquals("MR LINH DOAN AMEND", viewContactNameElement.getText());	
+			driver.close();
+}
+@Test
+public void customerTest022() throws Exception{
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
+	String targetTitle = "CUSTOMER";
+	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 022", "TEST CASE 022", "CO NHUE, HA NOI", "CO NHUE",
+			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+			"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+			customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement.click();
+			WebElement getCifCorpElement= wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+			getCifCorpElement.isDisplayed();
+		    String cifText = getCifCorpElement.getText();
+		    String afterCutCifCorpString = cifText.substring(14, 22);
+		    System.out.println(afterCutCifCorpString);
+		    driver.close();
+		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",afterCutCifCorpString);  
+		    driver.close();
+			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		    signInPage.SwitchFrame1();
+			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
+			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+			customerPageCorp.customerTest022AndVerify(afterCutCifCorpString,"MR LINH DOAN CA",RanDomStringInt.genRandom(),RanDomStringInt.genRandom(),"linhdq@abbank.vn",RanDomStringInt.genRandom());  		 
+			driver.close();
+}
+@Test
+public void customerTest023() throws Exception{
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
+	String targetTitle = "CUSTOMER";
+	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 019", "TEST CASE 019", "CO NHUE, HA NOI", "CO NHUE",
+			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+			"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+			customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement.click();
+			WebElement getCifCorpElement= wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+			getCifCorpElement.isDisplayed();
+		    String cifText = getCifCorpElement.getText();
+		    String afterCutCifCorpString = cifText.substring(14, 22);
+		    System.out.println(afterCutCifCorpString);
+		    driver.close();
+		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",afterCutCifCorpString);  
+		    driver.close();
+			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		    signInPage.SwitchFrame1();
+			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
+			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+			customerPageCorp.customerTest023AndVerify(afterCutCifCorpString,"MR LINH DOAN CA",RanDomStringInt.genRandom(),RanDomStringInt.genRandom(),"linhdq@abbank.vn",RanDomStringInt.genRandom());
+			driver.close();
+			Thread.sleep(1500);
+			customerPageCorp.authoriseCustomerCorp("LINHDQ.1",afterCutCifCorpString);
+			WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorp));
+			transactionIdCorpElement.sendKeys(afterCutCifCorpString);
+			WebElement viewTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
+			viewTransactionElement.click();
+			WebElement viewContactName2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewContactName2TC023));
+			WebElement viewRelatedPerson2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewRelatedPerson2TC023));
+			String dataContactName2 = "MR LINH DOAN CA";
+			String dataRelatedPerson2 = "Chief Accountant";
+			Assert.assertEquals(dataContactName2, viewContactName2Element.getText());
+			Assert.assertEquals(dataRelatedPerson2, viewRelatedPerson2Element.getText());
+			driver.close();		  		 
+}
+@Test
+public void customerTest024() throws Exception{
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
+	String targetTitle = "CUSTOMER";
+	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 024", "TEST CASE 024", "CO NHUE, HA NOI", "CO NHUE",
+			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+			"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+			customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement.click();
+			WebElement getCifCorpElement= wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+			getCifCorpElement.isDisplayed();
+		    String cifText = getCifCorpElement.getText().substring(14, 22);
+		    System.out.println(cifText);
+		    driver.close();
+			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		    signInPage.SwitchFrame1();
+			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
+			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+			customerPageCorp.customerTest024AndVerify(cifText,"MR LINH DOAN LR",RanDomStringInt.genRandom(),RanDomStringInt.genRandom(),"linhdq@abbank.vn",RanDomStringInt.genRandom());  		 
+			WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+			transactionIdCorpElement.sendKeys(cifText);
+			WebElement viewTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
+			viewTransactionElement.click();
+			WebElement viewContactName2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewContactName2TC024));
+			WebElement viewRelatedPerson2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewRelatedPerson2TC024));
+			String dataContactName2 = "MR LINH DOAN LR";
+			String dataRelatedPerson2 = "Legal Reprensentative";
+			Assert.assertEquals(dataContactName2, viewContactName2Element.getText());
+			Assert.assertEquals(dataRelatedPerson2, viewRelatedPerson2Element.getText());
+			driver.close();	
+}
+@Test
+public void customerTest028() throws Exception{
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
+	String targetTitle = "CUSTOMER";
+	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 028", "TEST CASE 028", "CO NHUE, HA NOI", "CO NHUE",
+			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+			"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+			customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement.click();
+			WebElement getCifCorpElement= wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+			getCifCorpElement.isDisplayed();
+		    String cifText = getCifCorpElement.getText().substring(14, 22);
+		    System.out.println(cifText);
+		    driver.close();
+		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);
+		    driver.close();
+			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		    signInPage.SwitchFrame1();
+			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
+			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+			customerPageCorp.customerTest028AndVerify(cifText,"2401","linhdq@abbank.vn",RanDomStringInt.genRandom());
+			driver.close();
+			customerPageCorp.authoriseCustomerCorp("LINHDQ.1",cifText);
+			WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorp));
+			transactionIdCorpElement.sendKeys(cifText);
+			WebElement viewTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
+			viewTransactionElement.click();
+			WebElement viewSectorElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewSector));
+			System.out.println(viewSectorElement.getText());
+			driver.close();
 }
 
-	
-
-	public void customerTest014Indep() throws Exception {
-			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-			driver.navigate().refresh();
-			signInPage = new SignInPage(driver);
-			customerPageCorp = new customerPageCorp(driver);
-			signInPage.signin("LINHDQ.1", "Anbinh$1234");
-			signInPage.SwitchFrame1();
-			signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
-			String targetTitle = "CUSTOMER";
-			SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
-			List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 017", "CONG TY DATA TEST CASE 017", "CO NHUE, HA NOI", "CO NHUE",
-					"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomCccdSDT.genRandomCCCD(), "DK1", RanDomCccdSDT.genRandomCCCD(), "HA NOI",
-					"20201010", "20301010",RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "20201010", "2020", "8009", "2102", "9614",
-					"999", "E093710", "MR LINH DOAN", RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "VN", "20221010");
-					customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
-					
-					WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
-					commitDealElement.click();
-					WebElement getCifCorpElement = driver.findElement(customerPageUI.getCifCorp);
-					getCifCorpElement.isDisplayed();
-				    String cifText = getCifCorpElement.getText();
-				    String afterCutCifCorpString = cifText.substring(14, 22);
-				    System.out.println(afterCutCifCorpString);
-				    driver.close();			
-				    customerPageCorp.authoriseCustomerCorp(afterCutCifCorpString);
-				    driver.close(); 
-					SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-					driver.navigate().refresh();			
-					signInPage = new SignInPage(driver);
-					customerPageCorp = new customerPageCorp(driver);
-					signInPage.signin("LINHDQ.1", "Anbinh$1234");
-					signInPage.SwitchFrame1();
-					signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
-					SwitchWindow.switchToWindowWithTitle(driver,"CUSTOMER");
-					List<String> inputCustomerCorpData2 = Arrays.asList("CONG TY TEST CASE 015", "TEST CASE 015", "CO NHUE, HA NOI", "CO NHUE",
-							"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomCccdSDT.genRandomCCCD(), "DK1", RanDomCccdSDT.genRandomCCCD(), "HA NOI",
-							"20201010", "20301010",RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "20201010", "2020", "8009", "2102", "9614",
-							"999", "E093710", "MR LINH DOAN", RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "VN", "20221010");
-							customerPageCorp.inputCustomerCorp(inputCustomerCorpData2);
-							WebElement commitDealElement2 = driver.findElement(customerPageUI.commitDeal);
-							commitDealElement2.isDisplayed();
-							commitDealElement2.click();
-							WebElement getCifCorpElement2 = driver.findElement(customerPageUI.getCifCorp);
-							getCifCorpElement2.isDisplayed();
-						    String cifText2 = getCifCorpElement2.getText();
-						    String afterCutCifCorpString2 = cifText2.substring(14, 22);
-						    System.out.println(afterCutCifCorpString2);
-						    driver.close();
-							SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-							signInPage.SwitchFrame1();
-							signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
-							SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
-							customerPageCorp.customerTest014AndVerify("9",afterCutCifCorpString,"linhdq@abbank.vn",RanDomCccdSDT.genRandomCCCD(),afterCutCifCorpString2);
-							driver.close();
-		}	
-	public void customerTest015Indep() throws Exception {
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		driver.navigate().refresh();
-		signInPage = new SignInPage(driver);
-		customerPageCorp = new customerPageCorp(driver);
-		signInPage.signin("LINHDQ.1", "Anbinh$1234");
-		signInPage.SwitchFrame1();
-		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
-		String targetTitle = "CUSTOMER";
-		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
-		List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 015", "CONG TY DATA TEST CASE 015", "CO NHUE, HA NOI", "CO NHUE",
-				"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomCccdSDT.genRandomCCCD(), "DK1", RanDomCccdSDT.genRandomCCCD(), "HA NOI",
-				"20201010", "20301010",RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "20201010", "2020", "8009", "2102", "9614",
-				"999", "E093710", "MR LINH DOAN", RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "VN", "20221010");
-				customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
-				
-				WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
-				commitDealElement.click();
-				WebElement getCifCorpElement = driver.findElement(customerPageUI.getCifCorp);
-				getCifCorpElement.isDisplayed();
-			    String cifText = getCifCorpElement.getText();
-			    String afterCutCifCorpString = cifText.substring(14, 22);
-			    System.out.println(afterCutCifCorpString);
-			    driver.close();			
-			    customerPageCorp.authoriseCustomerCorp(afterCutCifCorpString);
-			    driver.close(); 
-				SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-				driver.navigate().refresh();
-				
-				signInPage = new SignInPage(driver);
-				customerPageCorp = new customerPageCorp(driver);
-				signInPage.signin("LINHDQ.1", "Anbinh$1234");
-				signInPage.SwitchFrame1();
-				signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
-				SwitchWindow.switchToWindowWithTitle(driver,"CUSTOMER");
-				List<String> inputCustomerCorpData2 = Arrays.asList("CONG TY TEST CASE 014", "TEST CASE 014", "CO NHUE, HA NOI", "CO NHUE",
-						"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomCccdSDT.genRandomCCCD(), "DK1", RanDomCccdSDT.genRandomCCCD(), "HA NOI",
-						"20201010", "20301010",RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "20201010", "2020", "8009", "2102", "9614",
-						"999", "E093710", "MR LINH DOAN", RanDomCccdSDT.genRandomCCCD(), RanDomCccdSDT.genRandomCCCD(), "VN", "20221010");
-						customerPageCorp.inputCustomerCorp(inputCustomerCorpData2);
-						WebElement commitDealElement2 = driver.findElement(customerPageUI.commitDeal);
-						commitDealElement2.isDisplayed();
-						commitDealElement2.click();
-						WebElement getCifCorpElement2 = driver.findElement(customerPageUI.getCifCorp);
-						getCifCorpElement2.isDisplayed();
-					    String cifText2 = getCifCorpElement2.getText();
-					    String afterCutCifCorpString2 = cifText2.substring(14, 22);
-					    System.out.println(afterCutCifCorpString2);
-					    driver.close();
-						SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-						signInPage.SwitchFrame1();
-						signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
-						SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
-						customerPageCorp.customerTest014AndVerify("9",afterCutCifCorpString,"linhdq@abbank.vn",RanDomCccdSDT.genRandomCCCD(),afterCutCifCorpString2);  
-						driver.close();
-						customerPageCorp.authoriseCustomerCorp(afterCutCifCorpString2);
-						driver.close();
-						signInPage.SwitchFrame1();
-						signInPage.CMD("ENQ VMB.CUS.RELATION");
-						SwitchWindow.switchToWindowWithTitle(driver,"Customer Ralationship");					
-	}	
 }
