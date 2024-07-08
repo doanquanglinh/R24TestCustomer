@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import Base.BaseSetup;
 import Page.SignInPage;
 import Page.customerPage;
+import Page.customerPageCorp;
 import Base.SwitchWindow;
 import java.util.Arrays;
 import java.util.List;
@@ -29,6 +30,9 @@ public class customerTest extends BaseSetup {
 	@Test
 	public void customerTest001() throws Exception {
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		signInPage = new SignInPage(driver);
+		customerPage = new customerPage(driver);
+		signInPage.closeAfterMethod();
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPage = new customerPage(driver);
@@ -48,9 +52,10 @@ public class customerTest extends BaseSetup {
 	@Test
 	public void customerTest002() throws Exception {
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPage = new customerPage(driver);
+		signInPage.closeAfterMethod();
+		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Anbinh$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUS,VMB.INDIV.SMART");
@@ -69,10 +74,11 @@ public class customerTest extends BaseSetup {
 	
 	@Test
 	public void customerTest003() throws Exception {
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPage = new customerPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Anbinh$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUS,VMB.INDIV.SMART");
@@ -89,10 +95,11 @@ public class customerTest extends BaseSetup {
 	
 	@Test
 	public void customerTest004() throws Exception {
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPage = new customerPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Anbinh$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUS,VMB.INDIV.SMART");
@@ -107,10 +114,11 @@ public class customerTest extends BaseSetup {
 	}
 	@Test
 	public void customerTest005() throws Exception {
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPage = new customerPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Anbinh$1234");	
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUS,VMB.INDIV.SMART");
@@ -126,10 +134,11 @@ public class customerTest extends BaseSetup {
 	}
 	@Test
 	public void customerTest006() throws Exception {
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPage = new customerPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Anbinh$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUS,VMB.INDIV.SMART");
@@ -145,10 +154,11 @@ public class customerTest extends BaseSetup {
 	}
 	@Test
 	public void customerTest007() throws Exception {
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPage = new customerPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Anbinh$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUS,VMB.INDIV.SMART");
@@ -160,10 +170,11 @@ public class customerTest extends BaseSetup {
 	}
 	@Test
 	public void customerTest008() throws Exception {
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPage = new customerPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Anbinh$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER D 12951377");
@@ -175,10 +186,11 @@ public class customerTest extends BaseSetup {
 	}
 	@Test	
 	public void customerTest009() throws Exception {
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPage = new customerPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Anbinh$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUS,VMB.INDIV.SMART");
@@ -196,6 +208,7 @@ public class customerTest extends BaseSetup {
 	    String afterCutCifString = cifText.substring(14, 22);
 		System.out.println(afterCutCifString);
 		driver.close();
+		signInPage.closeAfterMethod();
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);

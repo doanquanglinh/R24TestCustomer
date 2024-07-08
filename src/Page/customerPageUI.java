@@ -100,6 +100,8 @@ public class customerPageUI {
 	public static final By viewContactName2TC024 =  By.xpath("//a[contains(text(),'Contact Name.2')]//ancestor::tr[@tabid]//span[contains(text(),'MR LINH DOAN')]");
 	public static final By viewRelatedPerson2TC024 =  By.xpath("//a[contains(text(),'Related person.2')]//ancestor::tr[@tabid]//span[contains(text(),'Legal Reprensentative') and @style]");
 	public static final By viewContactName2TC021 =  By.xpath("//a[contains(text(),'Contact Name.1')]//ancestor::tr[@tabid]//span[contains(text(),'MR LINH DOAN AMEND' )]");
+	public static final By viewContactName2TC022 =  By.xpath("//a[contains(text(),'Contact Name.2')]//ancestor::tr[@tabid]//span[contains(text(),'MR LINH DOAN CA' )]");
+	
 	public static final By viewSector = By.xpath("//a[contains(text(),'Sector')]//ancestor::tr[@tabid]//span[contains(text(),'2401')and@style]");
 	
 }

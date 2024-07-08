@@ -28,7 +28,6 @@ public class customerPageCorp {
 		WebElement newDealElementCorp = driver.findElement(customerPageUI.newDeal);
 		newDealElementCorp.isDisplayed();
 		newDealElementCorp.click();
-
 		WebElement gbFullNameCorpElement = driver.findElement(customerPageUI.gbFullName);
 		WebElement gbShortNameCorpElement = driver.findElement(customerPageUI.gbShortName);
 		WebElement registeredAddressElement = driver.findElement(customerPageUI.gbStreet);
@@ -119,12 +118,11 @@ public class customerPageCorp {
 		idNumberCorpElement.sendKeys(inputCustomerCorpData.get(26));
 		contactNationalityElement.sendKeys(inputCustomerCorpData.get(27));
 		contactDOBElement.sendKeys(inputCustomerCorpData.get(28));
-		Thread.sleep(6000);
+		Thread.sleep(1000);
 		WebElement validateDealCorp010Element = driver.findElement(customerPageUI.validateDeal);
 		validateDealCorp010Element.click();
 	}
 	
-
 	public void authoriseCustomerCorp(String acccountAuth, String authoriseCustomerData) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
@@ -220,7 +218,6 @@ public void customerTest014AndVerify(String relCodeData, String relCustomerData,
 			relCustomerCorpAmendElement.isDisplayed();
 			relCustomerCorpAmendElement.clear();
 			relCustomerCorpAmendElement.sendKeys(relCustomerData);	
-			
 			WebElement emailAddCorpElement = driver.findElement(customerPageUI.emailAddCorp);
 			WebElement mobileNumberCorpElement = driver.findElement(customerPageUI.mobileNumberCorp);
 			emailAddCorpElement.isDisplayed();
@@ -387,7 +384,7 @@ public void customerTest021AndVerify(String customerTest021DataTest,String conta
 	mobileNumberCorpElement.sendKeys(mobileNumberData);
 	WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
 	commitDealElement.click();
-	Thread.sleep(1000);
+	Thread.sleep(500);
 }	
 public void customerTest023AndVerify(String customerTest023DataTest,String contactName2Data, String officeNumber2Data, String mobileNumberCorp2Data, String emailAddData,String mobileNumberData) throws Exception  {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));

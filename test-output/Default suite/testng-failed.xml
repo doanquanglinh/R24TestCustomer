@@ -19,6 +19,7 @@
           <include name="customerTest012"/>
           <include name="customerTest023"/>
           <include name="customerTest013"/>
+          <include name="customerTest024"/>
           <include name="customerTest010"/>
           <include name="customerTest021"/>
           <include name="customerTest020"/>

@@ -2,12 +2,12 @@
 <testng-results ignored="15" total="16" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-04T10:11:37 ICT" name="T24 R24" finished-at="2024-07-04T10:12:08 ICT" duration-ms="31463">
+  <suite started-at="2024-07-08T09:59:59 ICT" name="T24 R24" finished-at="2024-07-08T10:00:36 ICT" duration-ms="36069">
     <groups>
     </groups>
-    <test started-at="2024-07-04T10:11:37 ICT" name="Linh Test" finished-at="2024-07-04T10:12:08 ICT" duration-ms="31463">
+    <test started-at="2024-07-08T09:59:59 ICT" name="Linh Test" finished-at="2024-07-08T10:00:36 ICT" duration-ms="36069">
       <class name="customerTest.customerTestCorp">
-        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:customerTest.customerTestCorp@704b2127]" started-at="2024-07-04T10:11:37 ICT" name="initializeTestBaseSetup" finished-at="2024-07-04T10:11:43 ICT" duration-ms="6378" status="PASS">
+        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:customerTest.customerTestCorp@5c371e13]" started-at="2024-07-08T09:59:59 ICT" name="initializeTestBaseSetup" finished-at="2024-07-08T10:00:06 ICT" duration-ms="6656" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,15 +23,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@704b2127]" started-at="2024-07-04T10:11:43 ICT" name="setUp" finished-at="2024-07-04T10:11:43 ICT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@5c371e13]" started-at="2024-07-08T10:00:06 ICT" name="setUp" finished-at="2024-07-08T10:00:06 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="customerTest010()[pri:0, instance:customerTest.customerTestCorp@704b2127]" started-at="2024-07-04T10:11:43 ICT" name="customerTest010" finished-at="2024-07-04T10:12:07 ICT" duration-ms="24401" status="PASS">
+        <test-method signature="customerTest021()[pri:0, instance:customerTest.customerTestCorp@5c371e13]" started-at="2024-07-08T10:00:06 ICT" name="customerTest021" finished-at="2024-07-08T10:00:34 ICT" duration-ms="28180" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- customerTest010 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:customerTest.customerTestCorp@704b2127]" started-at="2024-07-04T10:12:07 ICT" name="tearDown" finished-at="2024-07-04T10:12:08 ICT" duration-ms="635" status="PASS">
+        </test-method> <!-- customerTest021 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:customerTest.customerTestCorp@5c371e13]" started-at="2024-07-08T10:00:34 ICT" name="tearDown" finished-at="2024-07-08T10:00:36 ICT" duration-ms="1183" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

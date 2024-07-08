@@ -29,10 +29,11 @@ public class customerTestCorp extends BaseSetup {
 	}	
 	@Test
 public void customerTest010() throws Exception{
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPageCorp = new customerPageCorp(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Anbinh$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
@@ -48,10 +49,11 @@ public void customerTest010() throws Exception{
 	}
 @Test	
 public void customerTest011() throws Exception{
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPageCorp = new customerPageCorp(driver);
+	   	signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Anbinh$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
@@ -68,6 +70,9 @@ public void customerTest011() throws Exception{
 	}
 @Test
 public void customerTest012() throws Exception{
+		signInPage = new SignInPage(driver);
+		customerPageCorp = new customerPageCorp(driver);
+		signInPage.closeAfterMethod();
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
@@ -90,7 +95,8 @@ public void customerTest012() throws Exception{
 			    String cifText = getCifCorpElement.getText();
 			    String afterCutCifCorpStringTC012 = cifText.substring(14, 22);
 			    System.out.println(afterCutCifCorpStringTC012);
-			    driver.close();			
+			    driver.close();		
+			    signInPage.closeAfterMethod();
 				SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 				signInPage.SwitchFrame1();
 				signInPage.CMD("CUSTOMER,VMB.CORP.SMART D "+ afterCutCifCorpStringTC012);
@@ -112,6 +118,9 @@ public void customerTest012() throws Exception{
 }	
 @Test
 public void customerTest013() throws Exception{
+		signInPage = new SignInPage(driver);
+		customerPageCorp = new customerPageCorp(driver);
+		signInPage.closeAfterMethod();
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
@@ -143,6 +152,9 @@ public void customerTest013() throws Exception{
 	}	
 @Test
 public void customerTest014() throws Exception{
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
     SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
     driver.navigate().refresh();
@@ -166,6 +178,7 @@ public void customerTest014() throws Exception{
     driver.close();
     customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
     driver.close();
+    signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
 	signInPage.signin("LINHDQ.1", "Anbinh$1234");
@@ -193,11 +206,15 @@ public void customerTest014() throws Exception{
 }	
 @Test
 public void customerTest015() throws Exception{
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
     SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
     signInPage = new SignInPage(driver);
     customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
     signInPage.signin("LINHDQ.1", "Anbinh$1234");
     signInPage.SwitchFrame1();
     signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
@@ -216,6 +233,7 @@ public void customerTest015() throws Exception{
     driver.close();
     customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
     driver.close();
+	signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
 	signInPage.signin("LINHDQ.1", "Anbinh$1234");
@@ -242,7 +260,8 @@ public void customerTest015() throws Exception{
 			driver.close();
 		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText2); 
 		    driver.close();
-	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+			signInPage.closeAfterMethod();
+		    SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
@@ -258,10 +277,11 @@ public void customerTest015() throws Exception{
 }
 @Test
 public void customerTest016() throws Exception{
-	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
 	signInPage.signin("LINHDQ.1", "Anbinh$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.INDIV.SF");
@@ -273,10 +293,11 @@ public void customerTest016() throws Exception{
 }
 @Test
 public void customerTest017() throws Exception{
-	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
 	signInPage.signin("LINHDQ.1", "Anbinh$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.INDIV.AMEND.SF");
@@ -288,11 +309,12 @@ public void customerTest017() throws Exception{
 }
 @Test
 public void customerTest018() throws Exception{
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
-	signInPage = new SignInPage(driver);
-	customerPageCorp = new customerPageCorp(driver);
 	signInPage.signin("LINHDQ.1", "Anbinh$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
@@ -307,11 +329,11 @@ public void customerTest018() throws Exception{
 			commitDealElement.click();
 			WebElement getCifCorpElement = driver.findElement(customerPageUI.getCifCorp);
 			getCifCorpElement.isDisplayed();
-		    String cifText = getCifCorpElement.getText();
-		    String afterCutCifCorpString = cifText.substring(14, 22);
-		    System.out.println(afterCutCifCorpString);
+		    String cifText = getCifCorpElement.getText().substring(14, 22);
+		    System.out.println(cifText);
 		    driver.close();
-		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",afterCutCifCorpString);  
+			signInPage.closeAfterMethod();
+		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
 		    driver.close();
 			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		    signInPage.SwitchFrame1();
@@ -319,11 +341,11 @@ public void customerTest018() throws Exception{
 			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
 			String gbFullNameAfterAmned = "CONG TY DATA TEST CASE 018 AFTER AMEND";
 			String gbShortNameAfterAmned = "TEST CASE 018 AFTER AMEND";
-			customerPageCorp.customerTest018AndVerify(afterCutCifCorpString,gbFullNameAfterAmned,gbShortNameAfterAmned,"linhdq@abbank.vn",RanDomStringInt.genRandom());
+			customerPageCorp.customerTest018AndVerify(cifText,gbFullNameAfterAmned,gbShortNameAfterAmned,"linhdq@abbank.vn",RanDomStringInt.genRandom());
 			driver.close();
-			customerPageCorp.authoriseCustomerCorp("LINHDQ.1",afterCutCifCorpString);
+			customerPageCorp.authoriseCustomerCorp("LINHDQ.1",cifText);
 			WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorp));
-			transactionIdCorpElement.sendKeys(afterCutCifCorpString);
+			transactionIdCorpElement.sendKeys(cifText);
 			WebElement viewTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
 			viewTransactionElement.click();
 			WebElement viewgbFullNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.gbFullNameAmend));
@@ -337,10 +359,11 @@ public void customerTest018() throws Exception{
 @Test
 public void customerTest019() throws Exception{
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
 	signInPage.signin("LINHDQ.1", "Anbinh$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
@@ -359,6 +382,7 @@ public void customerTest019() throws Exception{
 		    String afterCutCifCorpString = cifText.substring(14, 22);
 		    System.out.println(afterCutCifCorpString);
 		    driver.close();
+			signInPage.closeAfterMethod();
 		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",afterCutCifCorpString);  
 		    driver.close();
 			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
@@ -384,10 +408,11 @@ public void customerTest019() throws Exception{
 @Test
 public void customerTest020() throws Exception{
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
 	signInPage.signin("LINHDQ.1", "Anbinh$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
@@ -407,6 +432,7 @@ public void customerTest020() throws Exception{
 		    driver.close();	
 		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
 		    driver.close();
+			signInPage.closeAfterMethod();
 			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		    signInPage.SwitchFrame1();
 			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
@@ -417,6 +443,9 @@ public void customerTest020() throws Exception{
 @Test
 public void customerTest021() throws Exception{
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
@@ -440,14 +469,13 @@ public void customerTest021() throws Exception{
 		    driver.close();
 		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
 		    driver.close();
+			signInPage.closeAfterMethod();
 			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		    signInPage.SwitchFrame1();
 			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
 			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
 			customerPageCorp.customerTest021AndVerify(cifText,"MR LINH DOAN AMEND","linhdq@abbank.vn",RanDomStringInt.genRandom());
-			driver.close();
-			customerPageCorp.authoriseCustomerCorp("LINHDQ.1",cifText);
-			WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorp));
+			WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
 			transactionIdCorpElement.sendKeys(cifText);
 			WebElement viewTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
 			viewTransactionElement.click();
@@ -459,6 +487,9 @@ public void customerTest021() throws Exception{
 @Test
 public void customerTest022() throws Exception{
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
@@ -477,22 +508,30 @@ public void customerTest022() throws Exception{
 			commitDealElement.click();
 			WebElement getCifCorpElement= wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
 			getCifCorpElement.isDisplayed();
-		    String cifText = getCifCorpElement.getText();
-		    String afterCutCifCorpString = cifText.substring(14, 22);
-		    System.out.println(afterCutCifCorpString);
+		    String cifText = getCifCorpElement.getText().substring(14, 22);
 		    driver.close();
-		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",afterCutCifCorpString);  
+		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
 		    driver.close();
+			signInPage.closeAfterMethod();
 			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		    signInPage.SwitchFrame1();
 			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
 			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
-			customerPageCorp.customerTest022AndVerify(afterCutCifCorpString,"MR LINH DOAN CA",RanDomStringInt.genRandom(),RanDomStringInt.genRandom(),"linhdq@abbank.vn",RanDomStringInt.genRandom());  		 
-			driver.close();
+			customerPageCorp.customerTest022AndVerify(cifText,"MR LINH DOAN CA",RanDomStringInt.genRandom(),RanDomStringInt.genRandom(),"linhdq@abbank.vn",RanDomStringInt.genRandom());  		 
+			WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+			transactionIdCorpElement.sendKeys(cifText);
+			WebElement viewTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
+			viewTransactionElement.click();
+			WebElement viewContactNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewContactName2TC022));
+			viewContactNameElement.isDisplayed();
+			Assert.assertEquals("MR LINH DOAN CA", viewContactNameElement.getText());	
 }
-@Test
+@Test 
 public void customerTest023() throws Exception{
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
@@ -502,7 +541,7 @@ public void customerTest023() throws Exception{
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
 	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
-	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 019", "TEST CASE 019", "CO NHUE, HA NOI", "CO NHUE",
+	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 023", "TEST CASE 023", "CO NHUE, HA NOI", "CO NHUE",
 			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
 			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
 			"999", "E093710", "MR LINH DOAN", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
@@ -517,6 +556,7 @@ public void customerTest023() throws Exception{
 		    driver.close();
 		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",afterCutCifCorpString);  
 		    driver.close();
+			signInPage.closeAfterMethod();
 			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		    signInPage.SwitchFrame1();
 			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
@@ -540,6 +580,9 @@ public void customerTest023() throws Exception{
 @Test
 public void customerTest024() throws Exception{
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
@@ -561,6 +604,7 @@ public void customerTest024() throws Exception{
 		    String cifText = getCifCorpElement.getText().substring(14, 22);
 		    System.out.println(cifText);
 		    driver.close();
+			signInPage.closeAfterMethod();
 			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		    signInPage.SwitchFrame1();
 			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
@@ -578,9 +622,14 @@ public void customerTest024() throws Exception{
 			Assert.assertEquals(dataRelatedPerson2, viewRelatedPerson2Element.getText());
 			driver.close();	
 }
+
+
 @Test
 public void customerTest028() throws Exception{
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
@@ -604,6 +653,7 @@ public void customerTest028() throws Exception{
 		    driver.close();
 		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);
 		    driver.close();
+			signInPage.closeAfterMethod();
 			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		    signInPage.SwitchFrame1();
 			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
@@ -617,7 +667,7 @@ public void customerTest028() throws Exception{
 			viewTransactionElement.click();
 			WebElement viewSectorElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewSector));
 			System.out.println(viewSectorElement.getText());
+			Assert.assertEquals("2401",viewSectorElement.getText());
 			driver.close();
 }
-
 }
