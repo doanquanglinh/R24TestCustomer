@@ -48,5 +48,6 @@ public class BaseSetup {
 	         	driver.quit();
 	            System.out.println("Done");
 	        }
+	     //thuan xoa
 	}	
 }

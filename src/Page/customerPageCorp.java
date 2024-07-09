@@ -171,7 +171,7 @@ public class customerPageCorp {
 	}
 	
 	
-	//Verify Case 010
+	//Verify Case 010///
 public void customerTest010Verify() {
 		try {
 			WebElement errorBoxElement = driver.findElement(customerPageUI.errorMesBox);

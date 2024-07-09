@@ -13,6 +13,7 @@
           <include name="tearDown"/>
           <include name="customerTest025"/>
           <include name="customerTest023"/>
+          <include name="customerTest024"/>
         </methods>
       </class> <!-- customerTest.customerTestCorp -->
     </classes>
