@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import Base.BaseSetup;
 import Page.SignInPage;
 import Page.customerPage;
-import Page.customerPageCorp;
 import Base.SwitchWindow;
 import java.util.Arrays;
 import java.util.List;

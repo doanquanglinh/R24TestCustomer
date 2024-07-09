@@ -6,11 +6,12 @@
 		<classes>
 <!--				<class name="customerTest.customerTest"></class> -->
 					<class name="customerTest.customerTestCorp">
-<!--					<class name="customerTest.customerTestCorp"></class> -->
-					<methods>		
-						<include name="customerTest021"/>																																																																	
-<!--					<include name="customerTest028"/>																																		-->
-					</methods>				
+						<methods>			
+							<include name="customerTest022"/>																																		
+							<include name="customerTest023"/>																																		
+							<include name="customerTest024"/>																																		
+							<include name="customerTest025"/>																																		
+						</methods>				
 					</class> 
 		</classes>
 	</test>

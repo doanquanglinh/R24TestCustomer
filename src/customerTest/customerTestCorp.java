@@ -2,6 +2,7 @@ package customerTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.openqa.selenium.Alert;
@@ -622,8 +623,58 @@ public void customerTest024() throws Exception{
 			Assert.assertEquals(dataRelatedPerson2, viewRelatedPerson2Element.getText());
 			driver.close();	
 }
-
-
+@Test
+public void customerTest025() throws Exception{
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.closeAfterMethod();
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
+	String targetTitle = "CUSTOMER";
+	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+	List<String> inputCustomerCorpData = Arrays.asList("CONG TY DATA TEST CASE 025", "TEST CASE 025", "CO NHUE, HA NOI", "CO NHUE",
+			"CO NHUE", "20201010", "CO NHUE", "CO NHUE", "1000", RanDomStringInt.genRandom(), "DK1", RanDomStringInt.genRandom(), "HA NOI",
+			"20201010", "20301010",RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "20201010", "2020", "8009", "2102", "9614",
+			"999", "E093710", "MR LINH DOAN LA BEFORE UPDATE", RanDomStringInt.genRandom(), RanDomStringInt.genRandom(), "VN", "20221010");
+			customerPageCorp.inputCustomerCorp(inputCustomerCorpData);
+		    WebElement dropDownElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.relatedPerson1));
+		    Select dropDown = new Select(dropDownElement);
+		    dropDown.selectByVisibleText("Legal Reprensentative");
+			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+			commitDealElement.click();
+			WebElement getCifCorpElement= wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+			getCifCorpElement.isDisplayed();
+		    String cifText = getCifCorpElement.getText().substring(14, 22);
+		    System.out.println(cifText);
+		    driver.close();
+		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
+		    driver.close();
+			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		    signInPage.SwitchFrame1();
+			signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
+			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+			customerPageCorp.customerTest025AndVerify(cifText,"MR LINH DOAN LA AFTER UPDATE","linhdq@abbank.vn",RanDomStringInt.genRandom());
+			driver.close();
+			customerPageCorp.authoriseCustomerCorpAmendVersion("LINHDQ.1",cifText);  
+			WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+			transactionIdCorpElement.sendKeys(cifText);
+			WebElement viewTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
+			viewTransactionElement.click();
+			WebElement viewContactNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewContactName2TC021));
+			viewContactNameElement.isDisplayed();
+			String dataRelatedPerson = "Legal Reprensentative";
+			WebElement viewRelatedPersonElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewRelatedPerson2TC025));
+			System.out.println(viewRelatedPersonElement.getText());
+			Assert.assertEquals(dataRelatedPerson, viewRelatedPersonElement.getText());
+			Assert.assertEquals("MR LINH DOAN LA AFTER UPDATE", viewContactNameElement.getText());	
+			driver.close();
+}
 @Test
 public void customerTest028() throws Exception{
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));

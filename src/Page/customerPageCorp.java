@@ -146,6 +146,31 @@ public class customerPageCorp {
 		WebElement getCifCorpElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
 		getCifCorpElement.isDisplayed();
 	}
+	public void authoriseCustomerCorpAmendVersion(String acccountAuth, String authoriseCustomerData) throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
+		signInPage = new SignInPage(driver);
+		customerPageCorp = new customerPageCorp(driver);
+		signInPage.signin(acccountAuth, "Anbinh$1234");
+		signInPage.SwitchFrame1();
+		signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
+		SwitchWindow.switchToWindowWithTitle(driver,"CUSTOMER");
+		WebElement transactionIdCorpElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+		transactionIdCorpElement.isDisplayed();
+		transactionIdCorpElement.sendKeys(authoriseCustomerData);
+		WebElement performContractElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.performContract));
+		performContractElement.isDisplayed();
+		performContractElement.click();
+		Thread.sleep(1000);
+		WebElement authoriseDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.authoriseDeal));
+		authoriseDealElement.isDisplayed();
+		authoriseDealElement.click();
+		WebElement getCifCorpElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+		getCifCorpElement.isDisplayed();
+	}
+	
+	
 	//Verify Case 010
 public void customerTest010Verify() {
 		try {
@@ -299,7 +324,6 @@ public String customerTest015Verify(String customerDataTest015) {
 			WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
 			commitDealElement.click();
 			Thread.sleep(1000);
-			
 		}
 		
 		public void customerTest019AndVerify(String customerTest019DataTest,String contactName2Data, String officeNumber2Data, String mobileNumberCorp2Data, String emailAddData,String mobileNumberData) throws Exception  {
@@ -493,6 +517,29 @@ public void customerTest024AndVerify(String customerTest024DataTest,String conta
 	commitDealElement.click();
 	Thread.sleep(1000);			
 }	
+public void customerTest025AndVerify(String customerTest025DataTest,String contactNameAmend, String emailAddData,String mobileNumberData) throws Exception  {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+	transactionIdCorpAmendElement.isDisplayed();
+	transactionIdCorpAmendElement.sendKeys(customerTest025DataTest);
+	WebElement editTransactionCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
+	editTransactionCorpElement.click();
+	Thread.sleep(500);
+	WebElement editcontactNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactName));
+	editcontactNameElement.isDisplayed();
+	editcontactNameElement.clear();
+	editcontactNameElement.sendKeys(contactNameAmend);
+	WebElement emailAddCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp));
+	WebElement mobileNumberCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp));
+	emailAddCorpElement.isDisplayed();
+	emailAddCorpElement.sendKeys(emailAddData);
+	mobileNumberCorpElement.sendKeys(mobileNumberData);
+	WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+	commitDealElement.click();
+	Thread.sleep(500);
+
+}	
+
 public void customerTest028AndVerify(String customerTest028DataTest,String sectorAmend, String emailAddData,String mobileNumberData) throws Exception  {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 	WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
