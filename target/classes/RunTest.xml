@@ -5,10 +5,10 @@
 	<test name="Linh Test">
 		<classes>
 <!--				<class name="customerTest.customerTest"></class> -->
-					<class name="customerTest.customerTestCorp">
-<!--						<methods>			-->
-<!--							<include name="customerTest026"/>																																		-->
-<!--						</methods>				-->
+					<class name="customerTest.customerTest">
+						<methods>			
+							<include name="customerTest004"/>																																		
+						</methods>				
 					</class> 
 		</classes>
 	</test>

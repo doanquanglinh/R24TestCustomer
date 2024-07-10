@@ -67,6 +67,8 @@ public class customerPageUI {
 	public static final By getCifCorp = By.xpath("//td[@class = 'message']");
 	public static final By transactionIdCorpAmend = By.xpath("//input[@id = 'transactionId' and @class = 'idbox idbox_CUSTOMER idbox_CUSTOMER_VMBCORPAMENDSMART']");
 	
+	public static final By returnToApp = By.xpath("//img[@title= 'Return to application screen']");
+	
 	public static final By emailAddCorp = By.id("fieldName:CONTACT.EMAIL:1");
 	public static final By emailAddCorp2 = By.id("fieldName:CONTACT.EMAIL:2");
 	public static final By emailAddCorp3 = By.id("fieldName:CONTACT.EMAIL:3");
