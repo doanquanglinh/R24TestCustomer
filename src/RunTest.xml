@@ -6,9 +6,9 @@
 		<classes>
 <!--				<class name="customerTest.customerTest"></class> -->
 					<class name="customerTest.customerTestCorp">
-						<methods>			
-							<include name="customerTest026"/>																																		
-						</methods>				
+<!--						<methods>			-->
+<!--							<include name="customerTest026"/>																																		-->
+<!--						</methods>				-->
 					</class> 
 		</classes>
 	</test>
