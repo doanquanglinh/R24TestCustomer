@@ -750,7 +750,7 @@ public void customerTest027() throws Exception{
 		    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",cifText);  
 		    driver.close();   
 			SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-		    signInPage.SwitschFrame1();
+		    signInPage.SwitchFrame1();
 		    signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
 			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
 			customerPageCorp.customerTest027AndVerify(cifText, "linhdq@abbank.vn","anhch@abbank.vn","thuannt@abbank.vn","thuyntt@abbank.vn", RanDomStringInt.genRandom(),"MS HUONG ANH","MS THUAN NGUYEN","MS THU THUY");
