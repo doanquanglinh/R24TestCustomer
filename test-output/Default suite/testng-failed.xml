@@ -15,7 +15,9 @@
           <include name="customerTest028"/>
           <include name="tearDown"/>
           <include name="customerTest014"/>
+          <include name="customerTest025"/>
           <include name="customerTest015"/>
+          <include name="customerTest026"/>
           <include name="customerTest012"/>
           <include name="customerTest023"/>
           <include name="customerTest013"/>

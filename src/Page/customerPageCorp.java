@@ -537,6 +537,93 @@ public void customerTest025AndVerify(String customerTest025DataTest,String conta
 	WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
 	commitDealElement.click();
 	Thread.sleep(500);
+}	
+
+public void customerTest026AndVerify(String customerTest026DataTest,String emailAddData1,String emailAddData2,String emailAddData3,String emailAddData4,String NumberData,String contactName2Data
+		,String contactName3Data,String contactName4Data) throws Exception  {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	WebElement transactionIdCorpAmendElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+	transactionIdCorpAmendElement.isDisplayed();
+	transactionIdCorpAmendElement.sendKeys(customerTest026DataTest);
+	WebElement editTransactionCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
+	editTransactionCorpElement.click();
+	Thread.sleep(500);
+	
+	WebElement expandContactName1Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactNameExpand));
+	expandContactName1Element.isDisplayed();
+	expandContactName1Element.click();
+	WebElement expandContactName2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactNameExpand2));
+	expandContactName2Element.isDisplayed();
+	expandContactName2Element.click();
+	WebElement expandContactName3Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactNameExpand3));
+	expandContactName3Element.isDisplayed();
+	expandContactName3Element.click();
+	
+	WebElement contactName2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactName2));
+	contactName2Element.sendKeys(contactName2Data);
+	WebElement contactName3Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactName3));
+	contactName3Element.isDisplayed();
+	contactName3Element.sendKeys(contactName3Data);
+	WebElement contactName4Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.contactName4));
+	contactName4Element.isDisplayed();
+	contactName4Element.sendKeys(contactName4Data);
+	
+	WebElement officeNumber2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.officeNumber2));
+	officeNumber2Element.sendKeys(NumberData);
+	WebElement officeNumber3Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.officeNumber3));
+	officeNumber3Element.sendKeys(NumberData);
+	WebElement officeNumber4Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.officeNumber4));
+	officeNumber4Element.sendKeys(NumberData);
+	
+	WebElement mobileNumberCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp));
+	mobileNumberCorpElement.sendKeys(NumberData);
+	WebElement mobileNumber2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp2));
+	mobileNumber2Element.sendKeys(NumberData);
+	WebElement mobileNumber3Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp3));
+	mobileNumber3Element.sendKeys(NumberData);
+	WebElement mobileNumber4Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mobileNumberCorp4));
+	mobileNumber4Element.sendKeys(NumberData);
+	
+	WebElement emailAddCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp));
+	emailAddCorpElement.sendKeys(emailAddData1);
+	WebElement emailAddCorp2Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp2));
+	emailAddCorp2Element.sendKeys(emailAddData2);
+	WebElement emailAddCorp3Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp3));
+	emailAddCorp3Element.sendKeys(emailAddData3);
+	WebElement emailAddCorp4Element = wait
+			.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.emailAddCorp4));
+	emailAddCorp4Element.sendKeys(emailAddData4);
+
+	WebElement dropDown1Element = wait
+			.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.relatedPerson1));
+	Select dropDown1 = new Select(dropDown1Element);
+	dropDown1.selectByVisibleText("Director");
+
+	WebElement dropDown2Element = wait
+			.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.relatedPerson2));
+	Select dropDown2 = new Select(dropDown2Element);
+	dropDown2.selectByVisibleText("Director");
+
+	WebElement dropDown3Element = wait
+			.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.relatedPerson3));
+	Select dropDown3 = new Select(dropDown3Element);
+	dropDown3.selectByVisibleText("Chief Accountant");
+
+	WebElement dropDown4Element = wait
+			.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.relatedPerson4));
+	Select dropDown4 = new Select(dropDown4Element);
+	dropDown4.selectByVisibleText("Contact Person");
+
+	WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+	commitDealElement.click();
+	Thread.sleep(500);
+	
+	WebElement transactionIdCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorpAmend));
+	transactionIdCorpElement.isDisplayed();
+	transactionIdCorpElement.sendKeys(customerTest026DataTest);
+	WebElement viewTransactionElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
+	viewTransactionElement.click();
+	Thread.sleep(999);
 
 }	
 

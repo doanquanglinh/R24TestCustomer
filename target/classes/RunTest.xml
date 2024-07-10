@@ -7,10 +7,7 @@
 <!--				<class name="customerTest.customerTest"></class> -->
 					<class name="customerTest.customerTestCorp">
 						<methods>			
-							<include name="customerTest022"/>																																		
-							<include name="customerTest023"/>																																		
-							<include name="customerTest024"/>																																		
-							<include name="customerTest025"/>																																		
+							<include name="customerTest026"/>																																		
 						</methods>				
 					</class> 
 		</classes>
