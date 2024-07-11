@@ -5,9 +5,9 @@
 	<test name="Linh Test">
 		<classes>
 <!--				<class name="customerTest.customerTest"></class> -->
-					<class name="customerTest.customerTest">
+					<class name="customerTest.customerTestCorp">
 						<methods>			
-							<include name="customerTest004"/>																																		
+							<include name="customerTest027"/>																																		
 						</methods>				
 					</class> 
 		</classes>

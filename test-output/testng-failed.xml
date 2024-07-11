@@ -5,14 +5,14 @@
   <parameter name="browserType" value="chrome"/>
   <test thread-count="5" name="Linh Test(failed)">
     <classes>
-      <class name="customerTest.customerTest">
+      <class name="customerTest.customerTestCorp">
         <methods>
-          <include name="customerTest004"/>
           <include name="initializeTestBaseSetup"/>
           <include name="setUp"/>
+          <include name="customerTest027"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- customerTest.customerTest -->
+      </class> <!-- customerTest.customerTestCorp -->
     </classes>
   </test> <!-- Linh Test(failed) -->
 </suite> <!-- Failed suite [T24 R24] -->

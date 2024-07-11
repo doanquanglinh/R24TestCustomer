@@ -751,8 +751,8 @@ public void customerTest027AndVerify(String customerTest026DataTest,String email
 	
 	System.out.println(viewContactName2Element.getText());
 	System.out.println(viewRelatedPerson2Element.getText());
-	Assert.assertEquals("Contact Person", viewRelatedPersonElement.getText());
-	Assert.assertEquals("MS THU THUY UPDATE", viewContactNameElement.getText());
+	Assert.assertEquals("Contact Person", viewRelatedPerson2Element.getText());
+	Assert.assertEquals("MS THU THUY UPDATE", viewContactName2Element.getText());
 	
 }	
 
