@@ -9,8 +9,8 @@
         <methods>
           <include name="initializeTestBaseSetup"/>
           <include name="setUp"/>
-          <include name="customerTest027"/>
           <include name="tearDown"/>
+          <include name="customerTest015"/>
         </methods>
       </class> <!-- customerTest.customerTestCorp -->
     </classes>

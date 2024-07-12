@@ -48,7 +48,7 @@ public void customerTest010() throws Exception{
 		customerPageCorp.customerTest010Verify();
 		driver.close();
 	}
-@Test	
+@Test
 public void customerTest011() throws Exception{
 		signInPage = new SignInPage(driver);
 		customerPageCorp = new customerPageCorp(driver);
@@ -754,6 +754,7 @@ public void customerTest027() throws Exception{
 		    signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
 			SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
 			customerPageCorp.customerTest027AndVerify(cifText, "linhdq@abbank.vn","anhch@abbank.vn","thuannt@abbank.vn","thuyntt@abbank.vn", RanDomStringInt.genRandom(),"MS HUONG ANH","MS THUAN NGUYEN","MS THU THUY");
+			driver.close();
 }
 
 @Test
