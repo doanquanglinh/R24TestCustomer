@@ -129,7 +129,7 @@ public class customerPageCorp {
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPageCorp = new customerPageCorp(driver);
-		signInPage.signin(acccountAuth, "Anbinh$1234");
+		signInPage.signin(acccountAuth, "Abb$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 		SwitchWindow.switchToWindowWithTitle(driver,"CUSTOMER");
@@ -152,7 +152,7 @@ public class customerPageCorp {
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPageCorp = new customerPageCorp(driver);
-		signInPage.signin(acccountAuth, "Anbinh$1234");
+		signInPage.signin(acccountAuth, "Abb$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER,VMB.CORP.AMEND.SMART");
 		SwitchWindow.switchToWindowWithTitle(driver,"CUSTOMER");

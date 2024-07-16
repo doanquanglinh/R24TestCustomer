@@ -35,7 +35,7 @@ public void customerTest010() throws Exception{
 		signInPage.closeAfterMethod();
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();
-		signInPage.signin("LINHDQ.1", "Anbinh$1234");
+		signInPage.signin("LINHDQ.1", "Abb$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 		String targetTitle = "CUSTOMER";
@@ -55,7 +55,7 @@ public void customerTest011() throws Exception{
 	   	signInPage.closeAfterMethod();
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();
-		signInPage.signin("LINHDQ.1", "Anbinh$1234");
+		signInPage.signin("LINHDQ.1", "Abb$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 		String targetTitle = "CUSTOMER";
@@ -78,7 +78,7 @@ public void customerTest012() throws Exception{
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPageCorp = new customerPageCorp(driver);
-		signInPage.signin("LINHDQ.1", "Anbinh$1234");
+		signInPage.signin("LINHDQ.1", "Abb$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 		String targetTitle = "CUSTOMER";
@@ -126,7 +126,7 @@ public void customerTest013() throws Exception{
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
 		customerPageCorp = new customerPageCorp(driver);
-		signInPage.signin("LINHDQ.1", "Anbinh$1234");
+		signInPage.signin("LINHDQ.1", "Abb$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 		String targetTitle = "CUSTOMER";
@@ -161,7 +161,7 @@ public void customerTest014() throws Exception{
     driver.navigate().refresh();
     signInPage = new SignInPage(driver);
     customerPageCorp = new customerPageCorp(driver);
-    signInPage.signin("LINHDQ.1", "Anbinh$1234");
+    signInPage.signin("LINHDQ.1", "Abb$1234");
     signInPage.SwitchFrame1();
     signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
     SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
@@ -182,7 +182,7 @@ public void customerTest014() throws Exception{
     signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
@@ -216,7 +216,7 @@ public void customerTest015() throws Exception{
     signInPage = new SignInPage(driver);
     customerPageCorp = new customerPageCorp(driver);
 	signInPage.closeAfterMethod();
-    signInPage.signin("LINHDQ.1", "Anbinh$1234");
+    signInPage.signin("LINHDQ.1", "Abb$1234");
     signInPage.SwitchFrame1();
     signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
     SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
@@ -237,7 +237,7 @@ public void customerTest015() throws Exception{
 	signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
@@ -266,7 +266,7 @@ public void customerTest015() throws Exception{
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("ENQ VMB.CUS.RELATION");
 	String targetTitle = "Customer Ralationship";
@@ -283,7 +283,7 @@ public void customerTest016() throws Exception{
 	signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.INDIV.SF");
 	SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
@@ -299,7 +299,7 @@ public void customerTest017() throws Exception{
 	signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.INDIV.AMEND.SF");
 	SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
@@ -316,7 +316,7 @@ public void customerTest018() throws Exception{
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
@@ -365,7 +365,7 @@ public void customerTest019() throws Exception{
 	signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
@@ -414,7 +414,7 @@ public void customerTest020() throws Exception{
 	signInPage.closeAfterMethod();
 	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 	driver.navigate().refresh();
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
@@ -451,7 +451,7 @@ public void customerTest021() throws Exception{
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
@@ -495,7 +495,7 @@ public void customerTest022() throws Exception{
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
@@ -537,7 +537,7 @@ public void customerTest023() throws Exception{
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
@@ -588,7 +588,7 @@ public void customerTest024() throws Exception{
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
@@ -633,7 +633,7 @@ public void customerTest025() throws Exception{
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
@@ -686,7 +686,7 @@ public void customerTest026() throws Exception{
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
@@ -730,7 +730,7 @@ public void customerTest027() throws Exception{
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
@@ -767,7 +767,7 @@ public void customerTest028() throws Exception{
 	driver.navigate().refresh();
 	signInPage = new SignInPage(driver);
 	customerPageCorp = new customerPageCorp(driver);
-	signInPage.signin("LINHDQ.1", "Anbinh$1234");
+	signInPage.signin("LINHDQ.1", "Abb$1234");
 	signInPage.SwitchFrame1();
 	signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 	String targetTitle = "CUSTOMER";
