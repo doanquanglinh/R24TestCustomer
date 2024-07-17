@@ -24,6 +24,7 @@ public class ldLoansPage {
 		WebElement loanProductElement = driver.findElement(ldLoansPageUI.LOAN_PRODUCT);
 		WebElement commitmentRefElement = driver.findElement(ldLoansPageUI.COMMITMENT_REF);
 		WebElement interestRateElement = driver.findElement(ldLoansPageUI.INTEREST_RATE);
+		WebElement interestDueDateElement = driver.findElement(ldLoansPageUI.INTEREST_DUE_DATE);
 		WebElement baseDateKeyElement = driver.findElement(ldLoansPageUI.BASE_DATE_KEY);
 		WebElement lsThaNoiElement = driver.findElement(ldLoansPageUI.LS_THA_NOI);
 		WebElement ngayThayLSElement = driver.findElement(ldLoansPageUI.NGAY_THAY_LS);
@@ -32,10 +33,17 @@ public class ldLoansPage {
 		WebElement payMethodElement = driver.findElement(ldLoansPageUI.PAY_METHOD);
 		WebElement limitReferenceElement = driver.findElement(ldLoansPageUI.LIMIT_REFERENCE);
 		WebElement additionalInfor1Element = driver.findElement(ldLoansPageUI.ADDITIONAL_INFO_1);
+		WebElement expandAdditionalInfor = driver.findElement(ldLoansPageUI.EXPAND_ADDITIONAL_INFO);
+		expandAdditionalInfor.click();
+		WebElement additionalInfor2Element = driver.findElement(ldLoansPageUI.ADDITIONAL_INFO_2);
 		WebElement description1Element = driver.findElement(ldLoansPageUI.DESCRIPTION_1);
+		WebElement description2Element = driver.findElement(ldLoansPageUI.DESCRIPTION_2);
 		WebElement collateralIDElement = driver.findElement(ldLoansPageUI.COLLATERAL_ID);
 		WebElement soTienElement = driver.findElement(ldLoansPageUI.SO_TIEN);
 		WebElement ngoaiLeElement = driver.findElement(ldLoansPageUI.NGOAI_LE);
+		WebElement purposeOfLoanElement = driver.findElement(ldLoansPageUI.PURPOSE_OF_LOAN);
+		WebElement fwdBackKey = driver.findElement(ldLoansPageUI.FORWARD_BACK_KEY);
+
 		
 		customerIDElement.isDisplayed();
 		
@@ -48,19 +56,40 @@ public class ldLoansPage {
 		loanProductElement.sendKeys(inputLDData.get(6));
 		commitmentRefElement.sendKeys(inputLDData.get(7));
 		interestRateElement.sendKeys(inputLDData.get(8));
-		baseDateKeyElement.sendKeys(inputLDData.get(9));
-		lsThaNoiElement.sendKeys(inputLDData.get(10));
-		ngayThayLSElement.sendKeys(inputLDData.get(11));
-		autoScheudlesElement.sendKeys(inputLDData.get(12));
-		defineScheudlesElement.sendKeys(inputLDData.get(13));
-		payMethodElement.sendKeys(inputLDData.get(14));
-		limitReferenceElement.sendKeys(inputLDData.get(15));
-		additionalInfor1Element.sendKeys(inputLDData.get(16));
-		description1Element.sendKeys(inputLDData.get(17));
-		collateralIDElement.sendKeys(inputLDData.get(18));
-		soTienElement.sendKeys(inputLDData.get(19));
-		collateralIDElement.sendKeys(inputLDData.get(20));
-		ngoaiLeElement.sendKeys(inputLDData.get(21));
+		interestDueDateElement.sendKeys(inputLDData.get(9));
+		lsThaNoiElement.click();
+		ngayThayLSElement.sendKeys(inputLDData.get(10));
+		autoScheudlesElement.sendKeys(inputLDData.get(11));
+		defineScheudlesElement.sendKeys(inputLDData.get(12));
+		limitReferenceElement.sendKeys(inputLDData.get(13));
+		description1Element.sendKeys(inputLDData.get(14));
+		collateralIDElement.sendKeys(inputLDData.get(15));
+		soTienElement.sendKeys(inputLDData.get(16));
+		ngoaiLeElement.click();
+		purposeOfLoanElement.sendKeys(inputLDData.get(17));
+		fwdBackKey.sendKeys(inputLDData.get(18));
+		additionalInfor1Element.sendKeys(inputLDData.get(19));
+		additionalInfor2Element.isDisplayed();
+		additionalInfor2Element.sendKeys(inputLDData.get(20));
+		description2Element.sendKeys(inputLDData.get(21));
 		
+		WebElement validateDealElement = driver.findElement(customerPageUI.validateDeal);
+		validateDealElement.click();
+
 	}
+	
+	//Verify Case 014//
+public String ldLoanTest014Verify() {
+	WebElement ErrorElement = driver.findElement(ldLoansPageUI.ERROR_MES_BOX);
+	ErrorElement.isDisplayed();
+	return ErrorElement.getText();
+	}
+
+//Verify Case 015//
+public String ldLoanTest015Verify() {
+WebElement ErrorElement = driver.findElement(ldLoansPageUI.ERROR_MES_BOX);
+ErrorElement.isDisplayed();
+return ErrorElement.getText();
+}
+
 }

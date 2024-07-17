@@ -12,7 +12,7 @@ public class Date {
 
     public String SystemDate() {
         LocalDate currentDate = LocalDate.now();
-        LocalDate systemDate = currentDate.minusDays(17);
+        LocalDate systemDate = currentDate.minusDays(18);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");  
         return systemDate.format(formatter);
     }

@@ -9,40 +9,24 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">T24 R24</th></tr>
-<tr><td><a href="#t0">Linh Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">47,163</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Linh Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">29,092</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">T24 R24</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Linh Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">ldLoansTest.ldLoansTest</td><td><a href="#m0">ldLoanTest014</a></td><td rowspan="1">1721121159379</td><td rowspan="1">41700</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">T24 R24</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Linh Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">ldLoansTest.ldLoansTest</td><td><a href="#m0">ldLoanTest015</a></td><td rowspan="1">1721210734495</td><td rowspan="1">4752</td></tr><tr><th colspan="4">Linh Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">ldLoansTest.ldLoansTest</td><td><a href="#m1">ldLoanTest014</a></td><td rowspan="1">1721210718682</td><td rowspan="1">15810</td></tr></tbody>
 </table>
-<h2>Linh Test</h2><h3 id="m0">ldLoansTest.ldLoansTest#ldLoanTest014</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: /html/frameset/frame[1] (tried for 40 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at Page.SignInPage.SwitchFrame1(SignInPage.java:68)
-	at ldLoansTest.ldLoansTest.ldLoanTest014(ldLoansTest.java:34)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=126.0.6478.127)
+<h2>Linh Test</h2><h3 id="m0">ldLoansTest.ldLoansTest#ldLoanTest015</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.id: signOnName
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d7b93509af828b343f095c0dfe7618b7, findElement {value=/html/frameset/frame[1], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53646}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53646/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d7b93509af828b343f095c0dfe7618b7
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 30 more
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	at Page.SignInPage.UserField(SignInPage.java:29)
+	at Page.SignInPage.signin(SignInPage.java:58)
+	at ldLoansTest.ldLoansTest.ldLoanTest015(ldLoansTest.java:58)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">ldLoansTest.ldLoansTest#ldLoanTest014</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
