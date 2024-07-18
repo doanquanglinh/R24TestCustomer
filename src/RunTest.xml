@@ -12,8 +12,10 @@
 			<!--						</methods>					-->
 			<!--						</class> 				-->
 			<class name="ldLoansTest.ldLoansTest">
+					<methods>			
+					<include name="ldLoanTest025"/>																																		
+					</methods>					
 			</class>
-
 		</classes>
 	</test>
 </suite>

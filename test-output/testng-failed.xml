@@ -7,7 +7,7 @@
     <classes>
       <class name="ldLoansTest.ldLoansTest">
         <methods>
-          <include name="ldLoanTest015"/>
+          <include name="ldLoanTest014"/>
           <include name="initializeTestBaseSetup"/>
           <include name="setUp"/>
           <include name="tearDown"/>

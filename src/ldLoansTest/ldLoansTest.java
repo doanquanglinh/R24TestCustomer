@@ -44,14 +44,15 @@ public class ldLoansTest extends BaseSetup {
 		String expectedMessage = "Loan Maturity Date FIN.MAT DATE AFTER COMMT END";
 		System.out.println(ldLoansPage.ldLoanTest014Verify());
 		Assert.assertEquals(expectedMessage, ldLoansPage.ldLoanTest014Verify());
-		//driver.close();
+		driver.close();
 	}
+	
 	@Test
 	public void ldLoanTest015() throws Exception {
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		signInPage = new SignInPage(driver);
 		ldLoansPage = new ldLoansPage(driver);
 		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		Date date = new Date();
 		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Abb$1234");
@@ -66,6 +67,20 @@ public class ldLoansTest extends BaseSetup {
 		Assert.assertEquals(expectedMessage, ldLoansPage.ldLoanTest015Verify());
 		driver.close();
 	}
-
 	
+	@Test
+	public void ldLoanTest025() throws Exception {
+		signInPage = new SignInPage(driver);
+		ldLoansPage = new ldLoansPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
+		signInPage.signin("LINHDQ.1", "Abb$1234");
+		signInPage.SwitchFrame1();
+		signInPage.CMD("LD.LOANS.AND.DEPOSITS,VMB.LOAN.AMEND LD2418337090");
+		String targetTitle = "LOANS.AND.DEPOSITS";
+		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+		
+	}
+		
 }
