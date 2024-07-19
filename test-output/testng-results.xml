@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="32" passed="28" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-18T17:28:16 ICT" name="T24 R24" finished-at="2024-07-18T17:28:27 ICT" duration-ms="10698">
+  <suite started-at="2024-07-19T10:29:43 ICT" name="T24 R24" finished-at="2024-07-19T10:51:14 ICT" duration-ms="1291630">
     <groups>
     </groups>
-    <test started-at="2024-07-18T17:28:16 ICT" name="Linh Test" finished-at="2024-07-18T17:28:27 ICT" duration-ms="10698">
-      <class name="ldLoansTest.ldLoansTest">
-        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:ldLoansTest.ldLoansTest@2e6ee0bc]" started-at="2024-07-18T17:28:16 ICT" name="initializeTestBaseSetup" finished-at="2024-07-18T17:28:22 ICT" duration-ms="6367" status="PASS">
+    <test started-at="2024-07-19T10:29:43 ICT" name="Linh Test" finished-at="2024-07-19T10:51:14 ICT" duration-ms="1291630">
+      <class name="customerTest.customerTest">
+        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:30:19 ICT" name="initializeTestBaseSetup" finished-at="2024-07-19T10:30:24 ICT" duration-ms="4373" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,15 +23,585 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@2e6ee0bc]" started-at="2024-07-18T17:28:22 ICT" name="setUp" finished-at="2024-07-18T17:28:22 ICT" duration-ms="0" status="PASS">
+        <test-method signature="customerTest001()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:30:24 ICT" name="customerTest001" finished-at="2024-07-19T10:30:31 ICT" duration-ms="7460" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest001 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:30:24 ICT" name="setUp" finished-at="2024-07-19T10:30:24 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="ldLoanTest025()[pri:0, instance:ldLoansTest.ldLoansTest@2e6ee0bc]" started-at="2024-07-18T17:28:22 ICT" name="ldLoanTest025" finished-at="2024-07-18T17:28:27 ICT" duration-ms="4272" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:30:31 ICT" name="setUp" finished-at="2024-07-19T10:30:31 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest002()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:30:31 ICT" name="customerTest002" finished-at="2024-07-19T10:30:38 ICT" duration-ms="6614" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest002 -->
+        <test-method signature="customerTest003()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:30:38 ICT" name="customerTest003" finished-at="2024-07-19T10:30:44 ICT" duration-ms="6530" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest003 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:30:38 ICT" name="setUp" finished-at="2024-07-19T10:30:38 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:30:44 ICT" name="setUp" finished-at="2024-07-19T10:30:44 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest004()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:30:44 ICT" name="customerTest004" finished-at="2024-07-19T10:30:51 ICT" duration-ms="6387" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.182)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [155611e12eb83bff5bfdf88d36493169, isElementDisplayed {id=f.C54F0DA4F4D89169121138725A96B310.d.437F3A8D3D29BDB69ACD54481B832E73.e.1487}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.182, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50938}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50938/devtoo..., se:cdpVersion: 126.0.6478.182, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (155611e12eb83bff5bfdf88d36493169)] -> id: error_box]
+Session ID: 155611e12eb83bff5bfdf88d36493169]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.182)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [155611e12eb83bff5bfdf88d36493169, isElementDisplayed {id=f.C54F0DA4F4D89169121138725A96B310.d.437F3A8D3D29BDB69ACD54481B832E73.e.1487}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.182, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50938}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50938/devtoo..., se:cdpVersion: 126.0.6478.182, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (155611e12eb83bff5bfdf88d36493169)] -> id: error_box]
+Session ID: 155611e12eb83bff5bfdf88d36493169
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:282)
+at Page.customerPage.customerTest004Verify(customerPage.java:114)
+at customerTest.customerTest.customerTest004(customerTest.java:111)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest004 -->
+        <test-method signature="customerTest005()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:30:51 ICT" name="customerTest005" finished-at="2024-07-19T10:31:04 ICT" duration-ms="13929" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest005 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:30:51 ICT" name="setUp" finished-at="2024-07-19T10:30:51 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest006()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:31:04 ICT" name="customerTest006" finished-at="2024-07-19T10:31:11 ICT" duration-ms="6160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest006 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:31:04 ICT" name="setUp" finished-at="2024-07-19T10:31:04 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:31:11 ICT" name="setUp" finished-at="2024-07-19T10:31:11 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest007()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:31:11 ICT" name="customerTest007" finished-at="2024-07-19T10:31:17 ICT" duration-ms="6416" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest007 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:31:17 ICT" name="setUp" finished-at="2024-07-19T10:31:17 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest008()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:31:17 ICT" name="customerTest008" finished-at="2024-07-19T10:31:22 ICT" duration-ms="4601" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest008 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:31:22 ICT" name="setUp" finished-at="2024-07-19T10:31:22 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest009()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:31:22 ICT" name="customerTest009" finished-at="2024-07-19T10:31:41 ICT" duration-ms="19644" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest009 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:customerTest.customerTest@62df0ff3]" started-at="2024-07-19T10:31:41 ICT" name="tearDown" finished-at="2024-07-19T10:31:42 ICT" duration-ms="872" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- customerTest.customerTest -->
+      <class name="customerTest.customerTestCorp">
+        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:31:42 ICT" name="initializeTestBaseSetup" finished-at="2024-07-19T10:31:46 ICT" duration-ms="4215" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://10.32.15.119:9089/BrowserWeb/servlet/BrowserServlet]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:31:46 ICT" name="setUp" finished-at="2024-07-19T10:31:46 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest010()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:31:46 ICT" name="customerTest010" finished-at="2024-07-19T10:31:56 ICT" duration-ms="9136" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest010 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:31:56 ICT" name="setUp" finished-at="2024-07-19T10:31:56 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest011()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:31:56 ICT" name="customerTest011" finished-at="2024-07-19T10:32:05 ICT" duration-ms="9270" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest011 -->
+        <test-method signature="customerTest012()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:32:05 ICT" name="customerTest012" finished-at="2024-07-19T10:32:19 ICT" duration-ms="14233" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest012 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:32:05 ICT" name="setUp" finished-at="2024-07-19T10:32:05 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:32:19 ICT" name="setUp" finished-at="2024-07-19T10:32:19 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest013()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:32:19 ICT" name="customerTest013" finished-at="2024-07-19T10:32:41 ICT" duration-ms="22331" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest013 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:32:41 ICT" name="setUp" finished-at="2024-07-19T10:32:41 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest014()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:32:41 ICT" name="customerTest014" finished-at="2024-07-19T10:33:53 ICT" duration-ms="71355" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest014 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:33:53 ICT" name="setUp" finished-at="2024-07-19T10:33:53 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest015()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:33:53 ICT" name="customerTest015" finished-at="2024-07-19T10:34:45 ICT" duration-ms="52041" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest015 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:34:45 ICT" name="setUp" finished-at="2024-07-19T10:34:45 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest016()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:34:45 ICT" name="customerTest016" finished-at="2024-07-19T10:34:49 ICT" duration-ms="4478" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest016 -->
+        <test-method signature="customerTest017()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:34:49 ICT" name="customerTest017" finished-at="2024-07-19T10:34:54 ICT" duration-ms="4715" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest017 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:34:49 ICT" name="setUp" finished-at="2024-07-19T10:34:49 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:34:54 ICT" name="setUp" finished-at="2024-07-19T10:34:54 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest018()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:34:54 ICT" name="customerTest018" finished-at="2024-07-19T10:38:23 ICT" duration-ms="209488" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest018 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:38:23 ICT" name="setUp" finished-at="2024-07-19T10:38:23 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest019()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:38:23 ICT" name="customerTest019" finished-at="2024-07-19T10:38:57 ICT" duration-ms="33071" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest019 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:38:57 ICT" name="setUp" finished-at="2024-07-19T10:38:57 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest020()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:38:57 ICT" name="customerTest020" finished-at="2024-07-19T10:39:19 ICT" duration-ms="22335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest020 -->
+        <test-method signature="customerTest021()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:39:19 ICT" name="customerTest021" finished-at="2024-07-19T10:42:37 ICT" duration-ms="198028" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [90af447804fc9c08ba2cf33bec34e556, clickElement {id=f.74C9A4ED992B9C3A2880C24872F5719B.d.C15BC8011AAF38D873E96A8728FB1464.e.10979}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.182, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51014}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51014/devtoo..., se:cdpVersion: 126.0.6478.182, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (90af447804fc9c08ba2cf33bec34e556)] -> xpath: //img[@title = 'Edit a contract']]
+Session ID: 90af447804fc9c08ba2cf33bec34e556]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [90af447804fc9c08ba2cf33bec34e556, clickElement {id=f.74C9A4ED992B9C3A2880C24872F5719B.d.C15BC8011AAF38D873E96A8728FB1464.e.10979}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.182, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51014}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51014/devtoo..., se:cdpVersion: 126.0.6478.182, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (90af447804fc9c08ba2cf33bec34e556)] -> xpath: //img[@title = 'Edit a contract']]
+Session ID: 90af447804fc9c08ba2cf33bec34e556
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at Page.customerPageCorp.customerTest021AndVerify(customerPageCorp.java:398)
+at customerTest.customerTestCorp.customerTest021(customerTestCorp.java:478)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.util.concurrent.TimeoutException
+at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+... 39 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest021 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:39:19 ICT" name="setUp" finished-at="2024-07-19T10:39:19 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest022()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:42:37 ICT" name="customerTest022" finished-at="2024-07-19T10:43:06 ICT" duration-ms="28845" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest022 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:42:37 ICT" name="setUp" finished-at="2024-07-19T10:42:37 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest023()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:43:06 ICT" name="customerTest023" finished-at="2024-07-19T10:43:42 ICT" duration-ms="35806" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest023 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:43:06 ICT" name="setUp" finished-at="2024-07-19T10:43:06 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest024()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:43:42 ICT" name="customerTest024" finished-at="2024-07-19T10:43:58 ICT" duration-ms="16796" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest024 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:43:42 ICT" name="setUp" finished-at="2024-07-19T10:43:42 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:43:58 ICT" name="setUp" finished-at="2024-07-19T10:43:58 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest025()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:43:58 ICT" name="customerTest025" finished-at="2024-07-19T10:47:00 ICT" duration-ms="181212" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [90af447804fc9c08ba2cf33bec34e556, clickElement {id=f.2F07867559A953A49ECFBE4BB5BDD77E.d.DDAF12939F4E5223218E6AEAD57E9521.e.14414}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.182, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51014}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51014/devtoo..., se:cdpVersion: 126.0.6478.182, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (90af447804fc9c08ba2cf33bec34e556)] -> id: sign-in]
+Session ID: 90af447804fc9c08ba2cf33bec34e556]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [90af447804fc9c08ba2cf33bec34e556, clickElement {id=f.2F07867559A953A49ECFBE4BB5BDD77E.d.DDAF12939F4E5223218E6AEAD57E9521.e.14414}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.182, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51014}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51014/devtoo..., se:cdpVersion: 126.0.6478.182, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (90af447804fc9c08ba2cf33bec34e556)] -> id: sign-in]
+Session ID: 90af447804fc9c08ba2cf33bec34e556
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at Page.SignInPage.ClickSignIn(SignInPage.java:43)
+at Page.SignInPage.signin(SignInPage.java:61)
+at customerTest.customerTestCorp.customerTest025(customerTestCorp.java:636)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.util.concurrent.TimeoutException
+at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+... 40 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest025 -->
+        <test-method signature="customerTest026()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:47:00 ICT" name="customerTest026" finished-at="2024-07-19T10:47:36 ICT" duration-ms="36051" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest026 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:47:00 ICT" name="setUp" finished-at="2024-07-19T10:47:00 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:47:36 ICT" name="setUp" finished-at="2024-07-19T10:47:36 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="customerTest027()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:47:36 ICT" name="customerTest027" finished-at="2024-07-19T10:48:03 ICT" duration-ms="27472" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest027 -->
+        <test-method signature="customerTest028()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:48:03 ICT" name="customerTest028" finished-at="2024-07-19T10:51:13 ICT" duration-ms="190422" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [90af447804fc9c08ba2cf33bec34e556, clickElement {id=f.2F07867559A953A49ECFBE4BB5BDD77E.d.A9B928D243355078C67A0B4CF7EE256C.e.17701}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.182, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51014}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51014/devtoo..., se:cdpVersion: 126.0.6478.182, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (90af447804fc9c08ba2cf33bec34e556)] -> id: sign-in]
+Session ID: 90af447804fc9c08ba2cf33bec34e556]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [90af447804fc9c08ba2cf33bec34e556, clickElement {id=f.2F07867559A953A49ECFBE4BB5BDD77E.d.A9B928D243355078C67A0B4CF7EE256C.e.17701}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.182, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51014}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51014/devtoo..., se:cdpVersion: 126.0.6478.182, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (90af447804fc9c08ba2cf33bec34e556)] -> id: sign-in]
+Session ID: 90af447804fc9c08ba2cf33bec34e556
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:399)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:355)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:187)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at Page.SignInPage.ClickSignIn(SignInPage.java:43)
+at Page.SignInPage.signin(SignInPage.java:61)
+at Page.customerPageCorp.authoriseCustomerCorp(customerPageCorp.java:132)
+at customerTest.customerTestCorp.customerTest028(customerTestCorp.java:787)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: java.util.concurrent.TimeoutException
+at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:382)
+... 41 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerTest028 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:48:03 ICT" name="setUp" finished-at="2024-07-19T10:48:03 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:customerTest.customerTestCorp@61019f59]" started-at="2024-07-19T10:51:13 ICT" name="tearDown" finished-at="2024-07-19T10:51:14 ICT" duration-ms="809" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- customerTest.customerTestCorp -->
+      <class name="ldLoansTest.ldLoansTest">
+        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:ldLoansTest.ldLoansTest@5bf61e67]" started-at="2024-07-19T10:29:43 ICT" name="initializeTestBaseSetup" finished-at="2024-07-19T10:29:48 ICT" duration-ms="4959" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://10.32.15.119:9089/BrowserWeb/servlet/BrowserServlet]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@5bf61e67]" started-at="2024-07-19T10:29:48 ICT" name="setUp" finished-at="2024-07-19T10:29:48 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="ldLoanTest014()[pri:0, instance:ldLoansTest.ldLoansTest@5bf61e67]" started-at="2024-07-19T10:29:48 ICT" name="ldLoanTest014" finished-at="2024-07-19T10:29:57 ICT" duration-ms="9632" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ldLoanTest014 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@5bf61e67]" started-at="2024-07-19T10:29:57 ICT" name="setUp" finished-at="2024-07-19T10:29:57 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="ldLoanTest015()[pri:0, instance:ldLoansTest.ldLoansTest@5bf61e67]" started-at="2024-07-19T10:29:57 ICT" name="ldLoanTest015" finished-at="2024-07-19T10:30:07 ICT" duration-ms="9506" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ldLoanTest015 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@5bf61e67]" started-at="2024-07-19T10:30:07 ICT" name="setUp" finished-at="2024-07-19T10:30:07 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="ldLoanTest025()[pri:0, instance:ldLoansTest.ldLoansTest@5bf61e67]" started-at="2024-07-19T10:30:07 ICT" name="ldLoanTest025" finished-at="2024-07-19T10:30:13 ICT" duration-ms="5768" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ldLoanTest025 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ldLoansTest.ldLoansTest@2e6ee0bc]" started-at="2024-07-18T17:28:27 ICT" name="tearDown" finished-at="2024-07-18T17:28:27 ICT" duration-ms="1" status="PASS">
+        <test-method signature="ldLoanTest026()[pri:0, instance:ldLoansTest.ldLoansTest@5bf61e67]" started-at="2024-07-19T10:30:13 ICT" name="ldLoanTest026" finished-at="2024-07-19T10:30:19 ICT" duration-ms="5908" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ldLoanTest026 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@5bf61e67]" started-at="2024-07-19T10:30:13 ICT" name="setUp" finished-at="2024-07-19T10:30:13 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ldLoansTest.ldLoansTest@5bf61e67]" started-at="2024-07-19T10:30:19 ICT" name="tearDown" finished-at="2024-07-19T10:30:19 ICT" duration-ms="646" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

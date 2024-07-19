@@ -1,7 +1,11 @@
 package Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -91,5 +95,34 @@ WebElement ErrorElement = driver.findElement(ldLoansPageUI.ERROR_MES_BOX);
 ErrorElement.isDisplayed();
 return ErrorElement.getText();
 }
+
+public String ldLoanTest025Verify(String amtIncDecData, String effDateData) {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	WebElement amtIncDec= wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.AMT_INCREASE_DECREASE));
+	amtIncDec.sendKeys(amtIncDecData);
+	WebElement effDate= wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.EFFECTIVE_DATE));
+	effDate.sendKeys(effDateData);
+	WebElement validateDeal= wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.validateDeal));
+	validateDeal.click();
+	WebElement ErrorElement = driver.findElement(ldLoansPageUI.ERROR_MES_BOX);
+	ErrorElement.isDisplayed();
+	System.out.println(ErrorElement.getText());
+	return ErrorElement.getText();
+}
+
+public String ldLoanTest026Verify(String amtIncDecData, String effDateData) {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	WebElement amtIncDec= wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.AMT_INCREASE_DECREASE));
+	amtIncDec.sendKeys(amtIncDecData);
+	WebElement effDate= wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.EFFECTIVE_DATE));
+	effDate.sendKeys(effDateData);
+	WebElement validateDeal= wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.validateDeal));
+	validateDeal.click();
+	WebElement ErrorElement = driver.findElement(ldLoansPageUI.ERROR_MES_BOX);
+	ErrorElement.isDisplayed();
+	System.out.println(ErrorElement.getText());
+	return ErrorElement.getText();
+}
+
 
 }

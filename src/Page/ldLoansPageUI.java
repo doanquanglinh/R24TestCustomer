@@ -32,6 +32,8 @@ public class ldLoansPageUI {
 	public static final By PURPOSE_OF_LOAN = By.id("fieldName:PURPOSE.OF.LOAN");
 	public static final By FORWARD_BACK_KEY = By.id("fieldName:FWD.BWD.KEY");
 	public static final By ERROR_MES_BOX = By.id("errors");
+	public static final By AMT_INCREASE_DECREASE = By.id("fieldName:AMOUNT.INCREASE");
+	public static final By EFFECTIVE_DATE = By.id("fieldName:AMT.V.DATE");
 
 }
 	

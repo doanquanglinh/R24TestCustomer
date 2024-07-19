@@ -80,7 +80,42 @@ public class ldLoansTest extends BaseSetup {
 		signInPage.CMD("LD.LOANS.AND.DEPOSITS,VMB.LOAN.AMEND LD2418337090");
 		String targetTitle = "LOANS.AND.DEPOSITS";
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
-		
+		String expectedMessage = "Effective Date Khong cho phep Nhap ngay khac ngay hien tai cua he thong";
+		Assert.assertEquals(expectedMessage, ldLoansPage.ldLoanTest025Verify("-1000000","20250629")); 
+		driver.close();
 	}
-		
+	@Test
+	public void ldLoanTest026() throws Exception {
+		signInPage = new SignInPage(driver);
+		ldLoansPage = new ldLoansPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
+		signInPage.signin("LINHDQ.1", "Abb$1234");
+		signInPage.SwitchFrame1();
+		signInPage.CMD("LD.LOANS.AND.DEPOSITS,VMB.LOAN.AMEND LD2418337090");
+		String targetTitle = "LOANS.AND.DEPOSITS";
+		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+		String expectedMessage = "Effective Date Khong cho phep Nhap ngay khac ngay hien tai cua he thong";
+		Assert.assertEquals(expectedMessage, ldLoansPage.ldLoanTest026Verify("-1000000","20240629")); 
+		driver.close();
+	}
+	
+	@Test
+	public void ldLoanTest029() throws Exception {
+		signInPage = new SignInPage(driver);
+		ldLoansPage = new ldLoansPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
+		signInPage.signin("LINHDQ.1", "Abb$1234");
+		signInPage.SwitchFrame1();
+		signInPage.CMD("LD.LOANS.AND.DEPOSITS,VMB.LOAN.AMEND LD2418337090");
+		String targetTitle = "LOANS.AND.DEPOSITS";
+		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+		String expectedMessage = "Effective Date Khong cho phep Nhap ngay khac ngay hien tai cua he thong";
+		Assert.assertEquals(expectedMessage, ldLoansPage.ldLoanTest026Verify("-1000000","20240629")); 
+		driver.close();
+	}
+	
 }

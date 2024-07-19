@@ -11,10 +11,13 @@
 			<!--							<include name="customerTest009"/>																																		-->
 			<!--						</methods>					-->
 			<!--						</class> 				-->
-			<class name="ldLoansTest.ldLoansTest">
-					<methods>			
-					<include name="ldLoanTest025"/>																																		
-					</methods>					
+			<class name="ldLoansTest.ldLoansTest"></class>
+			<class name="customerTest.customerTest">	</class>
+			<class name="customerTest.customerTestCorp">
+<!--					<methods>		-->
+<!--					<include name="ldLoanTest025"/>		-->
+<!--					<include name="ldLoanTest026"/>																																		-->
+<!--					</methods>					-->
 			</class>
 		</classes>
 	</test>
