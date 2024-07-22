@@ -16,4 +16,5 @@ public class Date {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");  
         return systemDate.format(formatter);
     }
+    
 }

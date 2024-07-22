@@ -5,20 +5,15 @@
 		value="http://10.32.15.119:9089/BrowserWeb/servlet/BrowserServlet" />
 	<test name="Linh Test">
 		<classes>
-<!--							<class name="customerTest.customerTest">-->
-<!--								<class name="customerTest.customerTestCorp">-->
-<!--									<methods>			-->
-<!--										<include name="customerTest019"/>																																		-->
-<!--									</methods>					-->
-			<!--						</class> 				-->
-			<class name="ldLoansTest.ldLoansTest"></class>
-			<class name="customerTest.customerTest">	</class>
-			<class name="customerTest.customerTestCorp">
+			<class name="ldLoansTest.ldLoansTest">
+<!--			<class name="customerTest.customerTest">	</class>-->
+<!--			<class name="customerTest.customerTestCorp">-->
 					<methods>		
-					<include name="ldLoanTest025"/>		
-					<include name="ldLoanTest026"/>																																		
-					</methods>					
-			</class>
+					<include name="ldLoanTest014"/>		
+					<include name="dateTestgetToday"/>		
+					<include name="customerKHDN"/>		
+					</methods>		
+					</class>			
 		</classes>
 	</test>
 </suite>

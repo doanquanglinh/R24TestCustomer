@@ -11,7 +11,7 @@ public class ldLoansPage {
 	public ldLoansPage(WebDriver driver) {
 		this.driver = driver;
 	}
-	public void  inputLD(List<String> inputLDData) {
+	public void  inputLD(List<String> inputLDData) throws InterruptedException {
 		WebElement newDealElement = driver.findElement(ldLoansPageUI.NEWDEAL);
 		newDealElement.isDisplayed();
 		newDealElement.click();
@@ -26,12 +26,12 @@ public class ldLoansPage {
 		WebElement commitmentRefElement = driver.findElement(ldLoansPageUI.COMMITMENT_REF);
 		WebElement interestRateElement = driver.findElement(ldLoansPageUI.INTEREST_RATE);
 		WebElement interestDueDateElement = driver.findElement(ldLoansPageUI.INTEREST_DUE_DATE);
-		WebElement baseDateKeyElement = driver.findElement(ldLoansPageUI.BASE_DATE_KEY);
+//		WebElement baseDateKeyElement = driver.findElement(ldLoansPageUI.BASE_DATE_KEY);
 		WebElement lsThaNoiElement = driver.findElement(ldLoansPageUI.LS_THA_NOI);
 		WebElement ngayThayLSElement = driver.findElement(ldLoansPageUI.NGAY_THAY_LS);
 		WebElement autoScheudlesElement = driver.findElement(ldLoansPageUI.AUTO_SCHEUDLES);
 		WebElement defineScheudlesElement = driver.findElement(ldLoansPageUI.DEFINE_SCHEUDLES);
-		WebElement payMethodElement = driver.findElement(ldLoansPageUI.PAY_METHOD);
+//		WebElement payMethodElement = driver.findElement(ldLoansPageUI.PAY_METHOD);
 		WebElement limitReferenceElement = driver.findElement(ldLoansPageUI.LIMIT_REFERENCE);
 		WebElement additionalInfor1Element = driver.findElement(ldLoansPageUI.ADDITIONAL_INFO_1);
 		WebElement expandAdditionalInfor = driver.findElement(ldLoansPageUI.EXPAND_ADDITIONAL_INFO);
@@ -52,6 +52,7 @@ public class ldLoansPage {
 		currencyElement.sendKeys(inputLDData.get(1));
 		loanAmountElement.sendKeys(inputLDData.get(2));
 		loanStartDateElement.sendKeys(inputLDData.get(3));
+		Thread.sleep(5000);
 		termElement.sendKeys(inputLDData.get(4));
 		loanMaturityDateElement.sendKeys(inputLDData.get(5));
 		loanProductElement.sendKeys(inputLDData.get(6));

@@ -170,7 +170,6 @@ public class customerPageCorp {
 		getCifCorpElement.isDisplayed();
 	}
 	
-	
 	//Verify Case 010///
 public void customerTest010Verify() {
 		try {

@@ -3,31 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="customerTest.customerTestCorp">
+      <class name="dateTest.dateTest">
         <methods>
-          <include name="customerTest011"/>
-          <include name="customerTest022"/>
           <include name="initializeTestBaseSetup"/>
-          <include name="setUp"/>
-          <include name="customerTest018"/>
-          <include name="customerTest016"/>
-          <include name="customerTest017"/>
-          <include name="customerTest028"/>
+          <include name="dateTestgetToday"/>
           <include name="tearDown"/>
-          <include name="customerTest014"/>
-          <include name="customerTest025"/>
-          <include name="customerTest015"/>
-          <include name="customerTest026"/>
-          <include name="customerTest012"/>
-          <include name="customerTest023"/>
-          <include name="customerTest013"/>
-          <include name="customerTest024"/>
-          <include name="customerTest010"/>
-          <include name="customerTest021"/>
-          <include name="customerTest020"/>
-          <include name="customerTest019"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- customerTest.customerTestCorp -->
+      </class> <!-- dateTest.dateTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
