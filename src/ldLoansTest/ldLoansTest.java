@@ -15,6 +15,8 @@ import Base.Date;
 import Base.RanDomStringInt;
 import Page.LimitPage;
 import Page.SignInPage;
+import Page.accountPage;
+import Page.accountUI;
 import Page.customerPageCorp;
 import Page.customerPageUI;
 import Page.datePage;
@@ -26,12 +28,13 @@ public class ldLoansTest extends BaseSetup {
 	public SignInPage signInPage;
 	public ldLoansPage ldLoansPage;
 	public LimitPage LimitPage;
+	public accountPage accountPage;
 	public customerPageCorp customerPageCorp;
 	public datePage DatePage;
 
     private String CIF_KHDN;
     private String sysDate;
-    private String CurAcc;
+//    private String CurAcc;
 
 	@Parameters({ "browserType", "URL" })
 	@BeforeMethod
@@ -41,17 +44,25 @@ public class ldLoansTest extends BaseSetup {
 	
 	@Test(dependsOnMethods = ("customerKHDN"))
 	public void openCurAcc() throws Exception{
-		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
-        signInPage = new SignInPage(driver);
-        ldLoansPage = new ldLoansPage(driver);
+		accountPage = new accountPage(driver);
+		signInPage = new SignInPage(driver);
+        ldLoansPage = new ldLoansPage(driver);	
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         signInPage.closeAfterMethod();
+        SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
         driver.navigate().refresh();
         signInPage.signin("LINHDQ.1", "Abb$1234");
         signInPage.SwitchFrame1();
         signInPage.CMD("ACCOUNT,VMB.CA.OPEN I 10");
-        
+        SwitchWindow.switchToWindowWithTitle(driver, "ACCOUNT");
+        List<String> inputCurAccountData = Arrays.asList(CIF_KHDN,"1001",RanDomStringInt.generateRandomString(6),"VND","Bhxh 1 lan");
+        accountPage.inputCurAccount(inputCurAccountData);
+		WebElement getCurAccountElement = wait.until(ExpectedConditions.visibilityOfElementLocated(accountUI.MESSAGE));
+        getCurAccountElement.isDisplayed();
+        String CurAccountText = getCurAccountElement.getText().substring(14, 27);
+        System.out.println(CurAccountText);
 	}
-
+	
 	@Test
 	public void customerKHDN() throws Exception{
 		signInPage = new SignInPage(driver);

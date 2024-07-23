@@ -6,5 +6,5 @@ public class accountUI {
 	public static final By MNEMONIC = By.id("fieldName:MNEMONIC");
 	public static final By CURRENCY = By.id("fieldName:CURRENCY");
 	public static final By MESSAGE = By.id("messages");
-	
+	public static final By NHOM_TAI_KHOAN = By.id("fieldName:NHOM.TK");
 }

@@ -9,9 +9,10 @@
 <!--			<class name="customerTest.customerTest">	</class>-->
 <!--			<class name="customerTest.customerTestCorp">-->
 					<methods>		
-					<include name="ldLoanTest014"/>		
-					<include name="dateTestgetToday"/>		
-					<include name="customerKHDN"/>		
+<!--					<include name="ldLoanTest014"/>		-->
+<!--					<include name="dateTestgetToday"/>		-->
+					<include name="openCurAcc"/>	
+					<include name="customerKHDN"/>	
 					</methods>		
 					</class>			
 		</classes>
