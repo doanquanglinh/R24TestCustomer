@@ -16,10 +16,6 @@ public class LimitPage {
 	}
 	public void inputLimit(List<String> inputLimitData) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		WebElement transactionID  = wait.until(ExpectedConditions.visibilityOfElementLocated(LimitUI.TRANSACTION_ID_LIMIT));
-		transactionID.isDisplayed();
-		WebElement editTransaction  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
-		editTransaction.click();
 		WebElement proposalDate  = wait.until(ExpectedConditions.visibilityOfElementLocated(LimitUI.PROPOSAL_DATE));
 		WebElement approvalDate  = wait.until(ExpectedConditions.visibilityOfElementLocated(LimitUI.APPROVAL_DATE));
 		WebElement termLimit  = wait.until(ExpectedConditions.visibilityOfElementLocated(LimitUI.TERM_LIMIT));
@@ -29,14 +25,13 @@ public class LimitPage {
 		WebElement internalAmount  = wait.until(ExpectedConditions.visibilityOfElementLocated(LimitUI.INTERNAL_AMOUNT));
 		proposalDate.isDisplayed();
 		
-		transactionID.sendKeys(inputLimitData.get(0));
-		proposalDate.sendKeys(inputLimitData.get(1));
-		approvalDate.sendKeys(inputLimitData.get(2));
-		termLimit.sendKeys(inputLimitData.get(3));
-		reviewFrequency.sendKeys(inputLimitData.get(4));
-		expiryDate.sendKeys(inputLimitData.get(5));
-		productAllowed.sendKeys(inputLimitData.get(6));
-		internalAmount.sendKeys(inputLimitData.get(7));
+		proposalDate.sendKeys(inputLimitData.get(0));
+		approvalDate.sendKeys(inputLimitData.get(1));
+		termLimit.sendKeys(inputLimitData.get(2));
+		reviewFrequency.sendKeys(inputLimitData.get(3));
+		expiryDate.sendKeys(inputLimitData.get(4));
+		productAllowed.sendKeys(inputLimitData.get(5));
+		internalAmount.sendKeys(inputLimitData.get(6));
 	}
 	public void authoriseLIMIT(String acccountAuth, String authoriseCustomerData) throws Exception {
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
@@ -46,6 +41,7 @@ public class LimitPage {
 		signInPage.signin(acccountAuth, "Abb$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("LIMIT");
+		
 		
 	}
 	

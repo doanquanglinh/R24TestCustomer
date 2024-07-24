@@ -28,7 +28,7 @@ public class ldLoansPageUI {
 	public static final By EXPAND_ADDITIONAL_INFO = By.xpath("//td[@mvdetails = 'M_284.2_285.2']//img[@title = 'Expand Sub Value']");
 	public static final By COLLATERAL_ID = By.id("fieldName:COLLATERAL.ID:1");
 	public static final By SO_TIEN = By.id("fieldName:SOTIEN");
-	public static final By NGOAI_LE = By.id("radio:tab1:NGOAI.LE");
+	public static final By NGOAI_LE = By.xpath("//input[@id = 'radio:tab1:NGOAI.LE' and @value = 'NO']");
 	public static final By PURPOSE_OF_LOAN = By.id("fieldName:PURPOSE.OF.LOAN");
 	public static final By FORWARD_BACK_KEY = By.id("fieldName:FWD.BWD.KEY");
 	public static final By ERROR_MES_BOX = By.id("errors");

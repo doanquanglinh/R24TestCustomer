@@ -74,6 +74,33 @@ public class ldLoansPage {
 		additionalInfor2Element.isDisplayed();
 		additionalInfor2Element.sendKeys(inputLDData.get(20));
 		description2Element.sendKeys(inputLDData.get(21));
+		WebElement validateDealElement = driver.findElement(customerPageUI.validateDeal);
+		validateDealElement.click();
+
+	}
+	
+	//LD.LOANS.AND.DEPOSITS,VMB.COMMIT 
+	public void  inputParentLD(List<String> inputParentLDData) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		WebElement newDealElement= wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.NEWDEAL));
+		WebElement customerIDElement= wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.CUSTOMERID));
+		customerIDElement.isDisplayed();
+		WebElement currencyElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.CURRENCY));
+		WebElement commitmentAmountElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.LOAN_AMOUNT1));
+		WebElement commitmentStartDateElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.lOAN_START_DATE));
+		WebElement termElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.TERM));
+		WebElement commitmentEndDateElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.LOAN_MATURITY_DATE));
+		WebElement ngoaiLeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.NGOAI_LE));
+		
+		newDealElement.isDisplayed();
+		newDealElement.click();
+		
+		newDealElement
+		
+		
+		
+		
+		
 		
 		WebElement validateDealElement = driver.findElement(customerPageUI.validateDeal);
 		validateDealElement.click();

@@ -3,7 +3,7 @@ package Page;
 import org.openqa.selenium.By;
 
 public class LimitUI {
-	public static final By TRANSACTION_ID_LIMIT = By.id("transactionId");
+	public static final By TRANSACTION_ID_SECURED_LIMIT = By.xpath("//input[@id = 'transactionId' and @class]");
 	public static final By PROPOSAL_DATE = By.id("fieldName:PROPOSAL.DATE");
 	public static final By APPROVAL_DATE = By.id("fieldName:APPROVAL.DATE");
 	public static final By TERM_LIMIT = By.id("fieldName:TERM.LIMIT");
