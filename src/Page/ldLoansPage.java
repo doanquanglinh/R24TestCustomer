@@ -83,6 +83,9 @@ public class ldLoansPage {
 	public void  inputParentLD(List<String> inputParentLDData) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		WebElement newDealElement= wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.NEWDEAL));
+		newDealElement.isDisplayed();
+		newDealElement.click();
+		
 		WebElement customerIDElement= wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.CUSTOMERID));
 		customerIDElement.isDisplayed();
 		WebElement currencyElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.CURRENCY));
@@ -92,19 +95,17 @@ public class ldLoansPage {
 		WebElement commitmentEndDateElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.LOAN_MATURITY_DATE));
 		WebElement ngoaiLeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(ldLoansPageUI.NGOAI_LE));
 		
-		newDealElement.isDisplayed();
-		newDealElement.click();
-		
-		newDealElement
-		
-		
-		
-		
-		
+		customerIDElement.sendKeys(inputParentLDData.get(0));
+		currencyElement.sendKeys(inputParentLDData.get(1));
+		commitmentAmountElement.sendKeys(inputParentLDData.get(2));
+		commitmentStartDateElement.sendKeys(inputParentLDData.get(3));
+		termElement.clear();
+		termElement.sendKeys(inputParentLDData.get(4));
+		commitmentEndDateElement.sendKeys(inputParentLDData.get(5));
+		ngoaiLeElement.click();
 		
 		WebElement validateDealElement = driver.findElement(customerPageUI.validateDeal);
 		validateDealElement.click();
-
 	}
 	
 	//Verify Case 014//

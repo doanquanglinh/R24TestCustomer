@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-T24_R24" class="navigator-link">
-              <span class="suite-name border-passed">T24 R24</span>
+              <span class="suite-name border-failed">T24 R24</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-T24_R24" class="hide-methods failed suite-T24_R24"> (hide)</a> <!-- hide-methods failed suite-T24_R24 -->
+                      <a href="#" panel-name="suite-T24_R24" class="show-methods failed suite-T24_R24"> (show)</a> <!-- show-methods failed suite-T24_R24 -->
+                    </span>
+                    <div class="method-list-content failed suite-T24_R24">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-T24_R24" title="ldLoansTest.ldLoansTest" class="method navigator-link" hash-for-method="openLoanAcc">openLoanAcc</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-T24_R24 -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -114,17 +128,12 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-T24_R24" title="ldLoansTest.ldLoansTest" class="method navigator-link" hash-for-method="limitGen">limitGen</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-T24_R24" title="ldLoansTest.ldLoansTest" class="method navigator-link" hash-for-method="openCurAcc">openCurAcc</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-T24_R24" title="ldLoansTest.ldLoansTest" class="method navigator-link" hash-for-method="openLoanAcc">openLoanAcc</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-T24_R24" title="ldLoansTest.ldLoansTest" class="method navigator-link" hash-for-method="parentLDTest">parentLDTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-T24_R24 -->
@@ -139,6 +148,35 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-T24_R24" class="panel T24_R24">
+          <div class="suite-T24_R24-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">ldLoansTest.ldLoansTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="openLoanAcc">
+                  </a> <!-- openLoanAcc -->
+                  <span class="method-name">openLoanAcc</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: /html/frameset/frame[1] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.72, chrome: {chromedriverVersion: 127.0.6533.72 (9755e24ca85a..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65082}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65082/devtoo..., se:cdpVersion: 127.0.6533.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12cfafd8e886f2804a641ac800deb5d5
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Page.SignInPage.SwitchFrame1(SignInPage.java:68)
+	at Page.accountPage.authAccount(accountPage.java:59)
+	at ldLoansTest.ldLoansTest.openLoanAcc(ldLoansTest.java:107)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-T24_R24-class-failed -->
           <div class="suite-T24_R24-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -161,13 +199,6 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="limitGen">
-                  </a> <!-- limitGen -->
-                  <span class="method-name">limitGen</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="openCurAcc">
                   </a> <!-- openCurAcc -->
                   <span class="method-name">openCurAcc</span>
@@ -175,9 +206,9 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="openLoanAcc">
-                  </a> <!-- openLoanAcc -->
-                  <span class="method-name">openLoanAcc</span>
+                  <a name="parentLDTest">
+                  </a> <!-- parentLDTest -->
+                  <span class="method-name">parentLDTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -202,7 +233,7 @@
           &lt;include name=&quot;openLoanAcc&quot;/&gt;
           &lt;include name=&quot;dateTestgetToday&quot;/&gt;
           &lt;include name=&quot;customerKHDN&quot;/&gt;
-          &lt;include name=&quot;limitGen&quot;/&gt;
+          &lt;include name=&quot;parentLDTest&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- ldLoansTest.ldLoansTest --&gt;
     &lt;/classes&gt;
@@ -246,30 +277,30 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'customerKHDN')
+data.setCell(0, 1, 'openLoanAcc')
 data.setCell(0, 2, 'ldLoansTest.ldLoansTest')
-data.setCell(0, 3, 19769);
+data.setCell(0, 3, 46371);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'openCurAcc')
+data.setCell(1, 1, 'customerKHDN')
 data.setCell(1, 2, 'ldLoansTest.ldLoansTest')
-data.setCell(1, 3, 12542);
+data.setCell(1, 3, 22042);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'openLoanAcc')
+data.setCell(2, 1, 'openCurAcc')
 data.setCell(2, 2, 'ldLoansTest.ldLoansTest')
-data.setCell(2, 3, 12225);
+data.setCell(2, 3, 15140);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'dateTestgetToday')
+data.setCell(3, 1, 'parentLDTest')
 data.setCell(3, 2, 'ldLoansTest.ldLoansTest')
-data.setCell(3, 3, 5554);
+data.setCell(3, 3, 7920);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'limitGen')
+data.setCell(4, 1, 'dateTestgetToday')
 data.setCell(4, 2, 'ldLoansTest.ldLoansTest')
-data.setCell(4, 3, 4891);
+data.setCell(4, 3, 4534);
 window.suiteTableData['T24_R24']= { tableData: data, tableDiv: 'times-div-T24_R24'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 54 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-T24_R24">
               </div> <!-- times-div-T24_R24 -->
             </div> <!-- times-div -->
@@ -284,12 +315,14 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-T24_R24" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">5 ignored methods</span>
+            <span class="header-content">6 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">ldLoansTest.ldLoansTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">limitGen</span>
+                <br/>
                 <span class="ignored-method-name">ldLoanTest014</span>
                 <br/>
                 <span class="ignored-method-name">ldLoanTest025</span>
@@ -317,47 +350,49 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">6080 ms</span>
+                <span class="method-start">6562 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">dateTestgetToday</span>
-                <span class="method-start">6082 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">customerKHDN</span>
-                <span class="method-start">11640 ms</span>
+                <span class="method-start">6563 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">11640 ms</span>
+                <span class="method-start">11100 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">customerKHDN</span>
+                <span class="method-start">11100 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">33147 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">openCurAcc</span>
-                <span class="method-start">31414 ms</span>
+                <span class="method-start">33147 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">31414 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">43957 ms</span>
+                <span class="method-start">48288 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">openLoanAcc</span>
-                <span class="method-start">43958 ms</span>
+                <span class="method-start">48289 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">limitGen</span>
-                <span class="method-start">56185 ms</span>
+                <span class="method-name">parentLDTest</span>
+                <span class="method-start">94664 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">56185 ms</span>
+                <span class="method-start">94664 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">61077 ms</span>
+                <span class="method-start">102587 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

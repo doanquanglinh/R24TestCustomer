@@ -14,7 +14,9 @@
 					<include name="openLoanAcc"/>	
 					<include name="dateTestgetToday"/>	
 					<include name="customerKHDN"/>	
-					<include name="limitGen"/>	
+					<include name="parentLDTest"/>	
+<!--					<include name="ldLoanTest014"/>	-->
+					
 					</methods>		
 					</class>			
 		</classes>

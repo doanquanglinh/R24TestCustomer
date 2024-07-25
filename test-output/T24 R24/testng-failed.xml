@@ -7,11 +7,10 @@
     <classes>
       <class name="ldLoansTest.ldLoansTest">
         <methods>
-          <include name="limitGen"/>
+          <include name="openLoanAcc"/>
           <include name="initializeTestBaseSetup"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="dateTestgetToday"/>
           <include name="customerKHDN"/>
         </methods>
       </class> <!-- ldLoansTest.ldLoansTest -->

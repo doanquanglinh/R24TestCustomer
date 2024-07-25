@@ -14,6 +14,7 @@ import Base.BaseSetup;
 import Base.Date;
 import Base.RanDomStringInt;
 import Page.LimitPage;
+import Page.LimitUI;
 import Page.SignInPage;
 import Page.accountPage;
 import Page.accountUI;
@@ -49,7 +50,7 @@ public class ldLoansTest extends BaseSetup {
 		accountPage = new accountPage(driver);
 		signInPage = new SignInPage(driver);
         ldLoansPage = new ldLoansPage(driver);	
-//    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         signInPage.closeAfterMethod();
         SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
         driver.navigate().refresh();
@@ -60,8 +61,10 @@ public class ldLoansTest extends BaseSetup {
         SwitchWindow.switchToWindowWithTitle(driver, "ACCOUNT");
         List<String> inputLimitData = Arrays.asList(sysDate,sysDate,"24M","M1201","20261010","2000","100M");
         LimitPage.inputLimit(inputLimitData);
+		WebElement limitData1  = wait.until(ExpectedConditions.visibilityOfElementLocated(LimitUI.M));
+        String limitLevel1Data = ;
+        LimitPage.authoriseLIMIT("LINHDQ.2",limitLevel1);
 	}
-	
 	@Test(dependsOnMethods = ("customerKHDN"))
 	public void openCurAcc() throws Exception{
 		accountPage = new accountPage(driver);
@@ -106,7 +109,7 @@ public class ldLoansTest extends BaseSetup {
         System.out.println(loanAccountText);
         driver.close();
         accountPage.authAccount("LINHDQ.2", loanAccountText);
-        LoanAcc = loanAccountText;
+//        LoanAcc = loanAccountText;
 	}
 	@Test
 	public void customerKHDN() throws Exception{
@@ -152,6 +155,22 @@ public class ldLoansTest extends BaseSetup {
 	        sysDate = DatePage.getSystemDate("VN0010001");
 	        driver.close();
 	    }
+	@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
+	public void parentLDTest() throws Exception {
+	        SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	        signInPage = new SignInPage(driver);
+	        ldLoansPage = new ldLoansPage(driver);
+	        signInPage.closeAfterMethod();
+	        driver.navigate().refresh();
+	        signInPage.signin("LINHDQ.1", "Abb$1234");
+	        signInPage.SwitchFrame1();
+	        signInPage.CMD("LD.LOANS.AND.DEPOSITS,VMB.COMMIT ");
+	        String targetTitle = "LOANS.AND.DEPOSITS";
+	        SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+	        List<String> inputParentLDData = Arrays.asList(CIF_KHDN, "VND","50M",sysDate,"24M","20271010");
+	        ldLoansPage.inputParentLD(inputParentLDData);
+	}
+	
 	@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc","limitGen"})
 	public void ldLoanTest014() throws Exception {
 	        SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
@@ -170,6 +189,7 @@ public class ldLoansTest extends BaseSetup {
 	        System.out.println(ldLoansPage.ldLoanTest014Verify());
 	        Assert.assertEquals(ldLoansPage.ldLoanTest014Verify(), expectedMessage);
 	}
+	
 	@Test
 	public void ldLoanTest015() throws Exception {
 		signInPage = new SignInPage(driver);

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="10" passed="5" failed="0" skipped="0">
+<testng-results ignored="6" total="11" passed="4" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-24T14:53:46 ICT" name="T24 R24" finished-at="2024-07-24T14:54:48 ICT" duration-ms="61115">
+  <suite started-at="2024-07-25T14:28:09 ICT" name="T24 R24" finished-at="2024-07-25T14:29:51 ICT" duration-ms="102624">
     <groups>
     </groups>
-    <test started-at="2024-07-24T14:53:46 ICT" name="Linh Test" finished-at="2024-07-24T14:54:48 ICT" duration-ms="61115">
+    <test started-at="2024-07-25T14:28:09 ICT" name="Linh Test" finished-at="2024-07-25T14:29:51 ICT" duration-ms="102624">
       <class name="ldLoansTest.ldLoansTest">
-        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:53:47 ICT" name="initializeTestBaseSetup" finished-at="2024-07-24T14:53:53 ICT" duration-ms="6066" status="PASS">
+        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:28:09 ICT" name="initializeTestBaseSetup" finished-at="2024-07-25T14:28:15 ICT" duration-ms="6549" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,47 +23,99 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:53:53 ICT" name="setUp" finished-at="2024-07-24T14:53:53 ICT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:28:15 ICT" name="setUp" finished-at="2024-07-25T14:28:15 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="dateTestgetToday()[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:53:53 ICT" name="dateTestgetToday" finished-at="2024-07-24T14:53:58 ICT" duration-ms="5554" status="PASS">
+        <test-method signature="dateTestgetToday()[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:28:15 ICT" name="dateTestgetToday" finished-at="2024-07-25T14:28:20 ICT" duration-ms="4534" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dateTestgetToday -->
-        <test-method signature="customerKHDN()[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:53:58 ICT" name="customerKHDN" finished-at="2024-07-24T14:54:18 ICT" duration-ms="19769" status="PASS">
+        <test-method signature="customerKHDN()[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:28:20 ICT" name="customerKHDN" finished-at="2024-07-25T14:28:42 ICT" duration-ms="22042" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- customerKHDN -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:53:58 ICT" name="setUp" finished-at="2024-07-24T14:53:58 ICT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:28:20 ICT" name="setUp" finished-at="2024-07-25T14:28:20 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="openCurAcc()[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:54:18 ICT" name="openCurAcc" finished-at="2024-07-24T14:54:30 ICT" depends-on-methods="ldLoansTest.ldLoansTest.customerKHDN" duration-ms="12542" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:28:42 ICT" name="setUp" finished-at="2024-07-25T14:28:42 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="openCurAcc()[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:28:42 ICT" name="openCurAcc" finished-at="2024-07-25T14:28:57 ICT" depends-on-methods="ldLoansTest.ldLoansTest.customerKHDN" duration-ms="15140" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openCurAcc -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:54:18 ICT" name="setUp" finished-at="2024-07-24T14:54:18 ICT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:28:57 ICT" name="setUp" finished-at="2024-07-25T14:28:57 ICT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:54:30 ICT" name="setUp" finished-at="2024-07-24T14:54:30 ICT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="openLoanAcc()[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:54:30 ICT" name="openLoanAcc" finished-at="2024-07-24T14:54:43 ICT" depends-on-methods="ldLoansTest.ldLoansTest.customerKHDN" duration-ms="12225" status="PASS">
+        <test-method signature="openLoanAcc()[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:28:57 ICT" name="openLoanAcc" finished-at="2024-07-25T14:29:44 ICT" depends-on-methods="ldLoansTest.ldLoansTest.customerKHDN" duration-ms="46371" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: /html/frameset/frame[1] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.72, chrome: {chromedriverVersion: 127.0.6533.72 (9755e24ca85a..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65082}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65082/devtoo..., se:cdpVersion: 127.0.6533.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12cfafd8e886f2804a641ac800deb5d5]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: /html/frameset/frame[1] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.72, chrome: {chromedriverVersion: 127.0.6533.72 (9755e24ca85a..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65082}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65082/devtoo..., se:cdpVersion: 127.0.6533.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12cfafd8e886f2804a641ac800deb5d5
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at Page.SignInPage.SwitchFrame1(SignInPage.java:68)
+at Page.accountPage.authAccount(accountPage.java:59)
+at ldLoansTest.ldLoansTest.openLoanAcc(ldLoansTest.java:107)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openLoanAcc -->
-        <test-method signature="limitGen()[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:54:43 ICT" name="limitGen" finished-at="2024-07-24T14:54:48 ICT" depends-on-methods="ldLoansTest.ldLoansTest.customerKHDN, ldLoansTest.ldLoansTest.dateTestgetToday" duration-ms="4891" status="PASS">
+        <test-method signature="parentLDTest()[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:29:44 ICT" name="parentLDTest" finished-at="2024-07-25T14:29:51 ICT" depends-on-methods="ldLoansTest.ldLoansTest.customerKHDN, ldLoansTest.ldLoansTest.dateTestgetToday, ldLoansTest.ldLoansTest.openCurAcc" duration-ms="7920" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- limitGen -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:54:43 ICT" name="setUp" finished-at="2024-07-24T14:54:43 ICT" duration-ms="0" status="PASS">
+        </test-method> <!-- parentLDTest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:29:44 ICT" name="setUp" finished-at="2024-07-25T14:29:44 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ldLoansTest.ldLoansTest@3d829787]" started-at="2024-07-24T14:54:48 ICT" name="tearDown" finished-at="2024-07-24T14:54:48 ICT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:ldLoansTest.ldLoansTest@60b85ba1]" started-at="2024-07-25T14:29:51 ICT" name="tearDown" finished-at="2024-07-25T14:29:51 ICT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
