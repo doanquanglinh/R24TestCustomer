@@ -44,8 +44,6 @@ public class LimitPage {
 		WebElement transactionIDAuthElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(LimitUI.TRANSACTION_ID_SECURED_LIMIT));
 		transactionIDAuthElement.isDisplayed();
 		transactionIDAuthElement.sendKeys(authoriseLimitData);
-		
-		
 	}
 	
 

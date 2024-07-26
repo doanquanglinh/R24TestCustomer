@@ -62,8 +62,8 @@ public class ldLoansTest extends BaseSetup {
         List<String> inputLimitData = Arrays.asList(sysDate,sysDate,"24M","M1201","20261010","2000","100M");
         LimitPage.inputLimit(inputLimitData);
 		WebElement limitData1  = wait.until(ExpectedConditions.visibilityOfElementLocated(LimitUI.M));
-        String limitLevel1Data = ;
-        LimitPage.authoriseLIMIT("LINHDQ.2",limitLevel1);
+		limitData1.isDisplayed();
+        LimitPage.authoriseLIMIT("LINHDQ.2",);
 	}
 	@Test(dependsOnMethods = ("customerKHDN"))
 	public void openCurAcc() throws Exception{
@@ -109,7 +109,7 @@ public class ldLoansTest extends BaseSetup {
         System.out.println(loanAccountText);
         driver.close();
         accountPage.authAccount("LINHDQ.2", loanAccountText);
-//        LoanAcc = loanAccountText;
+//      LoanAcc = loanAccountText;
 	}
 	@Test
 	public void customerKHDN() throws Exception{
