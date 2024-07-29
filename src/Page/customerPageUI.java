@@ -128,5 +128,9 @@ public class customerPageUI {
 	public static final By viewRelatedPerson4TC026 =  By.xpath("//a[contains(text(),' Related person.4')]//ancestor::tr[@tabid]//span[contains(text(),'Contact Person') and @style]");
 	
 	public static final By viewSector = By.xpath("//a[contains(text(),'Sector')]//ancestor::tr[@tabid]//span[contains(text(),'2401')and@style]");
+	public static final By transactionIDUpdate = By.xpath("//input[@id = 'transactionId' and @class = 'idbox idbox_CUSTOMER idbox_CUSTOMER_VMBAMENDRELPRIOCUS']");
+	public static final By PCPID = By.id("fieldName:PCP.ID");
+	public static final By companyVip= By.id("fieldName:COMPANY.VIP");
+	
 	
 }

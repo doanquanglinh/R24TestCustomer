@@ -55,15 +55,15 @@ public class ldLoansTest extends BaseSetup {
         SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
         driver.navigate().refresh();
         signInPage.signin("LINHDQ.1", "Abb$1234");
-        signInPage.SwitchFrame1();
+        signInPage.SwitchFrame1();		
         System.out.println(CIF_KHDN);
-        signInPage.CMD("LIMIT,VMB.SECURED " + CIF_KHDN +".10000.01");
+        signInPage.CMD("LIMIT,VMB.SECURED " + CIF_KHDN +".20000.01");
         SwitchWindow.switchToWindowWithTitle(driver, "ACCOUNT");
         List<String> inputLimitData = Arrays.asList(sysDate,sysDate,"24M","M1201","20261010","2000","100M");
         LimitPage.inputLimit(inputLimitData);
-		WebElement limitData1  = wait.until(ExpectedConditions.visibilityOfElementLocated(LimitUI.M));
-		limitData1.isDisplayed();
-        LimitPage.authoriseLIMIT("LINHDQ.2",);
+//		WebElement limitData1  = wait.until(ExpectedConditions.visibilityOfElementLocated(LimitUI.M));
+//		limitData1.isDisplayed();
+//        LimitPage.authoriseLIMIT("LINHDQ.2",);
 	}
 	@Test(dependsOnMethods = ("customerKHDN"))
 	public void openCurAcc() throws Exception{

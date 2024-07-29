@@ -2,20 +2,20 @@
 <suite name="T24 R24">
 	<parameter name="browserType" value="chrome" />
 	<parameter name="URL"
-		value="http://10.32.15.119:9089/BrowserWeb/servlet/BrowserServlet" />
+		value="http://10.32.15.119:10314/BrowserWeb/servlet/BrowserServlet" />
 	<test name="Linh Test">
 		<classes>
-			<class name="ldLoansTest.ldLoansTest">
-<!--			<class name="customerTest.customerTest">	</class>-->
-<!--			<class name="customerTest.customerTestCorp">-->
+<!--			<class name="ldLoansTest.ldLoansTest">-->
+<!--			<class name="customerTest.customerTest">	</class>	-->
+			<class name="customerTest.customerTestCorp">
 					<methods>		
-					<include name="ldLoanTest014"/>		
-					<include name="openCurAcc"/>	
-					<include name="openLoanAcc"/>	
-					<include name="dateTestgetToday"/>	
-					<include name="customerKHDN"/>	
-					<include name="parentLDTest"/>	
-					<include name="ldLoanTest014"/>	
+<!--					<include name="openCurAcc"/>	-->
+<!--					<include name="openLoanAcc"/>	-->
+<!--					<include name="dateTestgetToday"/>	-->
+<!--					<include name="customerKHDN"/>	-->
+<!--					<include name="parentLDTest"/>	-->
+<!--					<include name="limitGen"/>	-->
+					<include name="customerTest031"/>	
 					</methods>		
 					</class>			
 		</classes>

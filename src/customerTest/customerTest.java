@@ -42,7 +42,7 @@ public class customerTest extends BaseSetup {
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
 		List<String> inputCustomerData = Arrays.asList("DOAN", "LINH", "QUANG","DOAN QUANG LINH", "LINHDQ", "CO NHUE", "CO NHUE",
 				"1000", "19991010", "VN", "CCCD", "25787278228", "BAC NINH", "20151010",
-				"1001", "9102", "2001", "114", "E123456","9990","0797979796789","linhdq@abbank.vn","0264852376789","20301010");
+				"1001", "9102", "2001", "114", "E123456","9990","0797979796789","linhdq@abbank.vn","0568293520","20301010");
 		customerPage.inputCustomer(inputCustomerData);	
 		customerPage.customerTest001Verify();
 	driver.close();
@@ -62,7 +62,7 @@ public class customerTest extends BaseSetup {
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
 		List<String> inputCustomerData = Arrays.asList("DOAN", "LINH", "QUANG","DOAN QUANG LINH", "LINHDQ", "", "CO NHUE",
 				"1000", "19991010", "VN", "CCCD", "", "HA NOI", "20151010",
-				"1001", "9102", "2001", "114", "E123456","9990","012345678","linhdq@abbank.vn","0264852376789","20301010");
+				"1001", "9102", "2001", "114", "E123456","9990","012345678","linhdq@abbank.vn","0568293520","20301010");
 		customerPage.inputCustomer(inputCustomerData);	
 		String expectedMessageStreet = "Street.1";
 		String expectedMessageIdNumber = "ID Number.1";
@@ -147,7 +147,7 @@ public class customerTest extends BaseSetup {
 				"1000", "19991010", "VN", "DK1", "123456", "HA NOI", "20241010",
 				"1001", "9102", "2001", "114", "E123456","9990","012345678","linhdq@abbank.vn","0264852376789","20301010");
 		customerPage.inputCustomer(inputCustomerData);
-		String expectedMessageCustomer006 = "ID Type.1 KH CA NHAN KHÔNG DUOC CHON ID TYPE DK1";
+		String expectedMessageCustomer006 = "ID Type.1 KH CA NHAN KH�NG DUOC CHON ID TYPE DK1";
 		Assert.assertEquals(expectedMessageCustomer006,	customerPage.customerTest006Verify());
 		driver.close();
 	}
@@ -164,7 +164,7 @@ public class customerTest extends BaseSetup {
 		String targetTitle = "CUSTOMER";
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
 		String expectedMessageCustomer007 = "RECORD MISSING";
-		Assert.assertEquals(expectedMessageCustomer007, customerPage.customerTest007AndVerify("12951221"));
+		Assert.assertEquals(expectedMessageCustomer007, customerPage.customerTest007AndVerify("12981267"));
 		driver.close();
 	}
 	@Test
@@ -176,7 +176,7 @@ public class customerTest extends BaseSetup {
 		driver.navigate().refresh();
 		signInPage.signin("LINHDQ.1", "Abb$1234");
 		signInPage.SwitchFrame1();
-		signInPage.CMD("CUSTOMER D 12951377");
+		signInPage.CMD("CUSTOMER D 12981261");
 		String targetTitle = "CUSTOMER";
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
 		String expectedMessageCustomer008 = "UNAUTH. RECORD MISSING";

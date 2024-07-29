@@ -33,6 +33,7 @@ public class LimitPage {
 		productAllowed.sendKeys(inputLimitData.get(5));
 		internalAmount.sendKeys(inputLimitData.get(6));
 	}
+	
 	public void authoriseLIMIT(String acccountAuth, String authoriseLimitData) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
@@ -45,7 +46,5 @@ public class LimitPage {
 		transactionIDAuthElement.isDisplayed();
 		transactionIDAuthElement.sendKeys(authoriseLimitData);
 	}
-	
 
-	
 }
