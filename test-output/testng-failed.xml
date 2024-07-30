@@ -7,12 +7,39 @@
     <classes>
       <class name="customerTest.customerTestCorp">
         <methods>
+          <include name="customerTest022"/>
+          <include name="customerTest033"/>
           <include name="initializeTestBaseSetup"/>
-          <include name="customerTest031"/>
           <include name="setUp"/>
+          <include name="customerTest018"/>
+          <include name="customerTest016"/>
+          <include name="customerTest027"/>
+          <include name="customerTest017"/>
+          <include name="customerTest028"/>
           <include name="tearDown"/>
+          <include name="customerTest025"/>
+          <include name="customerTest015"/>
+          <include name="customerTest026"/>
+          <include name="customerTest023"/>
+          <include name="customerTest024"/>
+          <include name="customerTest021"/>
+          <include name="customerTest032"/>
+          <include name="customerTest020"/>
+          <include name="customerTest031"/>
+          <include name="customerTest019"/>
         </methods>
       </class> <!-- customerTest.customerTestCorp -->
+      <class name="customerTest.customerTest">
+        <methods>
+          <include name="customerTest007"/>
+          <include name="initializeTestBaseSetup"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="customerTest008"/>
+          <include name="customerTest009"/>
+          <include name="customerTest006"/>
+        </methods>
+      </class> <!-- customerTest.customerTest -->
     </classes>
   </test> <!-- Linh Test(failed) -->
 </suite> <!-- Failed suite [T24 R24] -->

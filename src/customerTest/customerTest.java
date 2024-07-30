@@ -124,7 +124,7 @@ public class customerTest extends BaseSetup {
 		String targetTitle = "CUSTOMER";
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
 		List<String> inputCustomerData = Arrays.asList("DOAN", "LINH", "QUANG","DOAN QUANG LINH", "LINHDQ", "CO NHUE", "CO NHUE",
-				"1000", "19991010", "VN", "CCCD", "123456", "HA NOI", "20241010",
+				"1000", "19991010", "VN", "CCCD", "123456", "HA NOI", "20221010",
 				"1001", "9102", "2001", "114", "E123456","9990","012345678","linhdq@abbank.vn","0264852376789","20301010");
 		customerPage.inputCustomer(inputCustomerData);
 		String expectedMessageCustomer005 = "ID Number.1 KH NAY DA CO ID TREN HE THONG";
@@ -144,7 +144,7 @@ public class customerTest extends BaseSetup {
 		String targetTitle = "CUSTOMER";
 		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
 		List<String> inputCustomerData = Arrays.asList("DOAN", "LINH", "QUANG","DOAN QUANG LINH", "LINHDQ", "CO NHUE", "CO NHUE",
-				"1000", "19991010", "VN", "DK1", "123456", "HA NOI", "20241010",
+				"1000", "19991010", "VN", "DK1", "123456", "HA NOI", "20201010",
 				"1001", "9102", "2001", "114", "E123456","9990","012345678","linhdq@abbank.vn","0264852376789","20301010");
 		customerPage.inputCustomer(inputCustomerData);
 		String expectedMessageCustomer006 = "ID Type.1 KH CA NHAN KH�NG DUOC CHON ID TYPE DK1";

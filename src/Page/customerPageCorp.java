@@ -820,6 +820,100 @@ public void customerTest031AndVerify(String customerIDData,String customerTest03
 	viewtransactionIdCorpUpdateElement.sendKeys(customerIDData);
 	WebElement viewTransactionElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
 	viewTransactionElement.click();
-
+	WebElement viewPCPIPElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewPCPID));
+	WebElement viewcompanyVipElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewcompanyVip));
+	Assert.assertEquals(viewPCPIPElement.getText(),"VN0010002.PRI1");
+	Assert.assertEquals(viewcompanyVipElement.getText(),"VN-001-0002");
 	}	
+
+public void customerTest032AndVerify(String customerIDData,String customerTest032PCPID, String acccountAuth) throws Exception  {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	WebElement transactionIdCorpUpdateElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIDtc032));
+	transactionIdCorpUpdateElement.isDisplayed();
+	transactionIdCorpUpdateElement.sendKeys(customerIDData);
+	WebElement editTransactionCorpElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
+	editTransactionCorpElement.click();
+	Thread.sleep(500);
+	WebElement PCPIDElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.PCPID));
+	PCPIDElement.sendKeys(customerTest032PCPID);
+	WebElement commitElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+	commitElement.click();
+	Thread.sleep(1000);
+	WebElement mesBoxElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mesBox));
+	mesBoxElement.isDisplayed();
+	driver.close();
+	signInPage.closeAfterMethod();
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.signin(acccountAuth, "Abb$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("CUSTOMER,VMB.AMEND.TARGET A");
+	SwitchWindow.switchToWindowWithTitle(driver,"CUSTOMER");
+	WebElement transactionIDUpdateElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIDtc032));
+	transactionIDUpdateElement.isDisplayed();
+	transactionIDUpdateElement.sendKeys(customerIDData);
+	WebElement performContractElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.performContract));
+	performContractElement.isDisplayed();
+	performContractElement.click();
+	Thread.sleep(1000);
+	WebElement authoriseDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.authoriseDeal));
+	authoriseDealElement.isDisplayed();
+	authoriseDealElement.click();
+	WebElement getCifCorpElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+	getCifCorpElement.isDisplayed();
+	WebElement viewtransactionIdCorpUpdateElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIDtc032));
+	viewtransactionIdCorpUpdateElement.sendKeys(customerIDData);
+	WebElement viewTransactionElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
+	viewTransactionElement.click();
+	WebElement viewPCPIPElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewPCPID));
+	Assert.assertEquals(viewPCPIPElement.getText(),"VN0010002.PRI1");
+	}	
+
+public void customerTest033AndVerify(String customerIDData,String userT24Data,String employeeIDData) throws Exception  {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	WebElement transactionIdTC033Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdTC033));
+	transactionIdTC033Element.sendKeys(customerIDData);
+	System.out.println(customerIDData);
+	WebElement editElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.editTransaction));
+	editElement.click();
+	WebElement userT24Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.userT24));
+	WebElement employeeIDElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.employeeID));
+	userT24Element.clear();
+	userT24Element.sendKeys(userT24Data);
+	employeeIDElement.clear();
+	employeeIDElement.sendKeys(employeeIDData);
+	System.out.println(employeeIDData);
+	WebElement commitElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+	commitElement.click();
+	WebElement mesBoxElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mesBox));
+	mesBoxElement.isDisplayed();
+	driver.close();
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage = new SignInPage(driver);
+	customerPageCorp = new customerPageCorp(driver);
+	signInPage.signin("LINHDQ.2", "Abb$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("ABB.CUSTOMER.UUTIEN,INPUT A");
+	String targetTitle = "CUSTOMER";
+	SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+	WebElement authtransactionIdTC033Element = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdTC033));
+	authtransactionIdTC033Element.sendKeys(customerIDData);
+	WebElement performContractElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.performContract));
+	performContractElement.click();
+	WebElement authoriseDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.authoriseDeal));
+	authoriseDealElement.click();
+	WebElement mesBoxAuthElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mesBox));
+	mesBoxAuthElement.isDisplayed();
+	WebElement authtransactionIdElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdTC033));
+	authtransactionIdElement.sendKeys(customerIDData);
+	WebElement viewElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.viewTransaction));
+	viewElement.click();
+	WebElement userT24ViewElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.userT24View));
+	WebElement employeeIDViewElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.employeeIDView));
+	Assert.assertEquals(userT24ViewElement.getText(),userT24Data );
+	Assert.assertEquals(employeeIDViewElement.getText(),employeeIDData );
+}
 }

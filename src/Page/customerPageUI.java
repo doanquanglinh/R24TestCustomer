@@ -123,14 +123,19 @@ public class customerPageUI {
 	public static final By viewRelatedPerson2TC025 =  By.xpath("//a[contains(text(),'Related person')]//ancestor::tr[@tabid]//span[contains(text(),'Legal Reprensentative') and @style]");
 	public static final By viewContactName2TC021 =  By.xpath("//a[contains(text(),'Contact Name.1')]//ancestor::tr[@tabid]//span[contains(text(),'MR LINH DOAN' )]");
 	public static final By viewContactName2TC022 =  By.xpath("//a[contains(text(),'Contact Name.2')]//ancestor::tr[@tabid]//span[contains(text(),'MR LINH DOAN CA' )]");
-	
 	public static final By viewContactName4TC026 =  By.xpath("//a[contains(text(),'Contact Name.4')]//ancestor::tr[@tabid]//span[contains(text(),'MS THU THUY' )]");
 	public static final By viewRelatedPerson4TC026 =  By.xpath("//a[contains(text(),' Related person.4')]//ancestor::tr[@tabid]//span[contains(text(),'Contact Person') and @style]");
-	
 	public static final By viewSector = By.xpath("//a[contains(text(),'Sector')]//ancestor::tr[@tabid]//span[contains(text(),'2401')and@style]");
 	public static final By transactionIDUpdate = By.xpath("//input[@id = 'transactionId' and @class = 'idbox idbox_CUSTOMER idbox_CUSTOMER_VMBAMENDRELPRIOCUS']");
+	public static final By transactionIDtc032 = By.xpath("//input[@id = 'transactionId' and @class = 'idbox idbox_CUSTOMER idbox_CUSTOMER_VMBAMENDTARGET']");
 	public static final By PCPID = By.id("fieldName:PCP.ID");
-	public static final By companyVip= By.id("fieldName:COMPANY.VIP");
-	
-	
+	public static final By companyVip = By.id("fieldName:COMPANY.VIP");
+	public static final By viewcompanyVip = By.xpath("//a[contains(text(),'COMPANY.VIP')]//ancestor::tr[@tabid]//span[contains(text(),'') and @style]");
+	public static final By viewPCPID = By.xpath("//a[contains(text(),'PCP.ID')]//ancestor::tr[@tabid]//span[contains(text(),'') and @style]");
+	public static final By transactionIdTC033 = By.xpath("//input[@id = 'transactionId' and @class = 'idbox idbox_ABBCUSTOMERUUTIEN idbox_ABBCUSTOMERUUTIEN_INPUT']");
+	public static final By userT24 = By.id("fieldName:USER.T24");
+	public static final By employeeID = By.id("fieldName:A01.00.07");
+	public static final By userT24View = By.xpath("//a[contains(text(),'USER.T24')]//ancestor::tr[@tabid]//span[contains(text(),'') and @style]");
+	public static final By employeeIDView = By.xpath("//a[contains(text(),'Employee ID')]//ancestor::tr[@tabid]//span[contains(text(),'') and @style]");
+
 }

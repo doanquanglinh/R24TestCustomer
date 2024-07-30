@@ -52,17 +52,14 @@ public class SignInPage  {
 		    }
 		}
 	
-
-	
 	public void signin(String USER, String PASSWORD) throws Exception {
-		    UserField(USER);
+	    	Thread.sleep(1000);
+	    	UserField(USER);
 		    PassWordField(PASSWORD);
 		    Thread.sleep(1000);
 		    ClickSignIn();
-		}
-
-	
-	
+		    Thread.sleep(1500);
+}
 	public void SwitchFrame1() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		WebElement frm = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/frameset/frame[1]")));

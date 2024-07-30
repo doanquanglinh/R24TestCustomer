@@ -106,14 +106,9 @@ public class customerPage {
 	//Verify Case 004
 	public void customerTest004Verify() {
 		WebElement errorBoxElement = driver.findElement(customerPageUI.errorMesBox);	
-		    if (errorBoxElement.isDisplayed()) {
-	            System.out.println("Error message box is displayed: CASE 004 PASS");
-	            driver.close();
-	        } else {
-	        	driver.close();
-	            Assert.assertTrue(errorBoxElement.isDisplayed());
+		Assert.assertEquals(errorBoxElement.getText(),"Issued Date.1 Cannot be Greater than or Equal to Today");
+	     System.out.println(errorBoxElement.getText());
 	        }
-	}
 	//Verify Case 005
 	public String customerTest005Verify() {
 		WebElement errorBoxElement = driver.findElement(customerPageUI.errorMesBox);
