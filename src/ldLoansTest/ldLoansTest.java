@@ -35,9 +35,9 @@ public class ldLoansTest extends BaseSetup {
 	public LimitPage limitPage;
     private String CIF_KHDN;
     private String sysDate;
-    private String CurAcc;
-    private String LoanAcc;
-    private String parentLD;
+//    private String CurAcc;
+//    private String LoanAcc;
+//    private String parentLD;
 
 	@Parameters({ "browserType", "URL" })
 	@BeforeMethod
@@ -50,7 +50,7 @@ public class ldLoansTest extends BaseSetup {
 		accountPage = new accountPage(driver);
 		signInPage = new SignInPage(driver);
         ldLoansPage = new ldLoansPage(driver);	
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+//    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         signInPage.closeAfterMethod();
         SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
         driver.navigate().refresh();

@@ -137,5 +137,14 @@ public class customerPageUI {
 	public static final By employeeID = By.id("fieldName:A01.00.07");
 	public static final By userT24View = By.xpath("//a[contains(text(),'USER.T24')]//ancestor::tr[@tabid]//span[contains(text(),'') and @style]");
 	public static final By employeeIDView = By.xpath("//a[contains(text(),'Employee ID')]//ancestor::tr[@tabid]//span[contains(text(),'') and @style]");
+//	public static final String FIND_BTN = "//a[text()='Find']";
+//	public static final String FIND_CRITERIA_DROP = "//input[@value='%s']/parent::td/following-sibling::td/select";
+	public static final By enqShortName = By.xpath("//input[@value='SHORT.NAME']/parent::td/following-sibling::td/input[@type='text']");
+	public static final By enqCoCode = By.xpath("//input[@value='CO.CODE']/parent::td/following-sibling::td/input[@type='text']");
+	public static final By enqFindButton = By.xpath("//a[@title = 'Run Selection']");
+	public static final By enqviewDetailButton = By.xpath("//img[@src='../plaf/images/default/enquiry/drill.gif']");
+	public static final By enqShortNameRes = By.xpath("//a[contains(text(),'GB Short Name')]//ancestor::tr[@tabid]//span[@class = 'disabled_dealbox disabled_dealbox_CUSTOMER']");
+	public static final By enqCoCodeRes = By.xpath("//a[contains(text(),'Company Book')]//ancestor::tr[@tabid]//span[@style]");
+	public static final By cifRes = By.xpath("//span[@class = 'iddisplay iddisplay_CUSTOMER']");
 
 }

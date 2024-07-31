@@ -1,5 +1,6 @@
 package customerTest;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -10,6 +11,8 @@ import Base.BaseSetup;
 import Page.SignInPage;
 import Page.customerPage;
 import Base.SwitchWindow;
+import Base.randomString;
+
 import java.util.Arrays;
 import java.util.List;
 import Page.customerPageUI;
@@ -219,6 +222,78 @@ public class customerTest extends BaseSetup {
 		customerPage.customerTest009AndVerify("15 OCT 1999",afterCutCifString);
 	    driver.close();
 	}	
+	@Test	
+	public void customerTest029() throws Exception {
+		signInPage = new SignInPage(driver);
+		customerPage = new customerPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
+		signInPage.signin("LINHDQ.1", "Abb$1234");
+		signInPage.SwitchFrame1();
+		signInPage.CMD("CUS,VMB.INDIV.SMART");
+		String targetTitle = "CUSTOMER";
+		String SHORTNAME = randomString.randomStringChar(10);
+		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+		List<String> inputCustomerData = Arrays.asList("DOAN", "LINH", "QUANG","TEST CASE 029",SHORTNAME, "CO NHUE", "CO NHUE",
+				"1000", "19991010", "VN", "CCCD",RanDomStringInt.genRandom(), "BAC NINH", "20151010",
+				"1001", "9102", "2001", "114", "E123456","9990",RanDomStringInt.genRandom(),"linhdq@abbank.vn",RanDomStringInt.genRandom(),"20301010");
+		customerPage.inputCustomer(inputCustomerData);	
+		WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
+		commitDealElement.click();
+		WebElement getCifElement = driver.findElement(customerPageUI.getCif);
+		getCifElement.isDisplayed();
+	    String cifText = getCifElement.getText();
+	    String afterCutCifString = cifText.substring(14, 22);
+		System.out.println(afterCutCifString);
+		System.out.println(SHORTNAME);
+		driver.close();
+		signInPage.closeAfterMethod();
+		String coCodeData = "VN0010001";
+		
+		customerPage.customerTest029(SHORTNAME,coCodeData);
+		WebElement cifResElement = driver.findElement(customerPageUI.cifRes);
+		WebElement enqShortNameResElement = driver.findElement(customerPageUI.enqShortNameRes);
+		WebElement enqCoCodeResElement = driver.findElement(customerPageUI.enqCoCodeRes);
+        String enqCoCodeResText = enqCoCodeResElement.getText().replace("-", "");
+
+		System.out.println(cifResElement.getText());
+		System.out.println(enqShortNameResElement.getText());
+		System.out.println(enqCoCodeResText);
+		
+		Assert.assertEquals(afterCutCifString,cifResElement.getText());
+		Assert.assertEquals(SHORTNAME,enqShortNameResElement.getText());
+		Assert.assertEquals(coCodeData,enqCoCodeResText);
+		driver.close();
+	}
+
+	@Test	
+	public void customerTest030() throws Exception {
+		signInPage = new SignInPage(driver);
+		customerPage = new customerPage(driver);
+		signInPage.closeAfterMethod();
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
+		signInPage.signin("LINHDQ.1", "Abb$1234");
+		signInPage.SwitchFrame1();
+		signInPage.CMD("CUS,VMB.INDIV.SMART");
+		String targetTitle = "CUSTOMER";
+		String SHORTNAME = randomString.randomStringChar(10);
+		SwitchWindow.switchToWindowWithTitle(driver, targetTitle);
+		List<String> inputCustomerData = Arrays.asList("DOAN", "LINH", "QUANG","TEST CASE 030",SHORTNAME, "CO NHUE", "CO NHUE",
+				"1000", "19991010", "VN", "CCCD",RanDomStringInt.genRandom(), "BAC NINH", "20151010",
+				"1502", "9102", "2001", "114", "E123456","9930",RanDomStringInt.genRandom(),"linhdq@abbank.vn",RanDomStringInt.genRandom(),"20301010");
+		customerPage.inputCustomer(inputCustomerData);	
+		WebElement commitDealElement = driver.findElement(customerPageUI.commitDeal);
+		commitDealElement.click();
+		WebElement getCifElement = driver.findElement(customerPageUI.getCif);
+		getCifElement.isDisplayed();
+	    String cifText = getCifElement.getText();
+	    String afterCutCifString = cifText.substring(14, 22);
+		System.out.println(afterCutCifString);
+		
+	}
+	
 }
 
 

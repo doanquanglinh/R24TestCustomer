@@ -11,7 +11,6 @@ import Page.customerPageCorp;
 import Base.SwitchWindow;
 import org.openqa.selenium.support.ui.Select;
 
-
 import java.time.Duration;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -133,7 +132,7 @@ public class customerPageCorp {
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 		SwitchWindow.switchToWindowWithTitle(driver,"CUSTOMER");
-		WebElement transactionIdCorpElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorp));
+		WebElement transactionIdCorpElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionId));
 		transactionIdCorpElement.isDisplayed();
 		transactionIdCorpElement.sendKeys(authoriseCustomerData);
 		WebElement performContractElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.performContract));
@@ -775,6 +774,20 @@ public void customerTest028AndVerify(String customerTest028DataTest,String secto
 	WebElement commitDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
 	commitDealElement.click();
 	Thread.sleep(1000);
+	}
+
+public void customerTest029AndVerify(String shortNameDataTest,String coCode) throws Exception  {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+    signInPage.SwitchFrame1();
+	signInPage.CMD("ENQ VMB.CUST.SEARCH.MENU");
+	SwitchWindow.switchToWindowWithTitle(driver, "Customer Individual List");
+	WebElement enqShortNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.enqShortName));
+	enqShortNameElement.clear();
+	WebElement enqCoCodeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.enqCoCode));
+	enqCoCodeElement.clear();
+	enqShortNameElement.sendKeys(shortNameDataTest);
+	enqCoCodeElement.sendKeys(coCode);
 	}
 
 public void customerTest031AndVerify(String customerIDData,String customerTest031PCPID, String companyVipData, String acccountAuth) throws Exception  {

@@ -1,12 +1,21 @@
 package Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import Base.SwitchWindow;
+
+import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 public class customerPage {
 	private WebDriver driver;
+	public SignInPage signInPage;
+	public customerPage customerPage;
+
 	public customerPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -75,6 +84,29 @@ public class customerPage {
 		expiryDateElement.sendKeys(inputCustomerData.get(23));
 		validateDealElement.click();
 	}
+//	public void authoriseCustomer(String acccountAuth, String authoriseCustomerData) throws Exception {
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+//		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+//		driver.navigate().refresh();
+//		signInPage = new SignInPage(driver);
+//		customerPage = new customerPage(driver);
+//		signInPage.signin(acccountAuth, "Abb$1234");
+//		signInPage.SwitchFrame1();
+//		signInPage.CMD("CUS,VMB.INDIV.SMART");
+//		SwitchWindow.switchToWindowWithTitle(driver,"CUSTOMER");
+//		WebElement transactionIdElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionId));
+//		transactionIdElement.isDisplayed();
+//		transactionIdElement.sendKeys(authoriseCustomerData);
+//		WebElement performContractElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.performContract));
+//		performContractElement.isDisplayed();
+//		performContractElement.click();
+//		Thread.sleep(1000);
+//		WebElement authoriseDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.authoriseDeal));
+//		authoriseDealElement.isDisplayed();
+//		authoriseDealElement.click();
+//		WebElement getCifCorpElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.getCifCorp));
+//		getCifCorpElement.isDisplayed();
+//	}
 	//Verify Case 001
 	public void customerTest001Verify() {
 		try {
@@ -168,6 +200,28 @@ public class customerPage {
 		System.out.println(dobAfterAmendElement.getText());
 		Assert.assertEquals(dobAmendData,dobAfterAmendElement.getText());
 	}
-	
+public void customerTest029(String enqShortNameData,String enqCoCodeData) throws Exception  {
+	signInPage = new SignInPage(driver);
+	customerPage = new customerPage(driver);
+	signInPage.closeAfterMethod();
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	driver.navigate().refresh();
+	signInPage.signin("LINHDQ.1", "Abb$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("ENQ VMB.CUST.SEARCH.MENU");
+	SwitchWindow.switchToWindowWithTitle(driver, "Customer Individual List");
+	WebElement enqShortNameElement = driver.findElement(customerPageUI.enqShortName);
+	enqShortNameElement.clear();
+	WebElement enqCoCodeElement = driver.findElement(customerPageUI.enqCoCode);
+	enqCoCodeElement.clear();
+	enqShortNameElement.sendKeys(enqShortNameData);
+	enqCoCodeElement.sendKeys(enqCoCodeData	);
+	WebElement enqFindButtonElement = driver.findElement(customerPageUI.enqFindButton);
+	enqFindButtonElement.click();
+	WebElement enqviewDetailButtonElement = driver.findElement(customerPageUI.enqviewDetailButton);
+	enqviewDetailButtonElement.click();
+	SwitchWindow.switchToWindowWithTitle(driver, "CUSTOMER");
+
+}
 }
 

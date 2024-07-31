@@ -6,21 +6,21 @@
 	<test name="Linh Test">
 		<classes>
 <!--			<class name="ldLoansTest.ldLoansTest">-->
-			<class name="customerTest.customerTest"></class>
-			<class name="customerTest.customerTestCorp"></class>
-<!--					<methods>		-->
-<!--					<include name="customerTest031"/>	-->
+			<class name="customerTest.customerTest">
+<!--			<class name="customerTest.customerTestCorp">-->
+					<methods>		
+					<include name="customerTest030"/>	
 <!--					<include name="customerTest033"/>	-->
 <!--					<include name="customerTest032"/>	-->
-<!--					<include name="customerTest033"/>	-->
+<!--					<include name="openCurAcc"/>	-->
 <!--					<include name="openLoanAcc"/>	-->
 <!--					<include name="dateTestgetToday"/>	-->
 <!--					<include name="customerKHDN"/>	-->
 <!--					<include name="parentLDTest"/>	-->
 <!--					<include name="limitGen"/>	-->
 <!--					<include name="customerTest004"/>	-->
-<!--					</methods>		-->
-<!--					</class>			-->
+					</methods>		
+					</class>			
 		</classes>
 	</test>
 </suite>
