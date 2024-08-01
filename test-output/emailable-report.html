@@ -9,13 +9,32 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">T24 R24</th></tr>
-<tr><td><a href="#t0">Linh Test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">68,222</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Linh Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">25,696</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">T24 R24</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Linh Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">MMTest.MMTest</td><td><a href="#m0">MMTest001</a></td><td rowspan="1">1722485587617</td><td rowspan="1">6923</td></tr><tr class="passedeven"><td><a href="#m1">customerKHDN</a></td><td rowspan="1">1722485531633</td><td rowspan="1">29614</td></tr><tr class="passedeven"><td><a href="#m2">dateTestgetToday</a></td><td rowspan="1">1722485561251</td><td rowspan="1">7634</td></tr><tr class="passedeven"><td><a href="#m3">openCurAcc</a></td><td rowspan="1">1722485568889</td><td rowspan="1">18725</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">T24 R24</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Linh Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">MMTest.MMTest</td><td><a href="#m0">MMTest001</a></td><td rowspan="1">1722507332152</td><td rowspan="1">20077</td></tr></tbody>
 </table>
-<h2>Linh Test</h2><h3 id="m0">MMTest.MMTest#MMTest001</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">MMTest.MMTest#customerKHDN</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">MMTest.MMTest#dateTestgetToday</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">MMTest.MMTest#openCurAcc</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Linh Test</h2><h3 id="m0">MMTest.MMTest#MMTest001</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=127.0.6533.88)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ce4d8b1b667ccb2bff89f0d8afec675c, sendKeysToElement {value=[Ljava.lang.CharSequence;@101330ad, id=f.BDC72B987D15058BF36F0B5591A04650.d.827C8ACD20ABFF3B8B8018090B371F5E.e.144}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.88, chrome: {chromedriverVersion: 127.0.6533.88 (a2d0cb026721..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49908}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49908/devtoo..., se:cdpVersion: 127.0.6533.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (ce4d8b1b667ccb2bff89f0d8afec675c)] -&gt; xpath: //input[@id = &apos;fieldName:INTEREST.RATE&apos;]]
+Session ID: ce4d8b1b667ccb2bff89f0d8afec675c
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at Page.MMPage.inputMM(MMPage.java:50)
+	at MMTest.MMTest.MMTest001(MMTest.java:122)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

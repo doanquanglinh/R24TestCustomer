@@ -10,9 +10,9 @@
 			<class name="MMTest.MMTest">
 <!--			<class name="customerTest.customerTestCorp">-->
 					<methods>		
-					<include name="customerKHDN"/>
-					<include name="openCurAcc"/>
-					<include name="dateTestgetToday"/>
+<!--					<include name="customerKHDN"/>-->
+<!--					<include name="openCurAcc"/>-->
+<!--					<include name="dateTestgetToday"/>-->
 					<include name="MMTest001"/>
 <!--					<include name="customerTest032"/>	-->
 <!--					<include name="customerTest033"/>	-->
@@ -23,7 +23,6 @@
 <!--					<include name="parentLDTest"/>	-->
 <!--					<include name="limitGen"/>	-->
 <!--					<include name="customerTest004"/>	-->
-					
 					</methods>		
 					</class>			
 		</classes>

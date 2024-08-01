@@ -11,6 +11,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import Base.BaseSetup;
 import Base.RanDomStringInt;
+import Page.MMPage;
 import Page.SignInPage;
 import Page.accountPage;
 import Page.accountUI;
@@ -25,10 +26,12 @@ public class MMTest extends BaseSetup {
 	public SignInPage signInPage;
 	public accountPage accountPage;
 	public customerPage customerPage;
+	private MMPage MMPage;
 	public datePage DatePage;
 	public customerPageCorp customerPageCorp;
 	private String CIF_KHDN;
 	private String sysDate;
+	
 
 	@Parameters({ "browserType", "URL" })
 	@BeforeMethod
@@ -77,6 +80,7 @@ public class MMTest extends BaseSetup {
 	    CIF_KHDN = getCifCorpElement.getText().substring(14, 22);
 	    driver.close();
 	    customerPageCorp.authoriseCustomerCorp("LINHDQ.2",CIF_KHDN);  
+	    System.out.println(CIF_KHDN);
 	    driver.close();
 	}
 	@Test(dependsOnMethods = ("customerKHDN"))
@@ -101,17 +105,21 @@ public class MMTest extends BaseSetup {
         accountPage.authAccount("LINHDQ.2", CurAccountText);
         
 	}
-	@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
+//	@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
+	@Test
 	public void MMTest001() throws Exception {
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		signInPage = new SignInPage(driver);
 		signInPage.closeAfterMethod();
 		driver.navigate().refresh();
 		signInPage = new SignInPage(driver);
+		MMPage = new MMPage(driver);
 		signInPage.signin("LINHDQ.1", "Abb$1234");
 		signInPage.SwitchFrame1();
 		signInPage.CMD("MM.MONEY.MARKET,VMB.PLACE");
 		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
+		List<String> inputMMData = Arrays.asList("20","10","CIF_KHDN","VND","50M","sysDate","24M","20261010","20");
+		MMPage.inputMM(inputMMData);
 		
 //		driver.close();
 	}
