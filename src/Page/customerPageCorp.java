@@ -132,7 +132,7 @@ public class customerPageCorp {
 		signInPage.SwitchFrame1();
 		signInPage.CMD("CUSTOMER,VMB.CORP.SMART");
 		SwitchWindow.switchToWindowWithTitle(driver,"CUSTOMER");
-		WebElement transactionIdCorpElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionId));
+		WebElement transactionIdCorpElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.transactionIdCorp));
 		transactionIdCorpElement.isDisplayed();
 		transactionIdCorpElement.sendKeys(authoriseCustomerData);
 		WebElement performContractElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.performContract));

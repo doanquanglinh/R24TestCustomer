@@ -1,6 +1,4 @@
 package customerTest;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -291,7 +289,6 @@ public class customerTest extends BaseSetup {
 	    String cifText = getCifElement.getText();
 	    String afterCutCifString = cifText.substring(14, 22);
 		System.out.println(afterCutCifString);
-		
 	}
 	
 }

@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +104,22 @@
                     <div class="method-list-content passed suite-T24_R24">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-T24_R24" title="customerTest.customerTest" class="method navigator-link" hash-for-method="customerTest030">customerTest030</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="MMTest001">MMTest001</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="customerKHDN">customerKHDN</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="dateTestgetToday">dateTestgetToday</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="openCurAcc">openCurAcc</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-T24_R24 -->
@@ -122,14 +137,35 @@
           <div class="suite-T24_R24-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">customerTest.customerTest</span>
+              <span class="class-name">MMTest.MMTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="customerTest030">
-                  </a> <!-- customerTest030 -->
-                  <span class="method-name">customerTest030</span>
+                  <a name="MMTest001">
+                  </a> <!-- MMTest001 -->
+                  <span class="method-name">MMTest001</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="customerKHDN">
+                  </a> <!-- customerKHDN -->
+                  <span class="method-name">customerKHDN</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="dateTestgetToday">
+                  </a> <!-- dateTestgetToday -->
+                  <span class="method-name">dateTestgetToday</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="openCurAcc">
+                  </a> <!-- openCurAcc -->
+                  <span class="method-name">openCurAcc</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -148,11 +184,14 @@
   &lt;parameter name=&quot;browserType&quot; value=&quot;chrome&quot;/&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Linh Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;customerTest.customerTest&quot;&gt;
+      &lt;class name=&quot;MMTest.MMTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;customerTest030&quot;/&gt;
+          &lt;include name=&quot;customerKHDN&quot;/&gt;
+          &lt;include name=&quot;openCurAcc&quot;/&gt;
+          &lt;include name=&quot;dateTestgetToday&quot;/&gt;
+          &lt;include name=&quot;MMTest001&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- customerTest.customerTest --&gt;
+      &lt;/class&gt; &lt;!-- MMTest.MMTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Linh Test --&gt;
 &lt;/suite&gt; &lt;!-- T24 R24 --&gt;
@@ -192,16 +231,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'customerTest030')
-data.setCell(0, 2, 'customerTest.customerTest')
-data.setCell(0, 3, 10834);
+data.setCell(0, 1, 'customerKHDN')
+data.setCell(0, 2, 'MMTest.MMTest')
+data.setCell(0, 3, 29614);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'openCurAcc')
+data.setCell(1, 2, 'MMTest.MMTest')
+data.setCell(1, 3, 18725);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'dateTestgetToday')
+data.setCell(2, 2, 'MMTest.MMTest')
+data.setCell(2, 3, 7634);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'MMTest001')
+data.setCell(3, 2, 'MMTest.MMTest')
+data.setCell(3, 3, 6923);
 window.suiteTableData['T24_R24']= { tableData: data, tableDiv: 'times-div-T24_R24'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-T24_R24">
               </div> <!-- times-div-T24_R24 -->
             </div> <!-- times-div -->
@@ -216,34 +267,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-T24_R24" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">10 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">customerTest.customerTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">customerTest007</span>
-                <br/>
-                <span class="ignored-method-name">customerTest029</span>
-                <br/>
-                <span class="ignored-method-name">customerTest004</span>
-                <br/>
-                <span class="ignored-method-name">customerTest005</span>
-                <br/>
-                <span class="ignored-method-name">customerTest002</span>
-                <br/>
-                <span class="ignored-method-name">customerTest003</span>
-                <br/>
-                <span class="ignored-method-name">customerTest001</span>
-                <br/>
-                <span class="ignored-method-name">customerTest008</span>
-                <br/>
-                <span class="ignored-method-name">customerTest009</span>
-                <br/>
-                <span class="ignored-method-name">customerTest006</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-T24_R24" class="panel">
@@ -252,22 +278,46 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">customerTest.customerTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">MMTest.MMTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initializeTestBaseSetup(chrome, http://10.32.15.119:10314/BrowserWeb/servlet/BrowserServlet)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">6055 ms</span>
+                <span class="method-start">5283 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">customerTest030</span>
-                <span class="method-start">6057 ms</span>
+                <span class="method-name">customerKHDN</span>
+                <span class="method-start">5285 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">34902 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">dateTestgetToday</span>
+                <span class="method-start">34903 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">42541 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">openCurAcc</span>
+                <span class="method-start">42541 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">61269 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">MMTest001</span>
+                <span class="method-start">61269 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">16896 ms</span>
+                <span class="method-start">68194 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

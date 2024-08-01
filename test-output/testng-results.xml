@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="10" total="11" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-31T16:54:49 ICT" name="T24 R24" finished-at="2024-07-31T16:55:05 ICT" duration-ms="16920">
+  <suite started-at="2024-08-01T11:12:06 ICT" name="T24 R24" finished-at="2024-08-01T11:13:14 ICT" duration-ms="68222">
     <groups>
     </groups>
-    <test started-at="2024-07-31T16:54:49 ICT" name="Linh Test" finished-at="2024-07-31T16:55:05 ICT" duration-ms="16920">
-      <class name="customerTest.customerTest">
-        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:customerTest.customerTest@62577d6]" started-at="2024-07-31T16:54:49 ICT" name="initializeTestBaseSetup" finished-at="2024-07-31T16:54:55 ICT" duration-ms="6036" status="PASS">
+    <test started-at="2024-08-01T11:12:06 ICT" name="Linh Test" finished-at="2024-08-01T11:13:14 ICT" duration-ms="68222">
+      <class name="MMTest.MMTest">
+        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:MMTest.MMTest@7a34b7b8]" started-at="2024-08-01T11:12:06 ICT" name="initializeTestBaseSetup" finished-at="2024-08-01T11:12:11 ICT" duration-ms="5268" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,19 +23,43 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:customerTest.customerTest@62577d6]" started-at="2024-07-31T16:54:55 ICT" name="setUp" finished-at="2024-07-31T16:54:55 ICT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:MMTest.MMTest@7a34b7b8]" started-at="2024-08-01T11:12:11 ICT" name="setUp" finished-at="2024-08-01T11:12:11 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="customerTest030()[pri:0, instance:customerTest.customerTest@62577d6]" started-at="2024-07-31T16:54:55 ICT" name="customerTest030" finished-at="2024-07-31T16:55:05 ICT" duration-ms="10834" status="PASS">
+        <test-method signature="customerKHDN()[pri:0, instance:MMTest.MMTest@7a34b7b8]" started-at="2024-08-01T11:12:11 ICT" name="customerKHDN" finished-at="2024-08-01T11:12:41 ICT" duration-ms="29614" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- customerTest030 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:customerTest.customerTest@62577d6]" started-at="2024-07-31T16:55:05 ICT" name="tearDown" finished-at="2024-07-31T16:55:05 ICT" duration-ms="1" status="PASS">
+        </test-method> <!-- customerKHDN -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:MMTest.MMTest@7a34b7b8]" started-at="2024-08-01T11:12:41 ICT" name="setUp" finished-at="2024-08-01T11:12:41 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="dateTestgetToday()[pri:0, instance:MMTest.MMTest@7a34b7b8]" started-at="2024-08-01T11:12:41 ICT" name="dateTestgetToday" finished-at="2024-08-01T11:12:48 ICT" duration-ms="7634" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dateTestgetToday -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:MMTest.MMTest@7a34b7b8]" started-at="2024-08-01T11:12:48 ICT" name="setUp" finished-at="2024-08-01T11:12:48 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="openCurAcc()[pri:0, instance:MMTest.MMTest@7a34b7b8]" started-at="2024-08-01T11:12:48 ICT" name="openCurAcc" finished-at="2024-08-01T11:13:07 ICT" depends-on-methods="MMTest.MMTest.customerKHDN" duration-ms="18725" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openCurAcc -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:MMTest.MMTest@7a34b7b8]" started-at="2024-08-01T11:13:07 ICT" name="setUp" finished-at="2024-08-01T11:13:07 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="MMTest001()[pri:0, instance:MMTest.MMTest@7a34b7b8]" started-at="2024-08-01T11:13:07 ICT" name="MMTest001" finished-at="2024-08-01T11:13:14 ICT" depends-on-methods="MMTest.MMTest.customerKHDN, MMTest.MMTest.dateTestgetToday, MMTest.MMTest.openCurAcc" duration-ms="6923" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MMTest001 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:MMTest.MMTest@7a34b7b8]" started-at="2024-08-01T11:13:14 ICT" name="tearDown" finished-at="2024-08-01T11:13:14 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- customerTest.customerTest -->
+      </class> <!-- MMTest.MMTest -->
     </test> <!-- Linh Test -->
   </suite> <!-- T24 R24 -->
 </testng-results>
