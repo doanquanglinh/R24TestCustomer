@@ -10,10 +10,10 @@
 			<class name="MMTest.MMTest">
 <!--			<class name="customerTest.customerTestCorp">-->
 					<methods>		
-<!--					<include name="customerKHDN"/>-->
-<!--					<include name="openCurAcc"/>-->
-<!--					<include name="dateTestgetToday"/>-->
-					<include name="MMTest001"/>
+					<include name="customerKHDN"/>
+					<include name="openCurAcc"/>
+					<include name="dateTestgetToday"/>
+					<include name="MMTest002"/>
 <!--					<include name="customerTest032"/>	-->
 <!--					<include name="customerTest033"/>	-->
 <!--					<include name="openCurAcc"/>	-->

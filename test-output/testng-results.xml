@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="4" passed="2" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-01T17:15:26 ICT" name="T24 R24" finished-at="2024-08-01T17:15:52 ICT" duration-ms="25696">
+  <suite started-at="2024-08-02T15:35:09 ICT" name="T24 R24" finished-at="2024-08-02T15:36:26 ICT" duration-ms="77321">
     <groups>
     </groups>
-    <test started-at="2024-08-01T17:15:26 ICT" name="Linh Test" finished-at="2024-08-01T17:15:52 ICT" duration-ms="25696">
+    <test started-at="2024-08-02T15:35:09 ICT" name="Linh Test" finished-at="2024-08-02T15:36:26 ICT" duration-ms="77321">
       <class name="MMTest.MMTest">
-        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-01T17:15:26 ICT" name="initializeTestBaseSetup" finished-at="2024-08-01T17:15:32 ICT" duration-ms="5575" status="PASS">
+        <test-method is-config="true" signature="initializeTestBaseSetup(java.lang.String,java.lang.String)[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-02T15:35:09 ICT" name="initializeTestBaseSetup" finished-at="2024-08-02T15:35:15 ICT" duration-ms="5904" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,35 +23,53 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-01T17:15:32 ICT" name="setUp" finished-at="2024-08-01T17:15:32 ICT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-02T15:35:15 ICT" name="setUp" finished-at="2024-08-02T15:35:15 ICT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="MMTest001()[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-01T17:15:32 ICT" name="MMTest001" finished-at="2024-08-01T17:15:52 ICT" duration-ms="20077" status="FAIL">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
+        <test-method signature="customerKHDN()[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-02T15:35:15 ICT" name="customerKHDN" finished-at="2024-08-02T15:35:38 ICT" duration-ms="23034" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- customerKHDN -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-02T15:35:38 ICT" name="setUp" finished-at="2024-08-02T15:35:38 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="dateTestgetToday()[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-02T15:35:38 ICT" name="dateTestgetToday" finished-at="2024-08-02T15:35:56 ICT" duration-ms="17751" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dateTestgetToday -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-02T15:35:56 ICT" name="setUp" finished-at="2024-08-02T15:35:56 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="openCurAcc()[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-02T15:35:56 ICT" name="openCurAcc" finished-at="2024-08-02T15:36:26 ICT" depends-on-methods="MMTest.MMTest.customerKHDN" duration-ms="30527" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[stale element reference: stale element not found
-  (Session info: chrome=127.0.6533.88)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+              <![CDATA[unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from target frame detached: received Inspector.detached event
+  (Session info: chrome=127.0.6533.89)
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ce4d8b1b667ccb2bff89f0d8afec675c, sendKeysToElement {value=[Ljava.lang.CharSequence;@101330ad, id=f.BDC72B987D15058BF36F0B5591A04650.d.827C8ACD20ABFF3B8B8018090B371F5E.e.144}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.88, chrome: {chromedriverVersion: 127.0.6533.88 (a2d0cb026721..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49908}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49908/devtoo..., se:cdpVersion: 127.0.6533.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (ce4d8b1b667ccb2bff89f0d8afec675c)] -> xpath: //input[@id = 'fieldName:INTEREST.RATE']]
-Session ID: ce4d8b1b667ccb2bff89f0d8afec675c]]>
+Command: [7ff02cf0ad52a5e4058b349cc8883094, clickElement {id=f.F92565C25E651D10A29C2FC82D05A17A.d.D3BCC690B9C8D85AB0A14B9CAC08C371.e.1135}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.89, chrome: {chromedriverVersion: 127.0.6533.88 (a2d0cb026721..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54876}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54876/devtoo..., se:cdpVersion: 127.0.6533.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7ff02cf0ad52a5e4058b349cc8883094)] -> id: sign-in]
+Session ID: 7ff02cf0ad52a5e4058b349cc8883094]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: chrome=127.0.6533.88)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from target frame detached: received Inspector.detached event
+  (Session info: chrome=127.0.6533.89)
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ce4d8b1b667ccb2bff89f0d8afec675c, sendKeysToElement {value=[Ljava.lang.CharSequence;@101330ad, id=f.BDC72B987D15058BF36F0B5591A04650.d.827C8ACD20ABFF3B8B8018090B371F5E.e.144}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.88, chrome: {chromedriverVersion: 127.0.6533.88 (a2d0cb026721..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49908}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49908/devtoo..., se:cdpVersion: 127.0.6533.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (ce4d8b1b667ccb2bff89f0d8afec675c)] -> xpath: //input[@id = 'fieldName:INTEREST.RATE']]
-Session ID: ce4d8b1b667ccb2bff89f0d8afec675c
+Command: [7ff02cf0ad52a5e4058b349cc8883094, clickElement {id=f.F92565C25E651D10A29C2FC82D05A17A.d.D3BCC690B9C8D85AB0A14B9CAC08C371.e.1135}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.89, chrome: {chromedriverVersion: 127.0.6533.88 (a2d0cb026721..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54876}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54876/devtoo..., se:cdpVersion: 127.0.6533.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7ff02cf0ad52a5e4058b349cc8883094)] -> id: sign-in]
+Session ID: 7ff02cf0ad52a5e4058b349cc8883094
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -65,9 +83,11 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(Driver
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
-at Page.MMPage.inputMM(MMPage.java:50)
-at MMTest.MMTest.MMTest001(MMTest.java:122)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at Page.SignInPage.ClickSignIn(SignInPage.java:43)
+at Page.SignInPage.signin(SignInPage.java:60)
+at Page.accountPage.authAccount(accountPage.java:58)
+at MMTest.MMTest.openCurAcc(MMTest.java:105)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -98,11 +118,43 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MMTest001 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-01T17:15:52 ICT" name="tearDown" finished-at="2024-08-01T17:15:52 ICT" duration-ms="1" status="PASS">
+        </test-method> <!-- openCurAcc -->
+        <test-method signature="MMTest002()[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-02T15:36:26 ICT" name="MMTest002" finished-at="2024-08-02T15:36:26 ICT" depends-on-methods="MMTest.MMTest.customerKHDN, MMTest.MMTest.dateTestgetToday, MMTest.MMTest.openCurAcc" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method MMTest.MMTest002()[pri:0, instance:MMTest.MMTest@58cd06cb] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method MMTest.MMTest002()[pri:0, instance:MMTest.MMTest@58cd06cb] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MMTest002 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:MMTest.MMTest@58cd06cb]" started-at="2024-08-02T15:36:26 ICT" name="tearDown" finished-at="2024-08-02T15:36:26 ICT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

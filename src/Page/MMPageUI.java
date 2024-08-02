@@ -14,10 +14,18 @@ public class MMPageUI {
 	public static final By INTERESTTYPE = By.xpath("//input[@id = 'radio:tab1:INT.RATE.TYPE' and @value = '1']");
 	public static final By INTERESTRATE = By.xpath("//input[@id = 'fieldName:INTEREST.RATE']");
 	public static final By INTERESTBASIS= By.id("fieldName:INTEREST.BASIS");
-	
+	public static final By NEGATIVE_RATE = By.id("fieldName:NEGATIVE.RATE");
+
 	public static final By PAYMENTDETAILTAB = By.xpath("//a[@class='nonactive-tab' and span[contains(text(), 'Payment Details')]]");
 	public static final By SECUREDFORM = By.id("fieldName:SECURED.FORM");
 	public static final By CREDITACCOUNT = By.id("fieldName:DRAWDOWN.ACCOUNT");
 	public static final By PRINCIPALLIQACCT = By.id("fieldName:PRIN.LIQ.ACCT");
-	
+	public static final By INT_LIQ_ACCT = By.id("fieldName:INT.LIQ.ACCT");
+	public static final By CAPITALISATION = By.xpath("//input[@id = 'radio:tab1:CAPITALISATION' and @value = 'N' ]");
+	public static final By SECURED_FORM = By.id("fieldName:SECURED.FORM");
+	public static final By TYPE_OF_TXNS = By.id("fieldName:Type of transac");
+	public static final By FREE_1 = By.id("fieldName:FREE:1");
+	public static final By FREE_EXPAND = By.xpath("//td[@mvdetails = 'M_210.2_210.2']//img[@title = 'Expand Sub Value']");
+	public static final By FREE_2 = By.id("fieldName:FREE:2");
+
 }

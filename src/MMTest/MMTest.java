@@ -105,9 +105,9 @@ public class MMTest extends BaseSetup {
         accountPage.authAccount("LINHDQ.2", CurAccountText);
         
 	}
-//	@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
-	@Test
-	public void MMTest001() throws Exception {
+	@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
+//	@Test
+	public void MMTest002() throws Exception {
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		signInPage = new SignInPage(driver);
 		signInPage.closeAfterMethod();
@@ -116,12 +116,11 @@ public class MMTest extends BaseSetup {
 		MMPage = new MMPage(driver);
 		signInPage.signin("LINHDQ.1", "Abb$1234");
 		signInPage.SwitchFrame1();
-		signInPage.CMD("MM.MONEY.MARKET,VMB.PLACE");
+		signInPage.CMD("MM.MONEY.MARKET,VMB.PLACE.OVN");
 		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
-		List<String> inputMMData = Arrays.asList("20","10","CIF_KHDN","VND","50M","sysDate","24M","20261010","20");
+		List<String> inputMMData = Arrays.asList(sysDate,"10","CIF_KHDN","VND","50M",sysDate,"24M","20261010","20","NO","curAcc","curAcc","curAcc","SECURED","TRADING","MM TEST 002 FREE 1","MM TEST 002 FREE 2");
 		MMPage.inputMM(inputMMData);
-		
-//		driver.close();
+		//		driver.close();
 	}
 }
 	
