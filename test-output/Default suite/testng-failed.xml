@@ -3,14 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="dateTest.dateTest">
+      <class name="MMTest.MMTest">
         <methods>
           <include name="initializeTestBaseSetup"/>
+          <include name="customerKHDN"/>
           <include name="dateTestgetToday"/>
+          <include name="openCurAcc"/>
+          <include name="MMTest002"/>
+          <include name="MMTest003"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="MMTest004"/>
         </methods>
-      </class> <!-- dateTest.dateTest -->
+      </class> <!-- MMTest.MMTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

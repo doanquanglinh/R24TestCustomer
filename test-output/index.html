@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,  1 skipped,  2 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -104,43 +104,10 @@
                     <div class="method-list-content failed suite-T24_R24">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="openCurAcc">openCurAcc</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="MMTest004">MMTest004</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-T24_R24 -->
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-T24_R24" class="hide-methods skipped suite-T24_R24"> (hide)</a> <!-- hide-methods skipped suite-T24_R24 -->
-                      <a href="#" panel-name="suite-T24_R24" class="show-methods skipped suite-T24_R24"> (show)</a> <!-- show-methods skipped suite-T24_R24 -->
-                    </span>
-                    <div class="method-list-content skipped suite-T24_R24">
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="MMTest002">MMTest002</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-T24_R24 -->
-                  </li>
-                  <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-T24_R24" class="hide-methods passed suite-T24_R24"> (hide)</a> <!-- hide-methods passed suite-T24_R24 -->
-                      <a href="#" panel-name="suite-T24_R24" class="show-methods passed suite-T24_R24"> (show)</a> <!-- show-methods passed suite-T24_R24 -->
-                    </span>
-                    <div class="method-list-content passed suite-T24_R24">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="customerKHDN">customerKHDN</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="dateTestgetToday">dateTestgetToday</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-T24_R24 -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -160,20 +127,24 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="openCurAcc">
-                  </a> <!-- openCurAcc -->
-                  <span class="method-name">openCurAcc</span>
-                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
-from unknown error: cannot determine loading status
-from target frame detached: received Inspector.detached event
+                  <a name="MMTest004">
+                  </a> <!-- MMTest004 -->
+                  <span class="method-name">MMTest004</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: fieldName:DEAL.DATE (tried for 40 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at Page.MMPage.inputMM004(MMPage.java:156)
+	at MMTest.MMTest.MMTest004(MMTest.java:184)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=127.0.6533.89)
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7ff02cf0ad52a5e4058b349cc8883094, clickElement {id=f.F92565C25E651D10A29C2FC82D05A17A.d.D3BCC690B9C8D85AB0A14B9CAC08C371.e.1135}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.89, chrome: {chromedriverVersion: 127.0.6533.88 (a2d0cb026721..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54876}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54876/devtoo..., se:cdpVersion: 127.0.6533.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (7ff02cf0ad52a5e4058b349cc8883094)] -&gt; id: sign-in]
-Session ID: 7ff02cf0ad52a5e4058b349cc8883094
+Command: [bb1133cafc49432711920a97fa1f8da7, findElement {using=id, value=fieldName:DEAL.DATE}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.89, chrome: {chromedriverVersion: 127.0.6533.88 (a2d0cb026721..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55965}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55965/devtoo..., se:cdpVersion: 127.0.6533.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bb1133cafc49432711920a97fa1f8da7
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -181,60 +152,20 @@ Session ID: 7ff02cf0ad52a5e4058b349cc8883094
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at Page.SignInPage.ClickSignIn(SignInPage.java:43)
-	at Page.SignInPage.signin(SignInPage.java:60)
-	at Page.accountPage.authAccount(accountPage.java:58)
-	at MMTest.MMTest.openCurAcc(MMTest.java:105)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 30 more
+... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-T24_R24-class-failed -->
-          <div class="suite-T24_R24-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">MMTest.MMTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="MMTest002">
-                  </a> <!-- MMTest002 -->
-                  <span class="method-name">MMTest002</span>
-                  <div class="stack-trace">java.lang.Throwable: Method MMTest.MMTest002()[pri:0, instance:MMTest.MMTest@58cd06cb] depends on not successfully finished methods
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 18 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-T24_R24-class-skipped -->
-          <div class="suite-T24_R24-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">MMTest.MMTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="customerKHDN">
-                  </a> <!-- customerKHDN -->
-                  <span class="method-name">customerKHDN</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="dateTestgetToday">
-                  </a> <!-- dateTestgetToday -->
-                  <span class="method-name">dateTestgetToday</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-T24_R24-class-passed -->
         </div> <!-- panel T24_R24 -->
         <div panel-name="test-xml-T24_R24" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -251,10 +182,7 @@ Session ID: 7ff02cf0ad52a5e4058b349cc8883094
     &lt;classes&gt;
       &lt;class name=&quot;MMTest.MMTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;customerKHDN&quot;/&gt;
-          &lt;include name=&quot;openCurAcc&quot;/&gt;
-          &lt;include name=&quot;dateTestgetToday&quot;/&gt;
-          &lt;include name=&quot;MMTest002&quot;/&gt;
+          &lt;include name=&quot;MMTest004&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- MMTest.MMTest --&gt;
     &lt;/classes&gt;
@@ -296,23 +224,11 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'openCurAcc')
+data.setCell(0, 1, 'MMTest004')
 data.setCell(0, 2, 'MMTest.MMTest')
-data.setCell(0, 3, 30527);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'customerKHDN')
-data.setCell(1, 2, 'MMTest.MMTest')
-data.setCell(1, 3, 23034);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'dateTestgetToday')
-data.setCell(2, 2, 'MMTest.MMTest')
-data.setCell(2, 3, 17751);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'MMTest002')
-data.setCell(3, 2, 'MMTest.MMTest')
-data.setCell(3, 3, 0);
+data.setCell(0, 3, 116887);
 window.suiteTableData['T24_R24']= { tableData: data, tableDiv: 'times-div-T24_R24'}
 return data;
 }
@@ -332,9 +248,24 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-T24_R24" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">5 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">MMTest.MMTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">customerKHDN</span>
+                <br/>
+                <span class="ignored-method-name">dateTestgetToday</span>
+                <br/>
+                <span class="ignored-method-name">openCurAcc</span>
+                <br/>
+                <span class="ignored-method-name">MMTest002</span>
+                <br/>
+                <span class="ignored-method-name">MMTest003</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-T24_R24" class="panel">
@@ -350,37 +281,17 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">5948 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">customerKHDN</span>
-                <span class="method-start">5952 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">28990 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">dateTestgetToday</span>
-                <span class="method-start">28990 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">46745 ms</span>
+                <span class="method-start">5949 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">openCurAcc</span>
-                <span class="method-start">46745 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">MMTest002</span>
-                <span class="method-start">77281 ms</span>
+                <span class="method-name">MMTest004</span>
+                <span class="method-start">5950 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">77287 ms</span>
+                <span class="method-start">122843 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
