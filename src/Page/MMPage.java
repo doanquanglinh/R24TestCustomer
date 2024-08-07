@@ -342,9 +342,7 @@ public class MMPage {
         overridesElement.click();
         WebElement commitSuccessfulElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COMMIT_SUCCESSFUL));
         commitSuccessfulElement.isDisplayed();
-//      WebElement interestTyperElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INTERESTTYPE));
-//		interestTyperElement.click();
-//		Thread.sleep(1000);
+
 	}
 	
 	public String MM006Verify() {

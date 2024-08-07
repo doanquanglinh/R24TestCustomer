@@ -201,7 +201,7 @@ public class MMTest extends BaseSetup {
 		driver.close();
 	}
 	
-	@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
+@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
 //@Test
 	public void MMTest006() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
@@ -222,9 +222,9 @@ public class MMTest extends BaseSetup {
 	    String mmID = commitSuccessfulElement.getText().substring(14,27);
 	    MMPage.MM006Verify();
 		SwitchWindow.switchToWindowWithTitle(driver, "Limit Summary/Customer Liability");
-//		driver.close();
+		driver.close();
 		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
-//		driver.close();
+		driver.close();
 		MMPage.authoriseMM006("LINHDQ.2",mmID);
 		MMPage.MM006Verify();
 		signInPage.closeAfterMethod();
