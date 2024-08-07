@@ -8,9 +8,12 @@
       <class name="MMTest.MMTest">
         <methods>
           <include name="initializeTestBaseSetup"/>
+          <include name="customerKHDN"/>
+          <include name="dateTestgetToday"/>
+          <include name="openCurAcc"/>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="MMTest004"/>
+          <include name="MMTest006"/>
         </methods>
       </class> <!-- MMTest.MMTest -->
     </classes>

@@ -5,6 +5,7 @@
     <classes>
       <class name="MMTest.MMTest">
         <methods>
+          <include name="MMTest005HAHA"/>
           <include name="initializeTestBaseSetup"/>
           <include name="customerKHDN"/>
           <include name="dateTestgetToday"/>

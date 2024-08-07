@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -21,6 +22,9 @@ import Page.customerPageUI;
 import Page.datePage;
 import Page.customerPage;
 import Base.SwitchWindow;
+import org.openqa.selenium.By;
+
+
 
 public class MMTest extends BaseSetup {
 	private WebDriver driver;
@@ -167,9 +171,10 @@ public class MMTest extends BaseSetup {
 		driver.close();
 	}
 	
-//	@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
-	@Test
+	@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
+//	@Test
 	public void MMTest004() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		signInPage = new SignInPage(driver);
 		signInPage.closeAfterMethod();
@@ -180,27 +185,25 @@ public class MMTest extends BaseSetup {
 		signInPage.SwitchFrame1();
 		signInPage.CMD("MM.MONEY.MARKET,VMB.REVREPO");
 		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
-		List<String> inputMMData004 = Arrays.asList("sysDate","10","CIF_KHDN","VND","10M","sysDate","24M","20261010","2.20","VSD","10000000","curAcc","curAcc","curAcc","SECURED","TRADING","MM TEST 003 FREE 1","MM TEST 003 FREE 2");
+		List<String> inputMMData004 = Arrays.asList(sysDate,"10",CIF_KHDN,"VND","10M",sysDate,"24M","20261010","2.20","VSD","10000000",curAcc,curAcc,curAcc,"SECURED","TRADING","MM TEST 004 FREE 1","MM TEST 004 FREE 2");
 		MMPage.inputMM004(inputMMData004);
-//		WebElement commitSuccessfulElement = wait.until	(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COMMIT_SUCCESSFUL));
-//	       commitSuccessfulElement.isDisplayed();
-//	    String mmID = commitSuccessfulElement.getText().substring(14,27);
-//	    MMPage.MM004Verify();
-//		SwitchWindow.switchToWindowWithTitle(driver, "Limit Summary/Customer Liability");
-//		driver.close();
-//		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
-//		driver.close();
-//		MMPage.authoriseAndAuthMM004("LINHDQ.2",mmID);
-//		MMPage.MM004Verify();
-//		signInPage.closeAfterMethod();
-//		driver.close();
+		WebElement commitSuccessfulElement = wait.until	(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COMMIT_SUCCESSFUL));
+	       commitSuccessfulElement.isDisplayed();
+	    String mmID = commitSuccessfulElement.getText().substring(14,27);
+	    MMPage.MM004Verify();
+		SwitchWindow.switchToWindowWithTitle(driver, "Limit Summary/Customer Liability");
+		driver.close();
+		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
+		driver.close();
+		MMPage.authoriseAndAuthMM004("LINHDQ.2",mmID);
+		MMPage.MM004Verify();
+		signInPage.closeAfterMethod();
+		driver.close();
 	}
 	
-	
-	/*-  FAIL
 	@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
-	public void MMTest005() throws Exception {
-
+//@Test
+	public void MMTest006() throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		signInPage = new SignInPage(driver);
@@ -210,24 +213,102 @@ public class MMTest extends BaseSetup {
 		MMPage = new MMPage(driver);
 		signInPage.signin("LINHDQ.1", "Abb$1234");
 		signInPage.SwitchFrame1();
-		signInPage.CMD("MM.MONEY.MARKET,VMB.PLACE.CALL");
+		signInPage.CMD("MM.MONEY.MARKET,VMB.TAKING.OVN");
 		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
-		List<String> inputMMData005 = Arrays.asList(sysDate,"10",CIF_KHDN,"VND","10M",sysDate,"24M","20261010","1.5","NO",curAcc,curAcc,curAcc,"UNSECURED","TRADING","MM TEST 005 FREE 1","MM TEST 005 FREE 2");
-		MMPage.inputMM005(inputMMData005);
+		List<String> inputMMData006 = Arrays.asList(sysDate,"10",CIF_KHDN,"VND","10M",sysDate,"1D","10",curAcc,curAcc,curAcc,"UNSECURED","NORMAL","MM TEST 006 FREE 1","MM TEST 006 FREE 2");
+		MMPage.inputMM006(inputMMData006);
 		WebElement commitSuccessfulElement = wait.until	(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COMMIT_SUCCESSFUL));
 	       commitSuccessfulElement.isDisplayed();
 	    String mmID = commitSuccessfulElement.getText().substring(14,27);
-	    MMPage.MM005Verify();
+	    MMPage.MM006Verify();
 		SwitchWindow.switchToWindowWithTitle(driver, "Limit Summary/Customer Liability");
-		driver.close();
+//		driver.close();
 		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
-		driver.close();
-		MMPage.authoriseAndAuthMM005("LINHDQ.2",mmID);
-		MMPage.MM005Verify();
+//		driver.close();
+		MMPage.authoriseMM006("LINHDQ.2",mmID);
+		MMPage.MM006Verify();
 		signInPage.closeAfterMethod();
 		driver.close();
 	}
-	*/
+	
+	 @Test
+	    public void MMTest005HAHA() throws Exception {
+	        for (int i = 0; i < 30; i++) {
+	            System.out.println("Running iteration: " + (i + 1));
+	            runTest();
+	      
+	        }
+	    }
+	    public void runTest() throws Exception {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+	        Thread.sleep(2000);
+	        WebElement banhMyChamSuaElement = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/main/ul/li[3]/a/img"));
+	        banhMyChamSuaElement.click();
+	        
+	        Thread.sleep(2000);
+	        
+	        WebElement colorElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("color")));
+	        Select dropdownColor = new Select(colorElement);
+	        dropdownColor.selectByValue("Kem");
+	        
+	        WebElement sizeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("size")));
+	        Select dropdownSize = new Select(sizeElement);
+	        dropdownSize.selectByValue("L");
+	        Thread.sleep(1000);
+
+	        WebElement addElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div/div/main/div[3]/div[2]/form/div/div[2]/button")));
+	        addElement.click();
+	        
+	        Thread.sleep(1000);
+
+	        WebElement viewCartElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div/div/main/div[1]/div/a")));
+	        viewCartElement.click();
+	        Thread.sleep(2000);
+	        WebElement paymentElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div/div/main/div/article/div/div/div/div[2]/div/div/div/a")));
+	        paymentElement.click();
+	        
+	        WebElement nameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("billing_first_name")));
+	        nameElement.clear();
+	        nameElement.sendKeys("LINH");
+
+	        
+	        WebElement lastNameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("billing_last_name")));
+	        lastNameElement.clear();
+	        lastNameElement.sendKeys("DOAN");
+	        
+	        WebElement addressElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("billing_address_1")));
+	        addressElement.clear();
+	        addressElement.sendKeys("CO NHUE 2");
+	        
+	        WebElement cityElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("billing_city")));
+	        cityElement.clear();
+	        cityElement.sendKeys("HA NOI");
+	        
+	        WebElement soDienThoaiElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("billing_phone")));
+	        soDienThoaiElement.clear();
+	        soDienThoaiElement.sendKeys("0123456789");
+	        
+	        WebElement emailElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("billing_email")));
+	        emailElement.clear();
+	        emailElement.sendKeys("anhch@gmail.com");
+	        
+	 
+	        Thread.sleep(1500);
+	        WebElement orderElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("woocommerce_checkout_place_order")));
+	        orderElement.isDisplayed();
+	        orderElement.click();
+	        Thread.sleep(5000);
+
+	        WebElement checkElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div/div/main/div/article/div/div/div/div/p")));
+	        checkElement.isDisplayed();
+	        
+	        WebElement homePageElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/header/div[1]/div/div/div/div[2]/div/div/div/div[2]/div[1]/nav/div/ul/li[5]/a")));
+	        homePageElement.click();
+	        driver.get("https://quanaohuonganh.com/cua-hang/"); 
+	        Thread.sleep(2000);
+
+	    }
 }
 	
 

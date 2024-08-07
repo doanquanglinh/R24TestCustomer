@@ -38,5 +38,7 @@ public class MMPageUI {
 	public static final By TRANSACTION_ID_MM_PLACE_OVN = By.xpath("//input[@id= 'transactionId' and @class = 'idbox idbox_MMMONEYMARKET idbox_MMMONEYMARKET_VMBPLACEOVN']");
 	public static final By TRANSACTION_ID_MM_MTHLY_INT = By.xpath("//input[@id= 'transactionId' and @class = 'idbox idbox_MMMONEYMARKET idbox_MMMONEYMARKET_VMBPLACEMTHLYINT']");
 	public static final By TRANSACTION_ID_MM_TAKING = By.xpath("//input[@id= 'transactionId' and @class = 'idbox idbox_MMMONEYMARKET idbox_MMMONEYMARKET_VMBTAKING']");
+	public static final By TRANSACTION_ID_MM_REPO = By.xpath("//input[@id= 'transactionId' and @class = 'idbox idbox_MMMONEYMARKET idbox_MMMONEYMARKET_VMBREVREPO']");
+	public static final By TRANSACTION_ID_MM_TAKING_OVN = By.xpath("//input[@id= 'transactionId' and @class = 'idbox idbox_MMMONEYMARKET idbox_MMMONEYMARKET_VMBTAKINGOVN']");
 
 }
