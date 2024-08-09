@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-T24_R24" class="navigator-link">
-              <span class="suite-name border-passed">T24 R24</span>
+              <span class="suite-name border-failed">T24 R24</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,36 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-T24_R24" class="hide-methods passed suite-T24_R24"> (hide)</a> <!-- hide-methods passed suite-T24_R24 -->
-                      <a href="#" panel-name="suite-T24_R24" class="show-methods passed suite-T24_R24"> (show)</a> <!-- show-methods passed suite-T24_R24 -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-T24_R24" class="hide-methods failed suite-T24_R24"> (hide)</a> <!-- hide-methods failed suite-T24_R24 -->
+                      <a href="#" panel-name="suite-T24_R24" class="show-methods failed suite-T24_R24"> (show)</a> <!-- show-methods failed suite-T24_R24 -->
                     </span>
-                    <div class="method-list-content passed suite-T24_R24">
+                    <div class="method-list-content failed suite-T24_R24">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="MMTest006">MMTest006</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="customerKHDN">customerKHDN</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="dateTestgetToday">dateTestgetToday</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-T24_R24" title="MMTest.MMTest" class="method navigator-link" hash-for-method="openCurAcc">openCurAcc</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-T24_R24 -->
+                    </div> <!-- method-list-content failed suite-T24_R24 -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -134,42 +119,48 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-T24_R24" class="panel T24_R24">
-          <div class="suite-T24_R24-class-passed">
+          <div class="suite-T24_R24-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">MMTest.MMTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="MMTest006">
-                  </a> <!-- MMTest006 -->
-                  <span class="method-name">MMTest006</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="customerKHDN">
-                  </a> <!-- customerKHDN -->
-                  <span class="method-name">customerKHDN</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="dateTestgetToday">
-                  </a> <!-- dateTestgetToday -->
-                  <span class="method-name">dateTestgetToday</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="openCurAcc">
                   </a> <!-- openCurAcc -->
                   <span class="method-name">openCurAcc</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#signOnName&quot;}
+  (Session info: chrome=127.0.6533.100)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d49047e37e1e7d84964be577d69a9138, findElement {using=id, value=signOnName}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.100, chrome: {chromedriverVersion: 127.0.6533.99 (f31af5097d90..., userDataDir: C:\Users\linhdq\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56052}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56052/devtoo..., se:cdpVersion: 127.0.6533.100, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d49047e37e1e7d84964be577d69a9138
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at Page.SignInPage.UserField(SignInPage.java:29)
+	at Page.SignInPage.signin(SignInPage.java:57)
+	at Page.accountPage.authAccount(accountPage.java:58)
+	at MMTest.MMTest.openCurAcc(MMTest.java:123)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-T24_R24-class-passed -->
+          </div> <!-- suite-T24_R24-class-failed -->
         </div> <!-- panel T24_R24 -->
         <div panel-name="test-xml-T24_R24" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -186,10 +177,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;MMTest.MMTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;customerKHDN&quot;/&gt;
           &lt;include name=&quot;openCurAcc&quot;/&gt;
-          &lt;include name=&quot;dateTestgetToday&quot;/&gt;
-          &lt;include name=&quot;MMTest006&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- MMTest.MMTest --&gt;
     &lt;/classes&gt;
@@ -231,28 +219,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'MMTest006')
+data.setCell(0, 1, 'openCurAcc')
 data.setCell(0, 2, 'MMTest.MMTest')
-data.setCell(0, 3, 28650);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'openCurAcc')
-data.setCell(1, 2, 'MMTest.MMTest')
-data.setCell(1, 3, 25679);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'customerKHDN')
-data.setCell(2, 2, 'MMTest.MMTest')
-data.setCell(2, 3, 23123);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'dateTestgetToday')
-data.setCell(3, 2, 'MMTest.MMTest')
-data.setCell(3, 3, 11848);
+data.setCell(0, 3, 13830);
 window.suiteTableData['T24_R24']= { tableData: data, tableDiv: 'times-div-T24_R24'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 13 seconds</span>
               <div id="times-div-T24_R24">
               </div> <!-- times-div-T24_R24 -->
             </div> <!-- times-div -->
@@ -267,7 +243,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-T24_R24" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">4 ignored methods</span>
+            <span class="header-content">10 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -275,9 +251,21 @@ return data;
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">MMTest005HAHA</span>
                 <br/>
+                <span class="ignored-method-name">MMTest008</span>
+                <br/>
+                <span class="ignored-method-name">customerKHDN</span>
+                <br/>
+                <span class="ignored-method-name">dateTestgetToday</span>
+                <br/>
+                <span class="ignored-method-name">MMTest005</span>
+                <br/>
                 <span class="ignored-method-name">MMTest002</span>
                 <br/>
                 <span class="ignored-method-name">MMTest003</span>
+                <br/>
+                <span class="ignored-method-name">MMTest006</span>
+                <br/>
+                <span class="ignored-method-name">MMTest007</span>
                 <br/>
                 <span class="ignored-method-name">MMTest004</span>
                 <br/>
@@ -298,39 +286,17 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">5438 ms</span>
+                <span class="method-start">6044 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">customerKHDN</span>
-                <span class="method-start">5439 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">28566 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">dateTestgetToday</span>
-                <span class="method-start">28567 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">40420 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">openCurAcc</span>
-                <span class="method-start">40421 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">66102 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">MMTest006</span>
-                <span class="method-start">66102 ms</span>
+                <span class="method-start">6045 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">94754 ms</span>
+                <span class="method-start">19883 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

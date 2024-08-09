@@ -5,15 +5,19 @@
     <classes>
       <class name="MMTest.MMTest">
         <methods>
-          <include name="MMTest005HAHA"/>
           <include name="initializeTestBaseSetup"/>
           <include name="customerKHDN"/>
           <include name="dateTestgetToday"/>
           <include name="openCurAcc"/>
+          <include name="tearDown"/>
+          <include name="MMTest005HAHA"/>
+          <include name="MMTest008"/>
+          <include name="MMTest005"/>
           <include name="MMTest002"/>
           <include name="MMTest003"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="MMTest006"/>
+          <include name="MMTest007"/>
           <include name="MMTest004"/>
         </methods>
       </class> <!-- MMTest.MMTest -->

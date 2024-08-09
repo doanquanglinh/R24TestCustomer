@@ -13,7 +13,7 @@ public class accountPage {
 	public accountPage(WebDriver driver) {
 		this.driver = driver;
 	}
-	public void  inputCurAccount(List<String> inputCurAccountData) {
+	public void  inputCurAccount(List<String> inputCurAccountData) throws InterruptedException {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 	WebElement customerIDElement = wait.until(ExpectedConditions.visibilityOfElementLocated(accountUI.CUSTOMER_ID));
 	WebElement productCodeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(accountUI.PRODUCT_CODE));
@@ -29,6 +29,7 @@ public class accountPage {
 	currencyElement.sendKeys(inputCurAccountData.get(3));
 	nhomTaiKhoanElement.sendKeys(inputCurAccountData.get(4));
 	commitElement.click();
+	Thread.sleep(5000);
 	}
 	
 	public void  inputLoanAccount(List<String> inputLoanAccount) {
@@ -49,7 +50,6 @@ public class accountPage {
 	}
 	
 	public void  authAccount(String acccountAuth, String authoriseAccountData) throws Exception {
-		 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();

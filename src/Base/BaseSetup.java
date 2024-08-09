@@ -1,6 +1,7 @@
 package Base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -9,6 +10,7 @@ public class BaseSetup {
 
 	private WebDriver driver;
 	public WebDriver getDriver() {
+		
 		return driver;
 	}
 
@@ -24,12 +26,15 @@ public class BaseSetup {
 	}
 
 	private WebDriver initChromeDriver(String URL) {
-		System.out.println("Launching Chrome browser...");
-	
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.navigate().to(URL);
-		return driver;
+		 System.out.println("Launching Chrome browser...");
+		    ChromeOptions options = new ChromeOptions();
+		    options.addArguments("--disable-popup-blocking");
+	        options.addArguments("disable-infobars"); 
+	        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+		    WebDriver driver = new ChromeDriver(options);
+		    driver.manage().window().maximize();
+		    driver.navigate().to(URL);
+		    return driver;
 	}
 
 	@Parameters({ "browserType", "URL" })

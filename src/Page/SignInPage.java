@@ -76,6 +76,22 @@ public class SignInPage  {
 		}
 	}
 
+	public void closePrint() throws InterruptedException {
+		Thread.sleep(1500);
+		driver.close();
+	    SwitchWindow.switchToWindowWithTitle(driver, "20676596553224803");
+	    driver.close();
+		Thread.sleep(1000);
+
+	}
+	
+	public void closeDoc() throws InterruptedException {
+		Thread.sleep(1500);
+		driver.close();
+	    SwitchWindow.switchToWindowWithTitle(driver, "20676596553224803");
+	    driver.close();
+		Thread.sleep(1000);
+	}
 	
 	/**********************************************************************************/
 	public void waitForPageLoaded() {

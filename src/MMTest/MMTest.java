@@ -23,6 +23,8 @@ import Page.datePage;
 import Page.customerPage;
 import Base.SwitchWindow;
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 
 
 
@@ -89,7 +91,8 @@ public class MMTest extends BaseSetup {
 	    System.out.println(CIF_KHDN);
 	    driver.close();
 	}
-	@Test(dependsOnMethods = ("customerKHDN"))
+//	@Test(dependsOnMethods = ("customerKHDN"))
+	@Test
 	public void openCurAcc() throws Exception{
 		accountPage = new accountPage(driver);
 		signInPage = new SignInPage(driver);
@@ -100,17 +103,18 @@ public class MMTest extends BaseSetup {
         signInPage.signin("LINHDQ.1", "Abb$1234");
         signInPage.SwitchFrame1();
         signInPage.CMD("ACCOUNT,VMB.CA.OPEN I 10");
+
         SwitchWindow.switchToWindowWithTitle(driver, "ACCOUNT");
-        List<String> inputCurAccountData = Arrays.asList(CIF_KHDN,"1001",RanDomStringInt.generateRandomString(6),"VND","Bhxh 1 lan");
+        List<String> inputCurAccountData = Arrays.asList("12981716","1001",RanDomStringInt.generateRandomString(6),"VND","Bhxh 1 lan");
         accountPage.inputCurAccount(inputCurAccountData);
 		WebElement getCurAccountElement = wait.until(ExpectedConditions.visibilityOfElementLocated(accountUI.MESSAGE));
         getCurAccountElement.isDisplayed();
         String CurAccountText = getCurAccountElement.getText().substring(14, 27);
         curAcc = CurAccountText;
         System.out.println(CurAccountText);
-        driver.close();
+//        driver.close();
         accountPage.authAccount("LINHDQ.2", CurAccountText);
-        
+
 	}
 	@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
 //	@Test
@@ -201,6 +205,38 @@ public class MMTest extends BaseSetup {
 		driver.close();
 	}
 	
+//@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
+@Test
+public void MMTest005() throws Exception {
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+	SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+	signInPage = new SignInPage(driver);
+	signInPage.closeAfterMethod();
+	driver.navigate().refresh();
+	signInPage = new SignInPage(driver);
+	MMPage = new MMPage(driver);
+	signInPage.signin("LINHDQ.1", "Abb$1234");
+	signInPage.SwitchFrame1();
+	signInPage.CMD("MM.MONEY.MARKET,VMB.PLACE.CALL");
+	SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
+	List<String> inputMMData005 = Arrays.asList(sysDate, "10", CIF_KHDN, "VND", "10M", sysDate, "1D", "10", curAcc,
+			curAcc, curAcc, "UNSECURED", "NORMAL", "MM TEST 005 FREE 1");
+	MMPage.inputMM005(inputMMData005);
+	WebElement commitSuccessfulElement = wait
+			.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COMMIT_SUCCESSFUL));
+	commitSuccessfulElement.isDisplayed();
+	String mmID = commitSuccessfulElement.getText().substring(14, 27);
+	MMPage.MM005Verify();
+	SwitchWindow.switchToWindowWithTitle(driver, "Limit Summary/Customer Liability");
+	driver.close();
+	SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
+	driver.close();
+	MMPage.authoriseMM005("LINHDQ.2", mmID);
+	MMPage.MM005Verify();
+	signInPage.closeAfterMethod();
+	driver.close();
+}
+
 @Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
 //@Test
 	public void MMTest006() throws Exception {
@@ -213,9 +249,9 @@ public class MMTest extends BaseSetup {
 		MMPage = new MMPage(driver);
 		signInPage.signin("LINHDQ.1", "Abb$1234");
 		signInPage.SwitchFrame1();
-		signInPage.CMD("MM.MONEY.MARKET,VMB.TAKING.OVN");
+		signInPage.CMD("MM.MONEY.MARKET,VMB.TAKING");
 		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
-		List<String> inputMMData006 = Arrays.asList(sysDate,"10",CIF_KHDN,"VND","10M",sysDate,"1D","10",curAcc,curAcc,curAcc,"UNSECURED","NORMAL","MM TEST 006 FREE 1","MM TEST 006 FREE 2");
+		List<String> inputMMData006 = Arrays.asList(sysDate,"10",CIF_KHDN,"VND","10M",sysDate,"1M","10",curAcc,curAcc,curAcc,"UNSECURED","NORMAL","MM TEST 006 FREE 1","MM TEST 006 FREE 2");
 		MMPage.inputMM006(inputMMData006);
 		WebElement commitSuccessfulElement = wait.until	(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COMMIT_SUCCESSFUL));
 	       commitSuccessfulElement.isDisplayed();
@@ -230,6 +266,69 @@ public class MMTest extends BaseSetup {
 		signInPage.closeAfterMethod();
 		driver.close();
 	}
+
+@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
+//@Test
+	public void MMTest007() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		signInPage = new SignInPage(driver);
+		signInPage.closeAfterMethod();
+		driver.navigate().refresh();
+		signInPage = new SignInPage(driver);
+		MMPage = new MMPage(driver);
+		signInPage.signin("LINHDQ.1", "Abb$1234");
+		signInPage.SwitchFrame1();
+		signInPage.CMD("MM.MONEY.MARKET,VMB.TAKING.OVN");
+		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
+		List<String> inputMMData007 = Arrays.asList(sysDate,"10",CIF_KHDN,"VND","10M",sysDate,"1D","10",curAcc,curAcc,curAcc,"UNSECURED","NORMAL","MM TEST 007 FREE 1");
+		MMPage.inputMM007(inputMMData007);
+		WebElement commitSuccessfulElement = wait.until	(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COMMIT_SUCCESSFUL));
+	       commitSuccessfulElement.isDisplayed();
+	    String mmID = commitSuccessfulElement.getText().substring(14,27);
+	    MMPage.MM007Verify();
+		SwitchWindow.switchToWindowWithTitle(driver, "Limit Summary/Customer Liability");
+		driver.close();
+		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
+		driver.close();
+		MMPage.authoriseMM007("LINHDQ.2",mmID);
+		MMPage.MM007Verify();
+		signInPage.closeAfterMethod();
+		driver.close();
+	}
+
+
+@Test(dependsOnMethods = {"dateTestgetToday","customerKHDN","openCurAcc"})
+//@Test
+	public void MMTest008() throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		signInPage = new SignInPage(driver);
+		signInPage.closeAfterMethod();
+		driver.navigate().refresh();
+		signInPage = new SignInPage(driver);
+		MMPage = new MMPage(driver);
+		signInPage.signin("LINHDQ.1", "Abb$1234");
+		signInPage.SwitchFrame1();
+		signInPage.CMD("MM.MONEY.MARKET,VMB.TAKING.MTHLY.INT");
+		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
+		List<String> inputMMData008 = Arrays.asList(sysDate,"10",CIF_KHDN,"VND","15M",sysDate,"1M","10",curAcc,curAcc,curAcc,"UNSECURED","NORMAL","MM TEST 008 FREE 1");
+		MMPage.inputMM008(inputMMData008);
+	       commitSuccessfulElement.isDisplayed();
+	    String mmID = commitSuccessfulElement.getText().substring(14,27);
+	    MMPage.MM008Verify();
+		SwitchWindow.switchToWindowWithTitle(driver, "Limit Summary/Customer Liability");
+		driver.close();
+		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
+		driver.close();
+		MMPage.authoriseMM008("LINHDQ.2",mmID);
+		MMPage.MM008Verify();
+		signInPage.closeAfterMethod();
+		driver.close();
+	}
+
+
+	
 	
 	 @Test
 	    public void MMTest005HAHA() throws Exception {

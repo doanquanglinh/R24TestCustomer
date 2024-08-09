@@ -259,7 +259,75 @@ public class MMPage {
 		return commitSuccessfulMessElement.getText().substring(14,27);
 	       
 	}
-	public void authoriseAndAuthMM005(String acccountAuth, String authoriseMMData) throws Exception {
+	
+	public void  inputMM005(List<String> inputMMData005) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		WebElement newDealElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.newDeal));
+		newDealElement.isDisplayed();
+		newDealElement.click();
+		WebElement dealDateElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.DEALDATE));
+		dealDateElement.sendKeys(inputMMData005.get(0));
+		WebElement dealerdeskElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.DEALERDESK));
+		dealerdeskElement.clear();
+		dealerdeskElement.sendKeys(inputMMData005.get(1));
+		WebElement counterpartyElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COUNTERPARTY));
+		counterpartyElement.sendKeys(inputMMData005.get(2));
+		WebElement currencyElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.CURRENCY));
+		currencyElement.sendKeys(inputMMData005.get(3));
+		WebElement amountPlacedElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.AMOUNTPLACED));
+		amountPlacedElement.sendKeys(inputMMData005.get(4));
+		WebElement startDateElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.STARTDATE));
+		startDateElement.sendKeys(inputMMData005.get(5));
+		WebElement termElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.TERM));
+		termElement.clear();
+		termElement.sendKeys(inputMMData005.get(6));
+
+		WebElement interestRateElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INTERESTRATE));
+		interestRateElement.sendKeys(inputMMData005.get(7));
+		
+
+	    WebElement capitalisationElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.CAPITALISATION));
+		capitalisationElement.click();
+			
+		WebElement noiLuuKyElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.NOI_LUU_KY));
+		noiLuuKyElement.sendKeys(inputMMData005.get(9));
+			
+		WebElement descDeptElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.DESC_DEPT));
+		descDeptElement.clear();
+		
+		WebElement tongMenhGiaElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.TONG_MENH_GIA));
+		tongMenhGiaElement.sendKeys(inputMMData005.get(10));
+		
+		WebElement interestTypeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INTERESTTYPE));
+		interestTypeElement.click();
+		
+		WebElement paymentDetailTabElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.PAYMENTDETAILTAB));
+		paymentDetailTabElement.click();
+		WebElement creditAccountElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.CREDITACCOUNT));
+		creditAccountElement.sendKeys(inputMMData005.get(11));
+		WebElement principalLiqacctElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.PRINCIPALLIQACCT));
+		principalLiqacctElement.sendKeys(inputMMData005.get(12));
+		WebElement interestLiqAccttElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INT_LIQ_ACCT));
+		interestLiqAccttElement.sendKeys(inputMMData005.get(13));
+		WebElement securedFormElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.SECURED_FORM));
+        Select securedForm = new Select(securedFormElement);
+        securedForm.selectByValue(inputMMData005.get(14));
+        WebElement typeOfTxnsElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.TYPE_OF_TXNS));
+        Select typeOfTxns = new Select(typeOfTxnsElement);
+        typeOfTxns.selectByValue(inputMMData005.get(15));
+        WebElement free1Element  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.FREE_1));
+        free1Element.sendKeys(inputMMData005.get(16));
+        WebElement commitElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+        commitElement.click();
+        
+        WebElement overridesElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.OVERRIDES));
+        overridesElement.click();
+        WebElement commitSuccessfulElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COMMIT_SUCCESSFUL));
+        commitSuccessfulElement.isDisplayed();
+       
+        
+	}
+	public void authoriseMM005(String acccountAuth, String authoriseMMData) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
 		driver.navigate().refresh();
@@ -277,6 +345,16 @@ public class MMPage {
         WebElement authoriseDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.authoriseDeal));
         authoriseDealElement.click();
         
+	}
+	public String MM005Verify() {
+		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		WebElement commitSuccessfulMessElement = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mesBox));
+		commitSuccessfulMessElement.isDisplayed();
+		System.out.println(commitSuccessfulMessElement.getText().substring(14,27));
+		return commitSuccessfulMessElement.getText().substring(14,27);
+	       
 	}
 	
 	public void  inputMM006(List<String> inputMMData006) throws InterruptedException {
@@ -363,9 +441,9 @@ public class MMPage {
 		MMPage = new MMPage(driver);
 		signInPage.signin(acccountAuth, "Abb$1234");
 		signInPage.SwitchFrame1();
-		signInPage.CMD("MM.MONEY.MARKET,VMB.TAKING.OVN");
+		signInPage.CMD("MM.MONEY.MARKET,VMB.TAKING");
 		SwitchWindow.switchToWindowWithTitle(driver,"MONEY MARKET");
-        WebElement transactionAuthMMMthkyIntElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.TRANSACTION_ID_MM_TAKING_OVN));
+        WebElement transactionAuthMMMthkyIntElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.TRANSACTION_ID_MM_TAKING));
         transactionAuthMMMthkyIntElement.isDisplayed();
         transactionAuthMMMthkyIntElement.sendKeys(authoriseMMData);
         WebElement performElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.performContract));
@@ -374,4 +452,197 @@ public class MMPage {
         authoriseDealElement.click();
         
 	}
+	
+	
+	public void  inputMM007(List<String> inputMMData006) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		WebElement newDealElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.newDeal));
+		newDealElement.isDisplayed();
+		newDealElement.click();
+		WebElement dealDateElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.DEALDATE));
+		dealDateElement.sendKeys(inputMMData006.get(0));
+		WebElement dealerdeskElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.DEALERDESK));
+		dealerdeskElement.clear();
+		dealerdeskElement.sendKeys(inputMMData006.get(1));
+		WebElement counterpartyElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COUNTERPARTY));
+		counterpartyElement.sendKeys(inputMMData006.get(2));
+		WebElement currencyElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.CURRENCY));
+		currencyElement.sendKeys(inputMMData006.get(3));
+		WebElement amountPlacedElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.AMOUNTPLACED));
+		amountPlacedElement.sendKeys(inputMMData006.get(4));
+		WebElement startDateElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.STARTDATE));
+		startDateElement.sendKeys(inputMMData006.get(5));
+		WebElement termElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.TERM));
+		termElement.clear();
+		termElement.sendKeys(inputMMData006.get(6));
+		
+		WebElement interestTyperElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INTERESTTYPE));
+		interestTyperElement.click();
+		Thread.sleep(1000);
+
+    	WebElement descDeptElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.DESC_DEPT));
+		descDeptElement.clear();
+		
+		WebElement interestTyperElement2  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INTERESTTYPE));
+		interestTyperElement2.click();
+		Thread.sleep(1000);
+
+		WebElement interestRateElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INTERESTRATE));
+		interestRateElement.sendKeys(inputMMData006.get(7));
+		WebElement capitalisationElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.CAPITALISATION));
+		capitalisationElement.click();
+		WebElement capitalisationElement2 = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.CAPITALISATION));
+		capitalisationElement2.click();
+		Thread.sleep(10000);
+		
+		WebElement paymentDetailTabElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.PAYMENTDETAILTAB));
+		paymentDetailTabElement.click();
+		WebElement creditAccountElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.CREDITACCOUNT));
+		creditAccountElement.sendKeys(inputMMData006.get(8));
+		WebElement principalLiqacctElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.PRINCIPALLIQACCT));
+		principalLiqacctElement.sendKeys(inputMMData006.get(9));
+		WebElement interestLiqAccttElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INT_LIQ_ACCT));
+		interestLiqAccttElement.sendKeys(inputMMData006.get(10));
+		WebElement securedFormElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.SECURED_FORM));
+        Select securedForm = new Select(securedFormElement);
+        securedForm.selectByValue(inputMMData006.get(11));
+        WebElement typeOfTxnsElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.TYPE_OF_TXNS));
+        Select typeOfTxns = new Select(typeOfTxnsElement);
+        typeOfTxns.selectByValue(inputMMData006.get(12));
+        WebElement free1Element  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.FREE_1));
+        free1Element.sendKeys(inputMMData006.get(13));
+        WebElement commitElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+        commitElement.click();
+        WebElement overridesElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.OVERRIDES));
+        overridesElement.click();
+        WebElement commitSuccessfulElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COMMIT_SUCCESSFUL));
+        commitSuccessfulElement.isDisplayed();
+
+	}
+	
+	public String MM007Verify() {
+		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		WebElement commitSuccessfulMessElement = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mesBox));
+		commitSuccessfulMessElement.isDisplayed();
+		System.out.println(commitSuccessfulMessElement.getText().substring(14,27));
+		return commitSuccessfulMessElement.getText().substring(14,27);
+	       
+	}
+	public void authoriseMM007(String acccountAuth, String authoriseMMData) throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
+		signInPage = new SignInPage(driver);
+		MMPage = new MMPage(driver);
+		signInPage.signin(acccountAuth, "Abb$1234");
+		signInPage.SwitchFrame1();
+		signInPage.CMD("MM.MONEY.MARKET,VMB.TAKING");
+		SwitchWindow.switchToWindowWithTitle(driver,"MONEY MARKET");
+        WebElement transactionAuthMMMthkyIntElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.TRANSACTION_ID_MM_TAKING));
+        transactionAuthMMMthkyIntElement.isDisplayed();
+        transactionAuthMMMthkyIntElement.sendKeys(authoriseMMData);
+        WebElement performElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.performContract));
+        performElement.click();
+        WebElement authoriseDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.authoriseDeal));
+        authoriseDealElement.click();
+	}
+	
+	public void  inputMM008(List<String> inputMMData008) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		WebElement newDealElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.newDeal));
+		newDealElement.isDisplayed();
+		newDealElement.click();
+		WebElement dealDateElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.DEALDATE));
+		dealDateElement.sendKeys(inputMMData008.get(0));
+		WebElement dealerdeskElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.DEALERDESK));
+		dealerdeskElement.clear();
+		dealerdeskElement.sendKeys(inputMMData008.get(1));
+		WebElement counterpartyElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COUNTERPARTY));
+		counterpartyElement.sendKeys(inputMMData008.get(2));
+		WebElement currencyElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.CURRENCY));
+		currencyElement.sendKeys(inputMMData008.get(3));
+		WebElement amountPlacedElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.AMOUNTPLACED));
+		amountPlacedElement.sendKeys(inputMMData008.get(4));
+		WebElement startDateElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.STARTDATE));
+		startDateElement.sendKeys(inputMMData008.get(5));
+		WebElement termElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.TERM));
+		termElement.clear();
+		termElement.sendKeys(inputMMData008.get(6));
+		
+		WebElement interestTyperElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INTERESTTYPE));
+		interestTyperElement.click();
+		Thread.sleep(1000);
+
+    	WebElement descDeptElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.DESC_DEPT));
+		descDeptElement.clear();
+		
+		WebElement interestTyperElement2  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INTERESTTYPE));
+		interestTyperElement2.click();
+		Thread.sleep(1000);
+
+		WebElement interestRateElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INTERESTRATE));
+		interestRateElement.sendKeys(inputMMData008.get(7));
+		WebElement capitalisationElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.CAPITALISATION));
+		capitalisationElement.click();
+		WebElement capitalisationElement2 = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.CAPITALISATION));
+		capitalisationElement2.click();
+		Thread.sleep(10000);
+		
+		WebElement paymentDetailTabElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.PAYMENTDETAILTAB));
+		paymentDetailTabElement.click();
+		WebElement creditAccountElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.CREDITACCOUNT));
+		creditAccountElement.sendKeys(inputMMData008.get(8));
+		WebElement principalLiqacctElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.PRINCIPALLIQACCT));
+		principalLiqacctElement.sendKeys(inputMMData008.get(9));
+		WebElement interestLiqAccttElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.INT_LIQ_ACCT));
+		interestLiqAccttElement.sendKeys(inputMMData008.get(10));
+		WebElement securedFormElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.SECURED_FORM));
+        Select securedForm = new Select(securedFormElement);
+        securedForm.selectByValue(inputMMData008.get(11));
+        WebElement typeOfTxnsElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.TYPE_OF_TXNS));
+        Select typeOfTxns = new Select(typeOfTxnsElement);
+        typeOfTxns.selectByValue(inputMMData008.get(12));
+        WebElement free1Element  = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.FREE_1));
+        free1Element.sendKeys(inputMMData008.get(13));
+        WebElement commitElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.commitDeal));
+        commitElement.click();
+        WebElement overridesElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.OVERRIDES));
+        overridesElement.click();
+        WebElement commitSuccessfulElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.COMMIT_SUCCESSFUL));
+        commitSuccessfulElement.isDisplayed();
+
+	}
+	
+	public String MM008Verify() {
+		SwitchWindow.switchToWindowWithTitle(driver, "MONEY MARKET");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		WebElement commitSuccessfulMessElement = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.mesBox));
+		commitSuccessfulMessElement.isDisplayed();
+		System.out.println(commitSuccessfulMessElement.getText().substring(14,27));
+		return commitSuccessfulMessElement.getText().substring(14,27);
+	       
+	}
+	public void authoriseMM008(String acccountAuth, String authoriseMMData) throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		SwitchWindow.switchToWindowWithTitle(driver, "T24 - HOI SO CHINH-HAN");
+		driver.navigate().refresh();
+		signInPage = new SignInPage(driver);
+		MMPage = new MMPage(driver);
+		signInPage.signin(acccountAuth, "Abb$1234");
+		signInPage.SwitchFrame1();
+		signInPage.CMD("MM.MONEY.MARKET,VMB.TAKING.MTHLY.INT");
+		SwitchWindow.switchToWindowWithTitle(driver,"MONEY MARKET");
+        WebElement transactionAuthMMMthkyIntElement = wait.until(ExpectedConditions.visibilityOfElementLocated(MMPageUI.TRANSACTION_ID_MM_MTHLY_INT_008));
+        transactionAuthMMMthkyIntElement.isDisplayed();
+        transactionAuthMMMthkyIntElement.sendKeys(authoriseMMData);
+        WebElement performElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.performContract));
+        performElement.click();
+        WebElement authoriseDealElement = wait.until(ExpectedConditions.visibilityOfElementLocated(customerPageUI.authoriseDeal));
+        authoriseDealElement.click();
+	}
+	
+	
 }
